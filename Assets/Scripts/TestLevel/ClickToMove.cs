@@ -6,7 +6,8 @@ public class ClickToMove : MonoBehaviour {
     //based on https://www.youtube.com/watch?v=k7yx7D6MU6w
 
     [SerializeField] [Range(1, 20)]
-    private float speed = 1/20;                   //how fast the player moves.
+    private float speed = 1;                   //how fast the player moves.
+    
 
     private Vector3 targetPosition;             //where we want to travel too.
     private bool isMoving;                      //toggle to check track if we are moving or not.
