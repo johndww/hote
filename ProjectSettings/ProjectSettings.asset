@@ -167,9 +167,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: F:/Work/Google Drive/unity/Heroes of the Empire Project/Heroes
-    Of The Empire/3d-sign.keystore
-  AndroidKeyaliasName: 3d-sign
+  AndroidKeystoreName: C:/Users/deliv/Documents/GitHub/hote/user.keystore
+  AndroidKeyaliasName: hotekey
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1

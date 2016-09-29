@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.Networking;
-using System;
 
 /// <summary>
 /// Movement for a Character/Player
@@ -25,13 +25,16 @@ public class ClickToMove : NetworkBehaviour {
     [SyncVar]
     private bool isMoving;
 
-    //a more visual description of what the left mouse button code is.
     const int LEFT_MOUSE_BUTTON = 0;
+    const int RIGHT_MOUSE_BUTTON = 1;
 
     // The Animator is what controls the switching from one animator to the other
     private Animator anim;
 
+    // gameobject who this player is currently targetting
+    private GameObject playerTarget;
 
+    enum PlayerInput { MOVE, SELECT, BUTTON1, BUTTON2, BUTTON3, BUTTON4, CHAR1, CHAR2, CHAR3, NONE }
 
     /// <summary>
     /// Initialization of the script
@@ -41,6 +44,12 @@ public class ClickToMove : NetworkBehaviour {
         targetPosition = transform.position;        
         isMoving = false;
         anim = gameObject.GetComponentInChildren<Animator>();
+
+        // by default, show only your self health bar - not enemies
+        if (hasAuthority)
+        {
+            GetComponentInChildren<Canvas>().enabled = true;
+        }
     }
 
 
@@ -50,8 +59,16 @@ public class ClickToMove : NetworkBehaviour {
     /// </summary>
     void Update()
     {
+        PlayerInput playerInput = getPlayerInput();
+
+        if (playerInput == PlayerInput.SELECT)
+        {
+            selectTarget();
+        }
+  
+
         // detect clicks only for the local player otherwise one player will control all characters
-        if (hasAuthority && Input.GetMouseButton(LEFT_MOUSE_BUTTON))
+        if (playerInput == PlayerInput.MOVE && hasAuthority)
         {
             FindAndSetTargetPosition();
         }
@@ -64,6 +81,22 @@ public class ClickToMove : NetworkBehaviour {
         else {
             // AnimationParameter is an integer that's used to switch between animations. When it's set to 0, the idle animation is being played.
             anim.SetInteger("AnimationParameter", 0); 
+        }
+    }
+
+    private void selectTarget()
+    {
+        RaycastHit hitInfo = new RaycastHit();
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Player")
+        {
+            if (playerTarget != null)
+            {
+                // deactivate old player target
+                playerTarget.GetComponentInChildren<Canvas>().enabled = false;
+            }
+
+            playerTarget = hitInfo.collider.gameObject;
+            playerTarget.GetComponentInChildren<Canvas>().enabled = true;
         }
     }
 
@@ -109,6 +142,36 @@ public class ClickToMove : NetworkBehaviour {
         }
             
         Debug.DrawLine(transform.position, targetPosition, Color.red);
+    }
+
+    private PlayerInput getPlayerInput()
+    {
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            foreach (Touch touch in Input.touches)
+            {
+                if (touch.tapCount == 1)
+                {
+                    return PlayerInput.SELECT;
+                }
+                if (touch.tapCount == 2)
+                {
+                    return PlayerInput.MOVE;
+                }
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButton(LEFT_MOUSE_BUTTON))
+            {
+                return PlayerInput.SELECT;
+            }
+            else if (Input.GetMouseButton(RIGHT_MOUSE_BUTTON))
+            {
+                return PlayerInput.MOVE;
+            }
+        }
+        return PlayerInput.NONE;
     }
 
     /// <summary>
