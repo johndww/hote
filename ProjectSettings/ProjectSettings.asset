@@ -167,8 +167,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/deliv/Documents/GitHub/hote/user.keystore
-  AndroidKeyaliasName: hotekey
+  AndroidKeystoreName: C:/Github/Heroes of the Empire/hote/3d-sign.keystore
+  AndroidKeyaliasName: 3d-sign
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
