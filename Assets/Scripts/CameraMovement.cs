@@ -52,13 +52,13 @@ public class CameraMovement : MonoBehaviour {
 			float touchDistanceChange = prevTouchDistance - currentTouchDistance;
 
 			// if the camera is not at the minimum limit, allow movement
-			if (camera.transform.position.y > 4 && camera.transform.position.y < 8) {
+			if (camera.transform.position.y > 20 && camera.transform.position.y < 40) {
 				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 30);
 			
 			// if the camera reaches the lowest limit, allow zoom out only
-			} else if (touchDistanceChange > 0 && camera.transform.position.y < 8) {
+			} else if (touchDistanceChange > 0 && camera.transform.position.y < 40) {
 				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 30);
-			} else if (touchDistanceChange < 0 && camera.transform.position.y > 4) {
+			} else if (touchDistanceChange < 0 && camera.transform.position.y > 20) {
 				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 30);
 			}
 
