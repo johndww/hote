@@ -104,7 +104,7 @@ public class ClickToMove : NetworkBehaviour {
     {
         if (anim.GetInteger("AnimationParameter") != 1)
         {
-            anim.SetInteger("AnimationParameter", 1);
+            anim.SetInteger("AnimationParameter", 6);
         }
     }
 
