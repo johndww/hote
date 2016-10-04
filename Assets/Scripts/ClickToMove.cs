@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -12,10 +13,20 @@ using UnityEngine.Networking;
 /// </summary>
 public class ClickToMove : NetworkBehaviour {
 
+    const int LEFT_MOUSE_BUTTON = 0;
+    const int RIGHT_MOUSE_BUTTON = 1;
+    // max number of historical positions tracked to determine if we should give up moving
+    const int MAX_VELOCITY_HISTORY_COUNT = 10;
+    // the minimum velocity avg that determines we are stuck
+    const int MIN_STUCK_VELOCITY_AVG = 2;
+    // tolerance for how close we need to get to a target before giving up
+    const float TARGET_POSITION_TOLERANCE = .2F;
 
     //how fast the player moves.
     [SerializeField] [Range(1, 20)]
     private float speed = 1;
+
+    private Queue<float> velocityHistory = new Queue<float>();
 
     //where we want to travel too. synchronized so players move on all clients
     [SyncVar]
@@ -24,9 +35,6 @@ public class ClickToMove : NetworkBehaviour {
     //toggle to check track if we are moving or not. synchronized so players move on all clients
     [SyncVar]
     private bool isMoving;
-
-    const int LEFT_MOUSE_BUTTON = 0;
-    const int RIGHT_MOUSE_BUTTON = 1;
 
     // The Animator is what controls the switching from one animator to the other
     private Animator anim;
@@ -132,16 +140,76 @@ public class ClickToMove : NetworkBehaviour {
     /// </summary>
     private void MovePlayer()
     {
-        transform.LookAt(targetPosition);
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
-        //if we are at the target position, then stop moving
-        if (transform.position == targetPosition)
+        CharacterController cc = GetComponent<CharacterController>();
+        if (withinTargetPosition() || cantReachPosition())
         {
             isMoving = false;
+            this.velocityHistory.Clear();
+            return;
         }
+        trackVelocityHistory(cc);
+
+        transform.LookAt(targetPosition);
+
+        // find the target position relative to the player:
+        Vector3 dir = this.targetPosition - transform.position;
+        // calculate movement at the desired speed:
+        Vector3 movement = dir.normalized * speed * Time.deltaTime;
+        // limit movement to never pass the target position:
+        if (movement.magnitude > dir.magnitude)
+        {
+            movement = dir;
+        }
+
+        // move the character:
+        cc.Move(movement);
             
-        Debug.DrawLine(transform.position, targetPosition, Color.red);
+        Debug.DrawLine(transform.position, this.targetPosition, Color.red);
+    }
+
+    /// <summary>
+    /// Determines if we're close enough to the target position we're trying to move to
+    /// </summary>
+    /// <returns>true if we're within position</returns>
+    private bool withinTargetPosition()
+    {
+        Vector3 difference = transform.position - this.targetPosition;
+        return Math.Abs(difference.magnitude) < TARGET_POSITION_TOLERANCE;
+    }
+
+    /// <summary>
+    /// Enqueues the current velocity in the stateful velocity tracker each frame
+    /// </summary>
+    /// <param name="cc">character controller we're tracking</param>
+    private void trackVelocityHistory(CharacterController cc)
+    {
+        if (this.velocityHistory.Count >= MAX_VELOCITY_HISTORY_COUNT)
+        {
+            this.velocityHistory.Dequeue();
+        }
+        this.velocityHistory.Enqueue(cc.velocity.magnitude);
+    }
+
+    /// <summary>
+    /// Determines if after MAX_VELOCITY_HISTORY_COUNT frames that we can't reach
+    /// a position we've been trying to move towards
+    /// </summary>
+    /// <returns>true if we should give up trying to move to the target position</returns>
+    private bool cantReachPosition()
+    {
+        if (this.velocityHistory.Count < MAX_VELOCITY_HISTORY_COUNT)
+        {
+            // we don't have enough velocity history to determine that we're stuck
+            return false;
+        }
+
+        // we have enough history to determine if we're stuck
+        float sumVelocities = 0;
+        foreach (float velocity in this.velocityHistory)
+        {
+            sumVelocities += velocity;
+        }
+        return sumVelocities / this.velocityHistory.Count < MIN_STUCK_VELOCITY_AVG;
     }
 
     private PlayerInput getPlayerInput()
