@@ -579,6 +579,7 @@ GameObject:
   - 114: {fileID: 114000011579287240}
   - 114: {fileID: 114000011125804292}
   - 114: {fileID: 114000013574801292}
+  - 143: {fileID: 143000012151452674}
   m_Layer: 0
   m_Name: earth_mage_3_prefab
   m_TagString: Player
@@ -819,7 +820,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014240588514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.96}
+  m_LocalPosition: {x: 10, y: -0.6262396, z: 1.2709135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1240,8 +1241,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 36
   m_CollisionDetection: 0
@@ -1253,10 +1254,10 @@ BoxCollider:
   m_GameObject: {fileID: 1000014240588514}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 2.58, y: 7.87, z: 1.18}
-  m_Center: {x: 0, y: 3.94, z: -0.09}
+  m_Size: {x: 4, y: 8.803441, z: 4}
+  m_Center: {x: 0, y: 4.4067206, z: 0}
 --- !u!95 &95000010163712438
 Animator:
   serializedVersion: 3
@@ -1603,6 +1604,23 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.22566509, y: 0.21263766, z: 0.47158337}
     m_Extent: {x: 4.3965497, y: 5.420459, z: 2.72712}
   m_DirtyAABB: 0
+--- !u!143 &143000012151452674
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014240588514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 10
+  m_Radius: 3
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 4, z: 0}
 --- !u!222 &222000013737782986
 CanvasRenderer:
   m_ObjectHideFlags: 1
