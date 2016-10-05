@@ -476,7 +476,7 @@ ModelImporter:
       name: Green
       takeName: Walk_blocking
       firstFrame: 1999.9999
-      lastFrame: 2130
+      lastFrame: 2116
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -568,7 +568,7 @@ ModelImporter:
       name: Blue
       takeName: Walk_blocking
       firstFrame: 2500
-      lastFrame: 2624
+      lastFrame: 2616
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -752,7 +752,7 @@ ModelImporter:
       name: Purple
       takeName: Walk_blocking
       firstFrame: 3500
-      lastFrame: 3589
+      lastFrame: 3609
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
