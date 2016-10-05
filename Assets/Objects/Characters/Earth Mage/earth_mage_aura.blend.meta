@@ -9,10 +9,72 @@ ModelImporter:
     100002: inner
     100004: outter
     100006: Plane
+    100008: Armature_001
+    100010: character_mesh
+    100012: Chest
+    100014: Fingers01_R
+    100016: Fingers02_R
+    100018: Foot_L
+    100020: Foot_R
+    100022: Hand_L
+    100024: Hand_L_001
+    100026: Hand_L_002
+    100028: Hand_R
+    100030: Head
+    100032: Leg_Control_L
+    100034: Leg_Control_R
+    100036: Lower_Arm_L
+    100038: Lower_Arm_R
+    100040: Lower_Leg_L
+    100042: Lower_Leg_R
+    100044: Neck
+    100046: Sphere
+    100048: Thumb01_L
+    100050: Thumb01_L_001
+    100052: Thumb01_R
+    100054: Thumb01_R_001
+    100056: Toes_L
+    100058: Toes_R
+    100060: Torso
+    100062: Upper_Arm_L
+    100064: Upper_Arm_R
+    100066: Upper_Leg_L
+    100068: Upper_Leg_R
     400000: //RootNode
     400002: inner
     400004: outter
     400006: Plane
+    400008: Armature_001
+    400010: character_mesh
+    400012: Chest
+    400014: Fingers01_R
+    400016: Fingers02_R
+    400018: Foot_L
+    400020: Foot_R
+    400022: Hand_L
+    400024: Hand_L_001
+    400026: Hand_L_002
+    400028: Hand_R
+    400030: Head
+    400032: Leg_Control_L
+    400034: Leg_Control_R
+    400036: Lower_Arm_L
+    400038: Lower_Arm_R
+    400040: Lower_Leg_L
+    400042: Lower_Leg_R
+    400044: Neck
+    400046: Sphere
+    400048: Thumb01_L
+    400050: Thumb01_L_001
+    400052: Thumb01_R
+    400054: Thumb01_R_001
+    400056: Toes_L
+    400058: Toes_R
+    400060: Torso
+    400062: Upper_Arm_L
+    400064: Upper_Arm_R
+    400066: Upper_Leg_L
+    400068: Upper_Leg_R
     2300000: inner
     2300002: outter
     2300004: Plane
@@ -22,10 +84,14 @@ ModelImporter:
     4300000: inner
     4300002: outter
     4300004: Plane
+    4300006: character_mesh
+    4300008: Sphere
     7400000: Rotation Loop
     7400002: Loop
     9500000: //RootNode
     11100000: //RootNode
+    13700000: character_mesh
+    13700002: Sphere
   materials:
     importMaterials: 1
     materialName: 0
