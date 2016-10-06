@@ -37,6 +37,26 @@ ModelImporter:
     100058: Upper_Arm_R
     100060: Upper_Leg_L
     100062: Upper_Leg_R
+    100064: Cube
+    100066: Cube_002
+    100068: Cube_004
+    100070: earth_mage_mesh
+    100072: green_-_mountain
+    100074: green_-_small_mountains
+    100076: green_-_small_mountains_2
+    100078: staff
+    100080: Cracks
+    100082: Cracks_001
+    100084: projectile_one
+    100086: projectile_one_001
+    100088: projectile_one_002
+    100090: projectile_one_005
+    100092: auto_attacks_cracks
+    100094: auto_attacks_projectile_1
+    100096: auto_attacks_projectile_2_-_1
+    100098: auto_attacks_projectile_2_-_2
+    100100: auto_attacks_projectile_3
+    100102: green_cracks
     400000: Armature_001
     400002: character_mesh
     400004: Chest
@@ -69,8 +89,84 @@ ModelImporter:
     400058: Upper_Arm_R
     400060: Upper_Leg_L
     400062: Upper_Leg_R
+    400064: Cube
+    400066: Cube_002
+    400068: Cube_004
+    400070: earth_mage_mesh
+    400072: green_-_mountain
+    400074: green_-_small_mountains
+    400076: green_-_small_mountains_2
+    400078: staff
+    400080: Cracks
+    400082: Cracks_001
+    400084: projectile_one
+    400086: projectile_one_001
+    400088: projectile_one_002
+    400090: projectile_one_005
+    400092: auto_attacks_cracks
+    400094: auto_attacks_projectile_1
+    400096: auto_attacks_projectile_2_-_1
+    400098: auto_attacks_projectile_2_-_2
+    400100: auto_attacks_projectile_3
+    400102: green_cracks
+    2300000: Cube
+    2300002: Cube_002
+    2300004: Cube_004
+    2300006: green_-_mountain
+    2300008: green_-_small_mountains
+    2300010: green_-_small_mountains_2
+    2300012: Cracks
+    2300014: Cracks_001
+    2300016: projectile_one
+    2300018: projectile_one_001
+    2300020: projectile_one_002
+    2300022: projectile_one_005
+    2300024: auto_attacks_cracks
+    2300026: auto_attacks_projectile_1
+    2300028: auto_attacks_projectile_2_-_1
+    2300030: auto_attacks_projectile_2_-_2
+    2300032: auto_attacks_projectile_3
+    2300034: green_cracks
+    3300000: Cube
+    3300002: Cube_002
+    3300004: Cube_004
+    3300006: green_-_mountain
+    3300008: green_-_small_mountains
+    3300010: green_-_small_mountains_2
+    3300012: Cracks
+    3300014: Cracks_001
+    3300016: projectile_one
+    3300018: projectile_one_001
+    3300020: projectile_one_002
+    3300022: projectile_one_005
+    3300024: auto_attacks_cracks
+    3300026: auto_attacks_projectile_1
+    3300028: auto_attacks_projectile_2_-_1
+    3300030: auto_attacks_projectile_2_-_2
+    3300032: auto_attacks_projectile_3
+    3300034: green_cracks
     4300000: character_mesh
     4300002: Sphere
+    4300004: Cube
+    4300006: Cube_002
+    4300008: Cube_004
+    4300010: green_-_mountain
+    4300012: earth_mage_mesh
+    4300014: staff
+    4300016: green_-_small_mountains_2
+    4300018: green_-_small_mountains
+    4300020: Cracks
+    4300022: projectile_one
+    4300024: projectile_one_001
+    4300026: projectile_one_002
+    4300028: Cracks_001
+    4300030: projectile_one_005
+    4300032: auto_attacks_projectile_1
+    4300034: green_cracks
+    4300036: auto_attacks_projectile_2_-_1
+    4300038: auto_attacks_projectile_2_-_2
+    4300040: auto_attacks_cracks
+    4300042: auto_attacks_projectile_3
     7400000: Default Take
     7400002: Walking
     7400004: Idle
@@ -80,9 +176,13 @@ ModelImporter:
     7400012: Blue
     7400014: Red
     7400016: Purple
+    7400018: AutoAttacks
     9500000: //RootNode
+    11100000: //RootNode
     13700000: character_mesh
     13700002: Sphere
+    13700004: earth_mage_mesh
+    13700006: staff
   materials:
     importMaterials: 1
     materialName: 0
@@ -97,7 +197,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -293,190 +393,6 @@ ModelImporter:
       takeName: Walk_blocking
       firstFrame: 1000
       lastFrame: 1140
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Armature_001
-        weight: 1
-      - path: Armature_001/Leg_Control_L
-        weight: 1
-      - path: Armature_001/Leg_Control_L/Foot_L
-        weight: 1
-      - path: Armature_001/Leg_Control_L/Foot_L/Toes_L
-        weight: 1
-      - path: Armature_001/Leg_Control_R
-        weight: 1
-      - path: Armature_001/Leg_Control_R/Foot_R
-        weight: 1
-      - path: Armature_001/Leg_Control_R/Foot_R/Toes_R
-        weight: 1
-      - path: Armature_001/Torso
-        weight: 1
-      - path: Armature_001/Torso/Chest
-        weight: 1
-      - path: Armature_001/Torso/Chest/Neck
-        weight: 1
-      - path: Armature_001/Torso/Chest/Neck/Head
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001/Hand_L_002
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L/Thumb01_L_001
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Fingers01_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Fingers01_R/Fingers02_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R/Thumb01_R_001
-        weight: 1
-      - path: Armature_001/Torso/Upper_Leg_L
-        weight: 1
-      - path: Armature_001/Torso/Upper_Leg_L/Lower_Leg_L
-        weight: 1
-      - path: Armature_001/Torso/Upper_Leg_R
-        weight: 1
-      - path: Armature_001/Torso/Upper_Leg_R/Lower_Leg_R
-        weight: 1
-      - path: character_mesh
-        weight: 1
-      - path: Sphere
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: AutoAttacks
-      takeName: Walk_blocking
-      firstFrame: 1500
-      lastFrame: 1614
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Armature_001
-        weight: 1
-      - path: Armature_001/Leg_Control_L
-        weight: 1
-      - path: Armature_001/Leg_Control_L/Foot_L
-        weight: 1
-      - path: Armature_001/Leg_Control_L/Foot_L/Toes_L
-        weight: 1
-      - path: Armature_001/Leg_Control_R
-        weight: 1
-      - path: Armature_001/Leg_Control_R/Foot_R
-        weight: 1
-      - path: Armature_001/Leg_Control_R/Foot_R/Toes_R
-        weight: 1
-      - path: Armature_001/Torso
-        weight: 1
-      - path: Armature_001/Torso/Chest
-        weight: 1
-      - path: Armature_001/Torso/Chest/Neck
-        weight: 1
-      - path: Armature_001/Torso/Chest/Neck/Head
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001/Hand_L_002
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L/Thumb01_L_001
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Fingers01_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Fingers01_R/Fingers02_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R
-        weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R/Thumb01_R_001
-        weight: 1
-      - path: Armature_001/Torso/Upper_Leg_L
-        weight: 1
-      - path: Armature_001/Torso/Upper_Leg_L/Lower_Leg_L
-        weight: 1
-      - path: Armature_001/Torso/Upper_Leg_R
-        weight: 1
-      - path: Armature_001/Torso/Upper_Leg_R/Lower_Leg_R
-        weight: 1
-      - path: character_mesh
-        weight: 1
-      - path: Sphere
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Green
-      takeName: Walk_blocking
-      firstFrame: 1999.9999
-      lastFrame: 2116
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -836,6 +752,226 @@ ModelImporter:
       - path: character_mesh
         weight: 1
       - path: Sphere
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: AutoAttacks
+      takeName: Walk_blocking
+      firstFrame: 1500
+      lastFrame: 1615
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_001
+        weight: 1
+      - path: Armature_001/Leg_Control_L
+        weight: 1
+      - path: Armature_001/Leg_Control_L/Foot_L
+        weight: 1
+      - path: Armature_001/Leg_Control_L/Foot_L/Toes_L
+        weight: 1
+      - path: Armature_001/Leg_Control_R
+        weight: 1
+      - path: Armature_001/Leg_Control_R/Foot_R
+        weight: 1
+      - path: Armature_001/Leg_Control_R/Foot_R/Toes_R
+        weight: 1
+      - path: Armature_001/Torso
+        weight: 1
+      - path: Armature_001/Torso/Chest
+        weight: 1
+      - path: Armature_001/Torso/Chest/Neck
+        weight: 1
+      - path: Armature_001/Torso/Chest/Neck/Head
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001/Hand_L_002
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L/Thumb01_L_001
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Fingers01_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Fingers01_R/Fingers02_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R/Thumb01_R_001
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_L
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_R
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: auto_attacks_cracks
+        weight: 1
+      - path: auto_attacks_projectile_1
+        weight: 1
+      - path: auto_attacks_projectile_2_-_1
+        weight: 1
+      - path: auto_attacks_projectile_2_-_2
+        weight: 1
+      - path: auto_attacks_projectile_3
+        weight: 1
+      - path: earth_mage_mesh
+        weight: 1
+      - path: green_-_mountain
+        weight: 1
+      - path: green_-_small_mountains
+        weight: 1
+      - path: green_-_small_mountains_2
+        weight: 1
+      - path: green_cracks
+        weight: 1
+      - path: staff
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Green
+      takeName: Walk_blocking
+      firstFrame: 1999.9999
+      lastFrame: 2116
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_001
+        weight: 1
+      - path: Armature_001/Leg_Control_L
+        weight: 1
+      - path: Armature_001/Leg_Control_L/Foot_L
+        weight: 1
+      - path: Armature_001/Leg_Control_L/Foot_L/Toes_L
+        weight: 1
+      - path: Armature_001/Leg_Control_R
+        weight: 1
+      - path: Armature_001/Leg_Control_R/Foot_R
+        weight: 1
+      - path: Armature_001/Leg_Control_R/Foot_R/Toes_R
+        weight: 1
+      - path: Armature_001/Torso
+        weight: 1
+      - path: Armature_001/Torso/Chest
+        weight: 1
+      - path: Armature_001/Torso/Chest/Neck
+        weight: 1
+      - path: Armature_001/Torso/Chest/Neck/Head
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001/Hand_L_002
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L/Thumb01_L_001
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Fingers01_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Fingers01_R/Fingers02_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R/Thumb01_R_001
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_L
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_R
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: auto_attacks_cracks
+        weight: 1
+      - path: auto_attacks_projectile_1
+        weight: 1
+      - path: auto_attacks_projectile_2_-_1
+        weight: 1
+      - path: auto_attacks_projectile_2_-_2
+        weight: 1
+      - path: auto_attacks_projectile_3
+        weight: 1
+      - path: earth_mage_mesh
+        weight: 1
+      - path: green_-_mountain
+        weight: 1
+      - path: green_-_small_mountains
+        weight: 1
+      - path: green_-_small_mountains_2
+        weight: 1
+      - path: green_cracks
+        weight: 1
+      - path: staff
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
