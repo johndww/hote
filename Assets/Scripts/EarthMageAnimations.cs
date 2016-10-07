@@ -3,7 +3,6 @@ using System.Collections;
 
 public class EarthMageAnimations : MonoBehaviour {
 
-
     // These will be turned on in the inspector to specify which animation I want the model to play.
     public bool Idle;
     public bool Green;
