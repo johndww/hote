@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: 792dceca0a940dd439791b4b9c36fee1
+timeCreated: 1475797987
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: auto_attacks_cracks
+    100002: auto_attacks_cracks_001
+    100004: auto_attacks_cracks_002
+    100006: auto_attacks_cracks_003
+    100008: auto_attacks_projectile_3
+    100010: auto_attacks_projectile_3_001
+    100012: auto_attacks_projectile_3_002
+    100014: auto_attacks_projectile_3_003
+    100016: auto_attacks_projectile_3_004
+    100018: auto_attacks_projectile_3_005
+    100020: auto_attacks_projectile_3_006
+    100022: auto_attacks_projectile_3_007
+    100024: auto_attacks_projectile_3_008
+    100026: auto_attacks_projectile_3_009
+    100028: auto_attacks_projectile_3_010
+    100030: auto_attacks_projectile_3_011
+    100032: //RootNode
+    100034: rock_000
+    100036: rock_001
+    100038: rock_002
+    100040: rock_003
+    100042: rock_004
+    100044: rock_005
+    100046: rock_006
+    100048: rock_007
+    100050: rock_008
+    100052: rock_009
+    100054: rock_010
+    100056: rock_011
+    100058: rock_012
+    100060: rock_013
+    100062: rock_014
+    100064: rock_015
+    100066: rock_016
+    100068: rock_017
+    100070: auto_attacks_cracks_004
+    100072: rock_018
+    100074: Smoke
+    100076: auto_attacks_cracks_005
+    100078: Plane
+    100080: rock_019
+    100082: rock_020
+    100084: rock_021
+    100086: rock_022
+    100088: Plane_001
+    100090: Plane_002
+    100092: Plane_003
+    100094: Smoke_001
+    400000: auto_attacks_cracks
+    400002: auto_attacks_cracks_001
+    400004: auto_attacks_cracks_002
+    400006: auto_attacks_cracks_003
+    400008: auto_attacks_projectile_3
+    400010: auto_attacks_projectile_3_001
+    400012: auto_attacks_projectile_3_002
+    400014: auto_attacks_projectile_3_003
+    400016: auto_attacks_projectile_3_004
+    400018: auto_attacks_projectile_3_005
+    400020: auto_attacks_projectile_3_006
+    400022: auto_attacks_projectile_3_007
+    400024: auto_attacks_projectile_3_008
+    400026: auto_attacks_projectile_3_009
+    400028: auto_attacks_projectile_3_010
+    400030: auto_attacks_projectile_3_011
+    400032: //RootNode
+    400034: rock_000
+    400036: rock_001
+    400038: rock_002
+    400040: rock_003
+    400042: rock_004
+    400044: rock_005
+    400046: rock_006
+    400048: rock_007
+    400050: rock_008
+    400052: rock_009
+    400054: rock_010
+    400056: rock_011
+    400058: rock_012
+    400060: rock_013
+    400062: rock_014
+    400064: rock_015
+    400066: rock_016
+    400068: rock_017
+    400070: auto_attacks_cracks_004
+    400072: rock_018
+    400074: Smoke
+    400076: auto_attacks_cracks_005
+    400078: Plane
+    400080: rock_019
+    400082: rock_020
+    400084: rock_021
+    400086: rock_022
+    400088: Plane_001
+    400090: Plane_002
+    400092: Plane_003
+    400094: Smoke_001
+    2300000: auto_attacks_cracks
+    2300002: auto_attacks_cracks_001
+    2300004: auto_attacks_cracks_002
+    2300006: auto_attacks_cracks_003
+    2300008: auto_attacks_projectile_3
+    2300010: auto_attacks_projectile_3_001
+    2300012: auto_attacks_projectile_3_002
+    2300014: auto_attacks_projectile_3_003
+    2300016: auto_attacks_projectile_3_004
+    2300018: auto_attacks_projectile_3_005
+    2300020: auto_attacks_projectile_3_006
+    2300022: auto_attacks_projectile_3_007
+    2300024: auto_attacks_projectile_3_008
+    2300026: auto_attacks_projectile_3_009
+    2300028: auto_attacks_projectile_3_010
+    2300030: auto_attacks_projectile_3_011
+    2300032: rock_000
+    2300034: rock_001
+    2300036: rock_002
+    2300038: rock_003
+    2300040: rock_004
+    2300042: rock_005
+    2300044: rock_006
+    2300046: rock_007
+    2300048: rock_008
+    2300050: rock_009
+    2300052: rock_010
+    2300054: rock_011
+    2300056: rock_012
+    2300058: rock_013
+    2300060: rock_014
+    2300062: rock_015
+    2300064: rock_016
+    2300066: rock_017
+    2300068: auto_attacks_cracks_004
+    2300070: rock_018
+    2300072: Smoke
+    2300074: auto_attacks_cracks_005
+    2300076: Plane
+    2300078: rock_019
+    2300080: rock_020
+    2300082: rock_021
+    2300084: rock_022
+    2300086: Plane_001
+    2300088: Plane_002
+    2300090: Plane_003
+    2300092: Smoke_001
+    3300000: auto_attacks_cracks
+    3300002: auto_attacks_cracks_001
+    3300004: auto_attacks_cracks_002
+    3300006: auto_attacks_cracks_003
+    3300008: auto_attacks_projectile_3
+    3300010: auto_attacks_projectile_3_001
+    3300012: auto_attacks_projectile_3_002
+    3300014: auto_attacks_projectile_3_003
+    3300016: auto_attacks_projectile_3_004
+    3300018: auto_attacks_projectile_3_005
+    3300020: auto_attacks_projectile_3_006
+    3300022: auto_attacks_projectile_3_007
+    3300024: auto_attacks_projectile_3_008
+    3300026: auto_attacks_projectile_3_009
+    3300028: auto_attacks_projectile_3_010
+    3300030: auto_attacks_projectile_3_011
+    3300032: rock_000
+    3300034: rock_001
+    3300036: rock_002
+    3300038: rock_003
+    3300040: rock_004
+    3300042: rock_005
+    3300044: rock_006
+    3300046: rock_007
+    3300048: rock_008
+    3300050: rock_009
+    3300052: rock_010
+    3300054: rock_011
+    3300056: rock_012
+    3300058: rock_013
+    3300060: rock_014
+    3300062: rock_015
+    3300064: rock_016
+    3300066: rock_017
+    3300068: auto_attacks_cracks_004
+    3300070: rock_018
+    3300072: Smoke
+    3300074: auto_attacks_cracks_005
+    3300076: Plane
+    3300078: rock_019
+    3300080: rock_020
+    3300082: rock_021
+    3300084: rock_022
+    3300086: Plane_001
+    3300088: Plane_002
+    3300090: Plane_003
+    3300092: Smoke_001
+    4300000: auto_attacks_cracks
+    4300002: auto_attacks_projectile_3
+    4300004: auto_attacks_projectile_3_001
+    4300006: auto_attacks_projectile_3_002
+    4300008: rock_004
+    4300010: rock_000
+    4300012: rock_001
+    4300014: rock_002
+    4300016: rock_003
+    4300018: rock_005
+    4300020: rock_006
+    4300022: auto_attacks_cracks_001
+    4300024: auto_attacks_cracks_002
+    4300026: auto_attacks_cracks_003
+    4300028: auto_attacks_projectile_3_003
+    4300030: auto_attacks_projectile_3_004
+    4300032: auto_attacks_projectile_3_005
+    4300034: auto_attacks_projectile_3_006
+    4300036: auto_attacks_projectile_3_007
+    4300038: auto_attacks_projectile_3_008
+    4300040: auto_attacks_projectile_3_009
+    4300042: auto_attacks_projectile_3_010
+    4300044: auto_attacks_projectile_3_011
+    4300046: rock_007
+    4300048: rock_008
+    4300050: rock_009
+    4300052: rock_010
+    4300054: rock_011
+    4300056: rock_012
+    4300058: rock_013
+    4300060: rock_014
+    4300062: rock_015
+    4300064: rock_016
+    4300066: rock_017
+    4300068: auto_attacks_cracks_004
+    4300070: rock_018
+    4300072: Smoke
+    4300074: auto_attacks_cracks_005
+    4300076: Plane
+    4300078: rock_019
+    4300080: rock_020
+    4300082: rock_021
+    4300084: rock_022
+    4300086: Plane_001
+    4300088: Plane_002
+    4300090: Plane_003
+    4300092: Smoke_001
+    7400000: Animation
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Animation
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 360
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: auto_attacks_projectile_3
+        weight: 1
+      - path: auto_attacks_projectile_3_001
+        weight: 1
+      - path: auto_attacks_projectile_3_002
+        weight: 1
+      - path: auto_attacks_projectile_3_003
+        weight: 1
+      - path: auto_attacks_projectile_3_004
+        weight: 1
+      - path: auto_attacks_projectile_3_005
+        weight: 1
+      - path: auto_attacks_projectile_3_006
+        weight: 1
+      - path: auto_attacks_projectile_3_007
+        weight: 1
+      - path: auto_attacks_projectile_3_008
+        weight: 1
+      - path: auto_attacks_projectile_3_009
+        weight: 1
+      - path: auto_attacks_projectile_3_010
+        weight: 1
+      - path: auto_attacks_projectile_3_011
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane_001
+        weight: 1
+      - path: Plane_002
+        weight: 1
+      - path: Plane_003
+        weight: 1
+      - path: rock_011
+        weight: 1
+      - path: rock_016
+        weight: 1
+      - path: Smoke
+        weight: 1
+      - path: Smoke_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

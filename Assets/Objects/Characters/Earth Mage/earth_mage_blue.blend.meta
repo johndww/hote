@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 2502ec4eff60c2a438d9ac3509d45934
+timeCreated: 1475779261
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: rock
+    100004: rock_001
+    100006: rock_002
+    100008: rock_003
+    100010: rock_004
+    100012: rock_005
+    100014: rock_006
+    100016: Smoke
+    100018: Smoke_001
+    100020: DarkHole
+    100022: rock_007
+    100024: rock_008
+    100026: rock_009
+    100028: rock_010
+    100030: rock_011
+    100032: rock_012
+    100034: rock_013
+    400000: //RootNode
+    400002: rock
+    400004: rock_001
+    400006: rock_002
+    400008: rock_003
+    400010: rock_004
+    400012: rock_005
+    400014: rock_006
+    400016: Smoke
+    400018: Smoke_001
+    400020: DarkHole
+    400022: rock_007
+    400024: rock_008
+    400026: rock_009
+    400028: rock_010
+    400030: rock_011
+    400032: rock_012
+    400034: rock_013
+    2300000: rock
+    2300002: rock_001
+    2300004: rock_002
+    2300006: rock_003
+    2300008: rock_004
+    2300010: rock_005
+    2300012: rock_006
+    2300014: Smoke
+    2300016: Smoke_001
+    2300018: DarkHole
+    2300020: rock_007
+    2300022: rock_008
+    2300024: rock_009
+    2300026: rock_010
+    2300028: rock_011
+    2300030: rock_012
+    2300032: rock_013
+    3300000: rock
+    3300002: rock_001
+    3300004: rock_002
+    3300006: rock_003
+    3300008: rock_004
+    3300010: rock_005
+    3300012: rock_006
+    3300014: Smoke
+    3300016: Smoke_001
+    3300018: DarkHole
+    3300020: rock_007
+    3300022: rock_008
+    3300024: rock_009
+    3300026: rock_010
+    3300028: rock_011
+    3300030: rock_012
+    3300032: rock_013
+    4300000: Smoke_001
+    4300002: rock
+    4300004: Smoke
+    4300006: rock_001
+    4300008: rock_002
+    4300010: rock_003
+    4300012: rock_004
+    4300014: rock_005
+    4300016: rock_006
+    4300018: DarkHole
+    4300020: rock_007
+    4300022: rock_008
+    4300024: rock_009
+    4300026: rock_010
+    4300028: rock_011
+    4300030: rock_012
+    4300032: rock_013
+    7400000: Animation
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Animation
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 199
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DarkHole
+        weight: 1
+      - path: rock
+        weight: 1
+      - path: rock_001
+        weight: 1
+      - path: rock_002
+        weight: 1
+      - path: rock_003
+        weight: 1
+      - path: rock_004
+        weight: 1
+      - path: rock_005
+        weight: 1
+      - path: rock_006
+        weight: 1
+      - path: rock_007
+        weight: 1
+      - path: rock_008
+        weight: 1
+      - path: rock_009
+        weight: 1
+      - path: rock_010
+        weight: 1
+      - path: rock_011
+        weight: 1
+      - path: rock_012
+        weight: 1
+      - path: rock_013
+        weight: 1
+      - path: Smoke
+        weight: 1
+      - path: Smoke_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
