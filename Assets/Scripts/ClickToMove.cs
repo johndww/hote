@@ -88,7 +88,7 @@ public class ClickToMove : NetworkBehaviour {
         }
         else {
             // AnimationParameter is an integer that's used to switch between animations. When it's set to 0, the idle animation is being played.
-            anim.SetInteger("AnimationParameter", 0); 
+            anim.SetInteger("AnimationPosition", 0); 
         }
     }
 
@@ -110,9 +110,9 @@ public class ClickToMove : NetworkBehaviour {
 
     private void StartWalkingAnimationIfNeeded()
     {
-        if (anim.GetInteger("AnimationParameter") != 1)
+        if (anim.GetInteger("AnimationPosition") != 1)
         {
-            anim.SetInteger("AnimationParameter", 6);
+            anim.SetInteger("AnimationPosition", 6);
         }
     }
 

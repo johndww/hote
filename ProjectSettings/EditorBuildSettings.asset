@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Levels/Earth Mage Animations.unity
-  - enabled: 0
     path: Assets/Levels/Arena1.unity
+  - enabled: 0
+    path: Assets/Levels/Earth Mage Animations.unity
   - enabled: 0
     path: Assets/Levels/UI.unity
   - enabled: 0

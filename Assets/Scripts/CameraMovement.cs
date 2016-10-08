@@ -52,14 +52,14 @@ public class CameraMovement : MonoBehaviour {
 			float touchDistanceChange = prevTouchDistance - currentTouchDistance;
 
 			// if the camera is not at the minimum limit, allow movement
-			if (camera.transform.position.y > 20 && camera.transform.position.y < 40) {
-				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 30);
+			if (camera.transform.position.y > 40 && camera.transform.position.y < 70) {
+				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 5);
 			
 			// if the camera reaches the lowest limit, allow zoom out only
-			} else if (touchDistanceChange > 0 && camera.transform.position.y < 40) {
-				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 30);
-			} else if (touchDistanceChange < 0 && camera.transform.position.y > 20) {
-				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 30);
+			} else if (touchDistanceChange > 0 && camera.transform.position.y < 70) {
+				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 5);
+			} else if (touchDistanceChange < 0 && camera.transform.position.y > 40) {
+				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 5);
 			}
 
 
@@ -68,7 +68,7 @@ public class CameraMovement : MonoBehaviour {
 			Vector2 prevTouchDifference = touchZeroPrevPos - touchOnePrevPos;
 			float currentAngle = Mathf.Atan2(currentTouchDifference.y, currentTouchDifference.x)*Mathf.Rad2Deg;
 			float prevAngle = Mathf.Atan2(prevTouchDifference.y, prevTouchDifference.x)*Mathf.Rad2Deg;
-			float transformAngle = (currentAngle - prevAngle)*5;
+			float transformAngle = (currentAngle - prevAngle)*7/2;
 
 			transform.Rotate(0, transformAngle, 0);
 
