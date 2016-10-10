@@ -21,21 +21,4 @@ class EarthMage : Hero
     {
         Debug.Log("earth mage attacking with: " + type);
     }
-
-    AttackType getAttack(string color)
-    {
-        switch (color)
-        {
-            case "green":
-                return AttackType.GREEN;
-            case "blue":
-                return AttackType.BLUE;
-            case "red":
-                return AttackType.RED;
-            case "purple":
-                return AttackType.PURPLE;
-            default:
-                throw new System.ArgumentException("unexpected color: " + color);
-        }
-    }
 }
