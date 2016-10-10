@@ -577,8 +577,8 @@ GameObject:
   - 54: {fileID: 54000011475422530}
   - 65: {fileID: 65000013598632660}
   - 114: {fileID: 114000011579287240}
-  - 114: {fileID: 114000013574801292}
   - 143: {fileID: 143000012151452674}
+  - 114: {fileID: 114000013346418426}
   m_Layer: 0
   m_Name: earth_mage_3_prefab
   m_TagString: Player
@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114000013574801292
+--- !u!114 &114000013346418426
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000014240588514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae2017628c2fab418abfabacb92882c, type: 3}
+  m_Script: {fileID: 11500000, guid: 139d3261f20d27f4a829ac8f74ffa4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!137 &137000010112599468
