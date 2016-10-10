@@ -5,13 +5,11 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 /// <summary>
-/// Movement for a Character/Player
-/// 
-/// Movement based on https://www.youtube.com/watch?v=k7yx7D6MU6w
+/// Movement for a Character
 /// 
 /// Synchronization based on https://unity3d.com/learn/tutorials/topics/multiplayer-networking/introduction-simple-multiplayer-example?playlist=29690
 /// </summary>
-public class ClickToMove : NetworkBehaviour {
+public class CharacterControl : MonoBehaviour {
 
     const int LEFT_MOUSE_BUTTON = 0;
     const int RIGHT_MOUSE_BUTTON = 1;
@@ -29,11 +27,11 @@ public class ClickToMove : NetworkBehaviour {
     private Queue<float> velocityHistory = new Queue<float>();
 
     //where we want to travel too. synchronized so players move on all clients
-    [SyncVar]
+    //[SyncVar]
     private Vector3 targetPosition;
 
     //toggle to check track if we are moving or not. synchronized so players move on all clients
-    [SyncVar]
+    //[SyncVar]
     private bool isMoving;
 
     // The Animator is what controls the switching from one animator to the other
@@ -54,10 +52,10 @@ public class ClickToMove : NetworkBehaviour {
         anim = gameObject.GetComponentInChildren<Animator>();
 
         // by default, show only your self health bar - not enemies
-        if (hasAuthority)
-        {
+        //if (hasAuthority)
+        //{
             GetComponentInChildren<Canvas>().enabled = true;
-        }
+        //}
     }
 
 
@@ -76,7 +74,8 @@ public class ClickToMove : NetworkBehaviour {
   
 
         // detect clicks only for the local player otherwise one player will control all characters
-        if (playerInput == PlayerInput.MOVE && hasAuthority)
+        //TODO need hasAuthority here likely when networking
+        if (playerInput == PlayerInput.MOVE)
         {
             FindAndSetTargetPosition();
         }
@@ -252,13 +251,13 @@ public class ClickToMove : NetworkBehaviour {
     /// 
     /// </summary>
 
-    [Command]
+    //[Command]
     private void CmdSetMovement(Boolean val)
     {
         isMoving = val;
     }
 
-    [Command]
+    //[Command]
     private void CmdSetTargetPosition(Vector3 position)
     {
         targetPosition = position;
