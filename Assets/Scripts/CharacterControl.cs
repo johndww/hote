@@ -11,8 +11,6 @@ using UnityEngine.Networking;
 /// </summary>
 public class CharacterControl : MonoBehaviour {
 
-    const int LEFT_MOUSE_BUTTON = 0;
-    const int RIGHT_MOUSE_BUTTON = 1;
     // max number of historical positions tracked to determine if we should give up moving
     const int MAX_VELOCITY_HISTORY_COUNT = 10;
     // the minimum velocity avg that determines we are stuck
@@ -40,8 +38,6 @@ public class CharacterControl : MonoBehaviour {
     // gameobject who this player is currently targetting
     private GameObject playerTarget;
 
-    enum PlayerInput { MOVE, SELECT, BUTTON1, BUTTON2, BUTTON3, BUTTON4, CHAR1, CHAR2, CHAR3, NONE }
-
     /// <summary>
     /// Initialization of the script
     /// </summary>
@@ -54,7 +50,8 @@ public class CharacterControl : MonoBehaviour {
         // by default, show only your self health bar - not enemies
         //if (hasAuthority)
         //{
-            GetComponentInChildren<Canvas>().enabled = true;
+        // TODO re-enable the health bars
+        //    GetComponentInChildren<Canvas>().enabled = true;
         //}
     }
 
@@ -65,19 +62,11 @@ public class CharacterControl : MonoBehaviour {
     /// </summary>
     void Update()
     {
-        PlayerInput playerInput = getPlayerInput();
+        PlayerInput.Type playerInput = PlayerInput.getPlayerInput();
 
-        if (playerInput == PlayerInput.SELECT)
+        if (playerInput == PlayerInput.Type.SELECT)
         {
             selectTarget();
-        }
-  
-
-        // detect clicks only for the local player otherwise one player will control all characters
-        //TODO need hasAuthority here likely when networking
-        if (playerInput == PlayerInput.MOVE)
-        {
-            FindAndSetTargetPosition();
         }
 
         if (isMoving)
@@ -118,17 +107,9 @@ public class CharacterControl : MonoBehaviour {
     /// <summary>
     /// Sets the target position we will travel too.
     /// </summary>
-    private void FindAndSetTargetPosition()
+    public void SetTargetPosition(Ray ray, float point)
     {
-        Plane plane = new Plane(Vector3.up, transform.position);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        float point = 0f;
-
-        if (plane.Raycast(ray, out point))
-        {
-            CmdSetTargetPosition(ray.GetPoint(point));
-        }
-
+        CmdSetTargetPosition(ray.GetPoint(point));
         // broadcast to everyone that this unit should start moving
         CmdSetMovement(true);
     }
@@ -209,36 +190,6 @@ public class CharacterControl : MonoBehaviour {
             sumVelocities += velocity;
         }
         return sumVelocities / this.velocityHistory.Count < MIN_STUCK_VELOCITY_AVG;
-    }
-
-    private PlayerInput getPlayerInput()
-    {
-        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            foreach (Touch touch in Input.touches)
-            {
-                if (touch.tapCount == 1)
-                {
-                    return PlayerInput.SELECT;
-                }
-                if (touch.tapCount == 2)
-                {
-                    return PlayerInput.MOVE;
-                }
-            }
-        }
-        else
-        {
-            if (Input.GetMouseButton(LEFT_MOUSE_BUTTON))
-            {
-                return PlayerInput.SELECT;
-            }
-            else if (Input.GetMouseButton(RIGHT_MOUSE_BUTTON))
-            {
-                return PlayerInput.MOVE;
-            }
-        }
-        return PlayerInput.NONE;
     }
 
     /// <summary>
