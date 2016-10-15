@@ -38,8 +38,6 @@ public class CharacterControl : MonoBehaviour {
     /// </summary>
     void Update()
     {
-        Debug.Log("walking: " + isWalking + "DIST: " + this.navMesh.remainingDistance + ". hashPath" + this.navMesh.hasPath + " velocity " + this.navMesh.velocity.sqrMagnitude);
-
         if (isWalking)
         {
             WalkControl();
@@ -84,10 +82,7 @@ public class CharacterControl : MonoBehaviour {
         RaycastHit hit;
 
 
-        Boolean hasHit = Physics.Raycast(ray, out hit, 200);
-        Debug.Log("ray: " + ray + "hasHit " + hasHit + " hit: " + hit);
-
-        if (hasHit)
+        if (Physics.Raycast(ray, out hit, 200))
         {
             navMesh.destination = hit.point;
 
