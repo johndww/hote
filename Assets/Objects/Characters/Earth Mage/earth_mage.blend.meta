@@ -59,6 +59,9 @@ ModelImporter:
     100102: green_cracks
     100104: red_icon
     100106: Plane
+    100108: Hand_R_001
+    100110: Hand_R_002
+    100112: purple_icon
     400000: Armature_001
     400002: character_mesh
     400004: Chest
@@ -113,6 +116,9 @@ ModelImporter:
     400102: green_cracks
     400104: red_icon
     400106: Plane
+    400108: Hand_R_001
+    400110: Hand_R_002
+    400112: purple_icon
     2300000: Cube
     2300002: Cube_002
     2300004: Cube_004
@@ -133,6 +139,7 @@ ModelImporter:
     2300034: green_cracks
     2300036: red_icon
     2300038: Plane
+    2300040: purple_icon
     3300000: Cube
     3300002: Cube_002
     3300004: Cube_004
@@ -153,6 +160,7 @@ ModelImporter:
     3300034: green_cracks
     3300036: red_icon
     3300038: Plane
+    3300040: purple_icon
     4300000: character_mesh
     4300002: Sphere
     4300004: Cube
@@ -177,6 +185,7 @@ ModelImporter:
     4300042: auto_attacks_projectile_3
     4300044: red_icon
     4300046: Plane
+    4300048: purple_icon
     7400000: Default Take
     7400002: Walking
     7400004: Idle
@@ -225,7 +234,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -409,7 +418,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -494,14 +503,14 @@ ModelImporter:
       name: Blue
       takeName: Walk_blocking
       firstFrame: 2500
-      lastFrame: 2700
+      lastFrame: 2617
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -703,7 +712,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -813,7 +822,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -900,14 +909,14 @@ ModelImporter:
       name: Purple
       takeName: Walk_blocking
       firstFrame: 3500
-      lastFrame: 3860.0002
+      lastFrame: 3589.8
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -965,9 +974,9 @@ ModelImporter:
         weight: 1
       - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R
         weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Fingers01_R
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Hand_R_001
         weight: 1
-      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Fingers01_R/Fingers02_R
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Hand_R_001/Hand_R_002
         weight: 1
       - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R
         weight: 1
@@ -983,7 +992,7 @@ ModelImporter:
         weight: 1
       - path: earth_mage_mesh
         weight: 1
-      - path: Plane
+      - path: purple_icon
         weight: 1
       - path: red_icon
         weight: 1

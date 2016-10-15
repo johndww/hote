@@ -28,32 +28,32 @@ public class EarthMageAnimations : MonoBehaviour {
 
         if (Green)
         {
-            anim.SetInteger("animation", 1);
+            anim.SetInteger("animation", 3);
         }
 
         if (Blue)
         {
-            anim.SetInteger("animation", 2);
+            anim.SetInteger("animation", 4);
         }
 
         if (Red)
         {
-            anim.SetInteger("animation", 3);
+            anim.SetInteger("animation", 5);
         }
 
         if (Purple)
         {
-            anim.SetInteger("animation", 4);
+            anim.SetInteger("animation", 6);
         }
 
         if (AutoAttacks)
         {
-            anim.SetInteger("animation", 5);
+            anim.SetInteger("animation", 2);
         }
 
         if (Walking)
         {
-            anim.SetInteger("animation", 6);
+            anim.SetInteger("animation", 1);
         }
 
         if (Death)
