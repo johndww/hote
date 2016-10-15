@@ -11,6 +11,7 @@ using UnityEngine.Networking;
 /// </summary>
 public class CharacterControl : MonoBehaviour {
     private static string ANIM_STATE = "animation";
+    private static Dictionary<AttackType, Anim> attackAnimMap = generateAttackTypeToAnimMap();
 
     // The Animator is what controls the switching from one animator to the other
     private Animator anim;
@@ -62,13 +63,21 @@ public class CharacterControl : MonoBehaviour {
 
     private void WalkControl()
     {
+        // navmesh is buggy. need to check alot to determine that we're done walking (or reached destination)
         if ((!this.navMesh.pathPending)
             && (this.navMesh.remainingDistance <= this.navMesh.stoppingDistance)
             && (!this.navMesh.hasPath || this.navMesh.velocity.sqrMagnitude == 0f))
         {
-            this.isWalking = false;
-            this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
+            StopWalking();
         }
+    }
+
+    private void StopWalking()
+    {
+        this.isWalking = false;
+        this.navMesh.Stop();
+        this.navMesh.ResetPath();
+        this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
     }
 
     /// <summary>
@@ -81,7 +90,6 @@ public class CharacterControl : MonoBehaviour {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-
         if (Physics.Raycast(ray, out hit, 200))
         {
             navMesh.destination = hit.point;
@@ -93,6 +101,23 @@ public class CharacterControl : MonoBehaviour {
                 this.anim.SetInteger(ANIM_STATE, (int) Anim.WALK);
             }
         }
+    }
+
+    public void Attack(AttackType type)
+    {
+        StopWalking();
+        this.anim.SetInteger(ANIM_STATE, (int)attackAnimMap[type]);
+        GetComponent<Hero>().Attack(type);
+    }
+
+    private static Dictionary<AttackType, Anim> generateAttackTypeToAnimMap()
+    {
+        Dictionary<AttackType, Anim> map = new Dictionary<AttackType, Anim>();
+        map.Add(AttackType.GREEN, Anim.GREEN);
+        map.Add(AttackType.BLUE, Anim.BLUE);
+        map.Add(AttackType.RED, Anim.RED);
+        map.Add(AttackType.PURPLE, Anim.PURPLE);
+        return map;
     }
 
     enum Anim { IDLE, WALK, AUTOATTACK, GREEN, BLUE, RED, PURPLE, DEATH}

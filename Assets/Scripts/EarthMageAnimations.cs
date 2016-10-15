@@ -23,42 +23,42 @@ public class EarthMageAnimations : MonoBehaviour {
         anim = gameObject.GetComponentInChildren<Animator>();
 
         if (Idle) {
-            anim.SetInteger("AnimationPosition", 0);
+            anim.SetInteger("animation", 0);
         }
 
         if (Green)
         {
-            anim.SetInteger("AnimationPosition", 1);
+            anim.SetInteger("animation", 1);
         }
 
         if (Blue)
         {
-            anim.SetInteger("AnimationPosition", 2);
+            anim.SetInteger("animation", 2);
         }
 
         if (Red)
         {
-            anim.SetInteger("AnimationPosition", 3);
+            anim.SetInteger("animation", 3);
         }
 
         if (Purple)
         {
-            anim.SetInteger("AnimationPosition", 4);
+            anim.SetInteger("animation", 4);
         }
 
         if (AutoAttacks)
         {
-            anim.SetInteger("AnimationPosition", 5);
+            anim.SetInteger("animation", 5);
         }
 
         if (Walking)
         {
-            anim.SetInteger("AnimationPosition", 6);
+            anim.SetInteger("animation", 6);
         }
 
         if (Death)
         {
-            anim.SetInteger("AnimationPosition", 7);
+            anim.SetInteger("animation", 7);
 
         }
 

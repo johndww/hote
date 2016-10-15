@@ -25,12 +25,12 @@ public class UIControls : MonoBehaviour {
 
     // ui abilities - derived from character selection
     private GameObject[] abilitiesBySlot = new GameObject[4];
-    private Hero[] heroBySlot = new Hero[4];
+    private CharacterControl[] characterBySlot = new CharacterControl[4];
 
     // current selections
     private GameObject currentAbilities;
     private Image currentImage;
-    private Hero currentHero;
+    private CharacterControl currentCharacterControl;
 
     // helper enum to map the slot to an array index
     enum HeroSlot { ONE = 0, TWO = 1, THREE = 2, FOUR = 3 }
@@ -58,15 +58,15 @@ public class UIControls : MonoBehaviour {
         // update new selections
         this.currentImage = this.imageBySlot[(int)selectedSlot];
         this.currentAbilities = this.abilitiesBySlot[(int)selectedSlot];
-        this.currentHero = this.heroBySlot[(int)selectedSlot];
+        this.currentCharacterControl = this.characterBySlot[(int)selectedSlot];
 
         // activate new selection
         this.currentImage.gameObject.SetActive(true);
         this.currentAbilities.gameObject.SetActive(true);
-        this.currentHero.Selected();
+        this.currentCharacterControl.GetComponent<Hero>().Selected();
 
         // update the selected hero for the Player
-        this.player.SelectedCharacter = this.currentHero.gameObject;
+        this.player.SelectedCharacter = this.currentCharacterControl.gameObject;
     }
 
     /// <summary>
@@ -78,7 +78,7 @@ public class UIControls : MonoBehaviour {
     public void attack(string attackColor)
     {
         AttackType type = getAttack(attackColor);
-        this.currentHero.Attack(type);
+        this.currentCharacterControl.Attack(type);
     }
 
     private void initialize()
@@ -86,15 +86,15 @@ public class UIControls : MonoBehaviour {
         GameObject[] characters = player.Characters;
 
         for (int i = 0; i < 4; i++) {
-            Hero hero = characters[i].GetComponent<Hero>();
-            GameObject uiAbilitiesForHeroSlot = this.heroTypeToAbilitiesUi[hero.GetHeroType()];
+            CharacterControl characterControl = characters[i].GetComponent<CharacterControl>();
+            GameObject uiAbilitiesForHeroSlot = this.heroTypeToAbilitiesUi[characterControl.GetComponent<Hero>().GetHeroType()];
 
             this.abilitiesBySlot[i] = uiAbilitiesForHeroSlot;
-            this.heroBySlot[i] = hero;
+            this.characterBySlot[i] = characterControl;
         }
         this.currentAbilities = this.abilitiesBySlot[0];
         this.currentImage = this.imageBySlot[0];
-        this.currentHero = this.heroBySlot[0];
+        this.currentCharacterControl = this.characterBySlot[0];
     }
 
     private HeroSlot getSlotByName(string slotName)
