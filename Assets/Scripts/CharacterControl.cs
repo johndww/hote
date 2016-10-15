@@ -10,30 +10,13 @@ using UnityEngine.Networking;
 /// Synchronization based on https://unity3d.com/learn/tutorials/topics/multiplayer-networking/introduction-simple-multiplayer-example?playlist=29690
 /// </summary>
 public class CharacterControl : MonoBehaviour {
-
-    // max number of historical positions tracked to determine if we should give up moving
-    const int MAX_VELOCITY_HISTORY_COUNT = 10;
-    // the minimum velocity avg that determines we are stuck
-    const int MIN_STUCK_VELOCITY_AVG = 2;
-    // tolerance for how close we need to get to a target before giving up
-    const float TARGET_POSITION_TOLERANCE = .2F;
-
-    //how fast the player moves.
-    [SerializeField] [Range(1, 20)]
-    private float speed = 1;
-
-    private Queue<float> velocityHistory = new Queue<float>();
-
-    //where we want to travel too. synchronized so players move on all clients
-    //[SyncVar]
-    private Vector3 targetPosition;
-
-    //toggle to check track if we are moving or not. synchronized so players move on all clients
-    //[SyncVar]
-    private bool isMoving;
+    private static string ANIM_STATE = "animation";
 
     // The Animator is what controls the switching from one animator to the other
     private Animator anim;
+    private NavMeshAgent navMesh;
+
+    private Boolean isWalking;
 
     // gameobject who this player is currently targetting
     private GameObject playerTarget;
@@ -43,174 +26,79 @@ public class CharacterControl : MonoBehaviour {
     /// </summary>
     void Start()
     {
-        targetPosition = transform.position;        
-        isMoving = false;
-        anim = gameObject.GetComponentInChildren<Animator>();
+        this.anim = GetComponentInChildren<Animator>();
+        this.navMesh = GetComponent<NavMeshAgent>();
 
-        // by default, show only your self health bar - not enemies
-        //if (hasAuthority)
-        //{
-        // TODO re-enable the health bars
-        //    GetComponentInChildren<Canvas>().enabled = true;
-        //}
+        // characters can walk through each other
+        Physics.IgnoreLayerCollision(8, 8);
     }
-
-
 
     /// <summary>
     /// Evaluated every frame
     /// </summary>
     void Update()
     {
-        PlayerInput.Type playerInput = PlayerInput.getPlayerInput();
+        Debug.Log("walking: " + isWalking + "DIST: " + this.navMesh.remainingDistance + ". hashPath" + this.navMesh.hasPath + " velocity " + this.navMesh.velocity.sqrMagnitude);
 
-        if (playerInput == PlayerInput.Type.SELECT)
+        if (isWalking)
         {
-            selectTarget();
-        }
-
-        if (isMoving)
-        {
-            StartWalkingAnimationIfNeeded();
-            MovePlayer();
-        }
-        else {
-            // AnimationParameter is an integer that's used to switch between animations. When it's set to 0, the idle animation is being played.
-            anim.SetInteger("AnimationPosition", 0); 
+            WalkControl();
         }
     }
 
-    private void selectTarget()
+    //private void selectTarget()
+    //{
+    //    RaycastHit hitInfo = new RaycastHit();
+    //    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Player")
+    //    {
+    //        if (playerTarget != null)
+    //        {
+    //            // deactivate old player target
+    //            playerTarget.GetComponentInChildren<Canvas>().enabled = false;
+    //        }
+
+    //        playerTarget = hitInfo.collider.gameObject;
+    //        playerTarget.GetComponentInChildren<Canvas>().enabled = true;
+    //    }
+    //}
+
+    private void WalkControl()
     {
-        RaycastHit hitInfo = new RaycastHit();
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Player")
+        if ((!this.navMesh.pathPending)
+            && (this.navMesh.remainingDistance <= this.navMesh.stoppingDistance)
+            && (!this.navMesh.hasPath || this.navMesh.velocity.sqrMagnitude == 0f))
         {
-            if (playerTarget != null)
-            {
-                // deactivate old player target
-                playerTarget.GetComponentInChildren<Canvas>().enabled = false;
-            }
-
-            playerTarget = hitInfo.collider.gameObject;
-            playerTarget.GetComponentInChildren<Canvas>().enabled = true;
+            this.isWalking = false;
+            this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
         }
-    }
-
-    private void StartWalkingAnimationIfNeeded()
-    {
-        if (anim.GetInteger("AnimationPosition") != 1)
-        {
-            anim.SetInteger("AnimationPosition", 6);
-        }
-    }
-
-    /// <summary>
-    /// Sets the target position we will travel too.
-    /// </summary>
-    public void SetTargetPosition(Ray ray, float point)
-    {
-        CmdSetTargetPosition(ray.GetPoint(point));
-        // broadcast to everyone that this unit should start moving
-        CmdSetMovement(true);
     }
 
     /// <summary>
     /// Moves the player in the right direction and also rotates them to look at the target position.
     /// When the player gets to the target position, stop them from moving.
     /// </summary>
-    private void MovePlayer()
+
+    public void Move()
     {
-        CharacterController cc = GetComponent<CharacterController>();
-        if (withinTargetPosition() || cantReachPosition())
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+
+        Boolean hasHit = Physics.Raycast(ray, out hit, 200);
+        Debug.Log("ray: " + ray + "hasHit " + hasHit + " hit: " + hit);
+
+        if (hasHit)
         {
-            isMoving = false;
-            this.velocityHistory.Clear();
-            return;
+            navMesh.destination = hit.point;
+
+            // might have already been walking. only start the animation if we just started
+            if (!isWalking)
+            {
+                isWalking = true;
+                this.anim.SetInteger(ANIM_STATE, (int) Anim.WALK);
+            }
         }
-        trackVelocityHistory(cc);
-
-        transform.LookAt(targetPosition);
-
-        // find the target position relative to the player:
-        Vector3 dir = this.targetPosition - transform.position;
-        // calculate movement at the desired speed:
-        Vector3 movement = dir.normalized * speed * Time.deltaTime;
-        // limit movement to never pass the target position:
-        if (movement.magnitude > dir.magnitude)
-        {
-            movement = dir;
-        }
-
-        // move the character:
-        cc.Move(movement);
-            
-        Debug.DrawLine(transform.position, this.targetPosition, Color.red);
     }
 
-    /// <summary>
-    /// Determines if we're close enough to the target position we're trying to move to
-    /// </summary>
-    /// <returns>true if we're within position</returns>
-    private bool withinTargetPosition()
-    {
-        Vector3 difference = transform.position - this.targetPosition;
-        return Math.Abs(difference.magnitude) < TARGET_POSITION_TOLERANCE;
-    }
-
-    /// <summary>
-    /// Enqueues the current velocity in the stateful velocity tracker each frame
-    /// </summary>
-    /// <param name="cc">character controller we're tracking</param>
-    private void trackVelocityHistory(CharacterController cc)
-    {
-        if (this.velocityHistory.Count >= MAX_VELOCITY_HISTORY_COUNT)
-        {
-            this.velocityHistory.Dequeue();
-        }
-        this.velocityHistory.Enqueue(cc.velocity.magnitude);
-    }
-
-    /// <summary>
-    /// Determines if after MAX_VELOCITY_HISTORY_COUNT frames that we can't reach
-    /// a position we've been trying to move towards
-    /// </summary>
-    /// <returns>true if we should give up trying to move to the target position</returns>
-    private bool cantReachPosition()
-    {
-        if (this.velocityHistory.Count < MAX_VELOCITY_HISTORY_COUNT)
-        {
-            // we don't have enough velocity history to determine that we're stuck
-            return false;
-        }
-
-        // we have enough history to determine if we're stuck
-        float sumVelocities = 0;
-        foreach (float velocity in this.velocityHistory)
-        {
-            sumVelocities += velocity;
-        }
-        return sumVelocities / this.velocityHistory.Count < MIN_STUCK_VELOCITY_AVG;
-    }
-
-    /// <summary>
-    /// 
-    /// 
-    /// 
-    /// All Commands below are used to send RPC (remote) calls from client->server
-    /// 
-    /// 
-    /// 
-    /// </summary>
-
-    //[Command]
-    private void CmdSetMovement(Boolean val)
-    {
-        isMoving = val;
-    }
-
-    //[Command]
-    private void CmdSetTargetPosition(Vector3 position)
-    {
-        targetPosition = position;
-    }
+    enum Anim { IDLE, WALK, AUTOATTACK, GREEN, BLUE, RED, PURPLE, DEATH}
 }

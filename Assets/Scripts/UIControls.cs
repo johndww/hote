@@ -66,7 +66,7 @@ public class UIControls : MonoBehaviour {
         this.currentHero.Selected();
 
         // update the selected hero for the Player
-        this.player.SelectedHero = this.currentHero.gameObject;
+        this.player.SelectedCharacter = this.currentHero.gameObject;
     }
 
     /// <summary>
