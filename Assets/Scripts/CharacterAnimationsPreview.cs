@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EarthMageAnimations : MonoBehaviour {
+public class CharacterAnimationsPreview : MonoBehaviour {
 
     // These will be turned on in the inspector to specify which animation I want the model to play.
     public bool Idle;
@@ -10,6 +10,7 @@ public class EarthMageAnimations : MonoBehaviour {
     public bool Red;
     public bool Purple;
     public bool AutoAttacks;
+    public bool AutoAttacksWalking;
     public bool Walking;
     public bool Death;
 
@@ -55,7 +56,10 @@ public class EarthMageAnimations : MonoBehaviour {
         {
             anim.SetInteger("animation", 1);
         }
-
+        if (AutoAttacksWalking)
+        {
+            anim.SetInteger("animation", 8);
+        }
         if (Death)
         {
             anim.SetInteger("animation", 7);

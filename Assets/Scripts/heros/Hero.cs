@@ -17,5 +17,6 @@ abstract class Hero : MonoBehaviour
 enum HeroType
 {
     EarthMage,
-    WindMage
+    WindMage,
+    Gladiator
 }
