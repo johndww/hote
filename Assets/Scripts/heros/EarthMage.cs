@@ -6,7 +6,6 @@ using UnityEngine;
 
 class EarthMage : Hero
 {
-
     public override HeroType GetHeroType()
     {
         return HeroType.EarthMage;
@@ -14,11 +13,15 @@ class EarthMage : Hero
 
     public override void Selected()
     {
-        Debug.Log("earth mage hero selected");
+//        Debug.Log("earth mage hero selected");
     }
 
     public override void Attack(AttackType type)
     {
         Debug.Log("earth mage attacking with: " + type);
     }
+
+	public override void AutoAttack (GameObject target) {
+		Debug.Log ("earth mage autoattacking " + target);
+	}
 }

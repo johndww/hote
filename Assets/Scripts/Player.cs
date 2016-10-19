@@ -39,11 +39,20 @@ public class Player : MonoBehaviour
     {
         PlayerInput.Type playerInput = PlayerInput.getPlayerInput();
 
-        // detect clicks only for the local player otherwise one player will control all characters
-        if (playerInput == PlayerInput.Type.MOVE && this.selectedCharacter != null)
+		// code below is only valid to be on a selected character
+		if (this.selectedCharacter == null) {
+			return;
+		}
+
+		var characterControl = this.selectedCharacter.GetComponent<CharacterControl>();
+
+        if (playerInput == PlayerInput.Type.MOVE)
         {
-            this.SelectedCharacter.GetComponent<CharacterControl>().Move();
+			characterControl.Move();
         }
+		else if (playerInput == PlayerInput.Type.SELECT) {
+			characterControl.SelectTarget();
+		}
     }
 
     Vector3[] getSpawnPoints()

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 /// <summary>
-/// Movement for a Character
+/// Character control for an indivudal hero.
 /// 
 /// Synchronization based on https://unity3d.com/learn/tutorials/topics/multiplayer-networking/introduction-simple-multiplayer-example?playlist=29690
 /// </summary>
@@ -13,14 +13,18 @@ public class CharacterControl : MonoBehaviour {
     private static string ANIM_STATE = "animation";
     private static Dictionary<AttackType, Anim> attackAnimMap = generateAttackTypeToAnimMap();
 
+	public LayerMask heroLayerMask;
+
     // The Animator is what controls the switching from one animator to the other
     private Animator anim;
     private NavMeshAgent navMesh;
 
     private Boolean isWalking;
 
-    // gameobject who this player is currently targetting
+    // gameobject who this player is currently targeting
     private GameObject playerTarget;
+
+	private Hero hero;
 
     /// <summary>
     /// Initialization of the script
@@ -29,6 +33,7 @@ public class CharacterControl : MonoBehaviour {
     {
         this.anim = GetComponentInChildren<Animator>();
         this.navMesh = GetComponent<NavMeshAgent>();
+		this.hero = GetComponent<Hero> ();
 
         // characters can walk through each other
         Physics.IgnoreLayerCollision(8, 8);
@@ -43,23 +48,36 @@ public class CharacterControl : MonoBehaviour {
         {
             WalkControl();
         }
+		else if (this.playerTarget != null) {
+			AttemptToAutoAttack ();
+		}
     }
 
-    //private void selectTarget()
-    //{
-    //    RaycastHit hitInfo = new RaycastHit();
-    //    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Player")
-    //    {
-    //        if (playerTarget != null)
-    //        {
-    //            // deactivate old player target
-    //            playerTarget.GetComponentInChildren<Canvas>().enabled = false;
-    //        }
+	void AttemptToAutoAttack ()
+	{
+		if (this.hero.isTooFarToAutoAttack()) {
+			// move a bit towards target
+		}
+		else {
+			// autoattack
+			this.hero.AutoAttack(this.playerTarget);
+		}
+	}
 
-    //        playerTarget = hitInfo.collider.gameObject;
-    //        playerTarget.GetComponentInChildren<Canvas>().enabled = true;
-    //    }
-    //}
+    public void SelectTarget()
+    {
+        RaycastHit hitInfo = new RaycastHit();
+		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, 200, this.heroLayerMask))
+        {
+			//TODO avoid targetting friends too!
+			// can't target ourselves
+			if (hitInfo.collider.gameObject.GetInstanceID() == gameObject.GetInstanceID()) {
+				return;
+			}
+
+            playerTarget = hitInfo.collider.gameObject;
+        }
+    }
 
     private void WalkControl()
     {
@@ -107,7 +125,7 @@ public class CharacterControl : MonoBehaviour {
     {
         StopWalking();
         this.anim.SetInteger(ANIM_STATE, (int)attackAnimMap[type]);
-        GetComponent<Hero>().Attack(type);
+		this.hero.Attack(type);
     }
 
     private static Dictionary<AttackType, Anim> generateAttackTypeToAnimMap()

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014034224344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toes_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013040056832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014217756730}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_L_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,8 @@ GameObject:
   - 114: {fileID: 114000011704421840}
   - 114: {fileID: 114000010663798864}
   - 195: {fileID: 195000014223015444}
-  m_Layer: 0
+  - 136: {fileID: 136000010512737778}
+  m_Layer: 8
   m_Name: holy_warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +85,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012656784330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toes_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +101,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013527924796}
   - 137: {fileID: 137000012501463158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Holy_Warrior_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +116,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010320537582}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Thumb01_R_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +131,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011425929286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_R_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +146,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010880936722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +161,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013691724280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +176,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013612180620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Thumb01_L_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +192,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013550352366}
   - 137: {fileID: 137000011509570666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +207,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012347195760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +223,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013908582544}
   - 137: {fileID: 137000010337658632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shoulders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +240,7 @@ GameObject:
   - 4: {fileID: 4000013893765080}
   - 33: {fileID: 33000011903488648}
   - 23: {fileID: 23000012000240048}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shield_Shine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +257,7 @@ GameObject:
   - 4: {fileID: 4000010590355968}
   - 33: {fileID: 33000012983373916}
   - 23: {fileID: 23000012452347864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_Trace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +273,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012752722188}
   - 137: {fileID: 137000011565255588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +288,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011987079784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_R_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +303,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011528185598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +318,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013309950988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg_Control_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +333,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014069663796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +348,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011059124402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Thumb01_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +363,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010006679552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +378,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012569719292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +393,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014261598158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +408,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011415072518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +423,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012593567454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Thumb01_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +438,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010808824728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_L_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +453,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013124906822}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +468,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013912948906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +483,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010907425172}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +498,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013614112324}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,7 +513,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010008178066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg_Control_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +528,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013620797302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +543,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010900957712}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +558,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014021871406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,6 +1180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c23c5203869694c8b448c89ff5c934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heroLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &114000013609901924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1199,6 +1203,19 @@ MonoBehaviour:
   AutoAttacksWalking: 0
   Walking: 0
   Death: 0
+--- !u!136 &136000010512737778
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010385196886}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3
+  m_Height: 9
+  m_Direction: 1
+  m_Center: {x: 0, y: 4, z: 0}
 --- !u!137 &137000010337658632
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

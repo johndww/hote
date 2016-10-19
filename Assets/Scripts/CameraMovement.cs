@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
-	public GameObject camera; // attach the camera
+	public GameObject theCamera; // attach the camera
 	public GameObject camera_object; // attach the camera object that will be transformed during panning and rotation
 	public GameObject camera_poivot_point; // attach the center object around which the camera will rotate and towards which it will zoom in
 
@@ -21,7 +21,7 @@ public class CameraMovement : MonoBehaviour {
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 
 			// Adjust the speed of the camera based on height... faster when you're higher up
-			float camera_y_pos = Mathf.Round(camera.transform.position.y);
+			float camera_y_pos = Mathf.Round(theCamera.transform.position.y);
 
 			// Move object across XY plane
 			camera_object.transform.Translate(-touchDeltaPosition.x / (150/camera_y_pos), 0, -touchDeltaPosition.y / (150/camera_y_pos));
@@ -52,14 +52,14 @@ public class CameraMovement : MonoBehaviour {
 			float touchDistanceChange = prevTouchDistance - currentTouchDistance;
 
 			// if the camera is not at the minimum limit, allow movement
-			if (camera.transform.position.y > 30 && camera.transform.position.y < 70) {
-				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 5);
+			if (theCamera.transform.position.y > 30 && theCamera.transform.position.y < 70) {
+				theCamera.transform.position = Vector3.MoveTowards (theCamera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 5);
 			
 			// if the camera reaches the lowest limit, allow zoom out only
-			} else if (touchDistanceChange > 0 && camera.transform.position.y < 70) {
-				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 5);
-			} else if (touchDistanceChange < 0 && camera.transform.position.y > 30) {
-				camera.transform.position = Vector3.MoveTowards (camera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 5);
+			} else if (touchDistanceChange > 0 && theCamera.transform.position.y < 70) {
+				theCamera.transform.position = Vector3.MoveTowards (theCamera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 5);
+			} else if (touchDistanceChange < 0 && theCamera.transform.position.y > 30) {
+				theCamera.transform.position = Vector3.MoveTowards (theCamera.transform.position, camera_poivot_point.transform.position, -touchDistanceChange / 5);
 			}
 
 

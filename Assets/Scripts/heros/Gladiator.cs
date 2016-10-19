@@ -14,11 +14,15 @@ class Gladiator : Hero
 
     public override void Selected()
     {
-        Debug.Log("Gladiator hero selected");
+//        Debug.Log("Gladiator hero selected");
     }
 
     public override void Attack(AttackType type)
     {
         Debug.Log("Gladiator attacking with: " + type);
-    }
+	}
+
+	public override void AutoAttack (GameObject target) {
+		Debug.Log ("gladiator autoattacking" + target);
+	}
 }

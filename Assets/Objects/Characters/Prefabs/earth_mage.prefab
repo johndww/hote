@@ -608,10 +608,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011781657338}
   - 95: {fileID: 95000010163712438}
-  - 54: {fileID: 54000011475422530}
   - 114: {fileID: 114000011579287240}
   - 114: {fileID: 114000013346418426}
   - 195: {fileID: 195000012561645714}
+  - 136: {fileID: 136000010278404188}
   m_Layer: 8
   m_Name: earth_mage
   m_TagString: Untagged
@@ -1363,21 +1363,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011928916090}
   m_Mesh: {fileID: 4300000, guid: 01235d7780eb8234694b9e7e3e331bc3, type: 3}
---- !u!54 &54000011475422530
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014240588514}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!95 &95000010163712438
 Animator:
   serializedVersion: 3
@@ -1482,6 +1467,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c23c5203869694c8b448c89ff5c934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heroLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &114000012491197642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1557,6 +1545,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139d3261f20d27f4a829ac8f74ffa4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &136000010278404188
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014240588514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3
+  m_Height: 9
+  m_Direction: 1
+  m_Center: {x: 0, y: 4, z: 0}
 --- !u!137 &137000011921785646
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

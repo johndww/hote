@@ -2877,7 +2877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ab01ea280811f49b7937f169f908d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 1043804488}
+  theCamera: {fileID: 1043804488}
   camera_object: {fileID: 1275277712}
   camera_poivot_point: {fileID: 855971917}
 --- !u!4 &1275277715
