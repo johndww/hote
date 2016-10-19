@@ -18,5 +18,6 @@ enum HeroType
 {
     EarthMage,
     WindMage,
-    Gladiator
+    Gladiator,
+    HolyWarrior
 }
