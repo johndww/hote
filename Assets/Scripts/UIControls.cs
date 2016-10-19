@@ -14,6 +14,8 @@ public class UIControls : MonoBehaviour {
 
     // all character ui abilities
     public GameObject earthMageAbilityUi;
+	public GameObject gladiatorAbilityUi;
+	public GameObject holyWarriorAbilityUi;
     // TODO add the rest of the characters
 
     private Dictionary<HeroType, GameObject> heroTypeToAbilitiesUi;
@@ -135,6 +137,8 @@ public class UIControls : MonoBehaviour {
     {
         Dictionary<HeroType, GameObject> map = new Dictionary<HeroType, GameObject>();
         map.Add(HeroType.EarthMage, this.earthMageAbilityUi);
+		map.Add(HeroType.Gladiator, this.gladiatorAbilityUi);
+		map.Add(HeroType.HolyWarrior, this.holyWarriorAbilityUi);
         //TODO add other abilities by type
         return map;
     }
