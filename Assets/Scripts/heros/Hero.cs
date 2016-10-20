@@ -64,5 +64,6 @@ enum HeroType
     EarthMage,
     WindMage,
     Gladiator,
-    HolyWarrior
+    HolyWarrior,
+    Jaeger
 }

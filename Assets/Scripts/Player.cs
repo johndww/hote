@@ -19,12 +19,13 @@ public class Player : MonoBehaviour
         get { return selectedCharacter;  }
         set { 
 			if (selectedCharacter != null) {
-				HeroUtil.SetHeroMarkerEnablement(false, this.selectedCharacter, Statics.CHAR_MARKER_WHITE);
+				HeroUtil.SetHeroMarkerEnablement(false, this.selectedCharacter, Statics.CHAR_MARKER_BLUE_FILLED);
 				HeroUtil.SetHeroMarkerEnablement(true, this.selectedCharacter, Statics.CHAR_MARKER_BLUE);
-			}
-			HeroUtil.SetHeroMarkerEnablement(true, value, Statics.CHAR_MARKER_WHITE);
+            }
+            HeroUtil.SetHeroMarkerEnablement(true, value, Statics.CHAR_MARKER_BLUE_FILLED);
+            HeroUtil.SetHeroMarkerEnablement(false, value, Statics.CHAR_MARKER_BLUE);
 
-			this.selectedCharacter = value; 
+            this.selectedCharacter = value; 
 			this.selectedCharacter.GetComponent<Hero>().Selected();
 		}
     }

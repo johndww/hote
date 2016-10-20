@@ -6,7 +6,8 @@ TagManager:
   tags:
   - char_marker_blue
   - char_marker_red
-  - char_marker_white
+  - char_marker_blue_filled
+  - char_marker_red_filled
   layers:
   - Default
   - TransparentFX
