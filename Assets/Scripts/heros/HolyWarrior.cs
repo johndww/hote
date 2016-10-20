@@ -25,4 +25,8 @@ class HolyWarrior : Hero
 	public override void AutoAttack (GameObject target) {
 		Debug.Log ("holy warrior autoattacking" + target);
 	}
+
+	public override Boolean StopAttack() {
+		return true;
+	}
 }

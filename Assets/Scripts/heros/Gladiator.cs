@@ -25,4 +25,8 @@ class Gladiator : Hero
 	public override void AutoAttack (GameObject target) {
 		Debug.Log ("gladiator autoattacking" + target);
 	}
+
+	public override Boolean StopAttack() {
+		return true;
+	}
 }

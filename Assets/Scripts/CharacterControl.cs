@@ -44,11 +44,15 @@ public class CharacterControl : MonoBehaviour {
     /// </summary>
     void Update()
     {
+		if (this.hero.isDead()) {
+			return;
+		}
+
         if (isWalking)
         {
             WalkControl();
         }
-		else if (this.playerTarget != null) {
+		else if (this.playerTarget != null && !this.playerTarget.GetComponent<Hero>().isDead()) {
 			AttemptToAutoAttack ();
 		}
     }
@@ -105,6 +109,11 @@ public class CharacterControl : MonoBehaviour {
 
     public void Move()
     {
+		// attempt to stop attacking (if attacking) so we can move
+		if (!this.hero.StopAttack()) {
+			// can't stop attacking so the move command is ignored
+			return;
+		}
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
