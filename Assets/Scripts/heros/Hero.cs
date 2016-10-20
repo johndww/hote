@@ -6,7 +6,7 @@ using UnityEngine;
 
 abstract class Hero : MonoBehaviour
 {
-	protected int hp = 250;
+	protected int hp = 2000;
 
     public abstract HeroType GetHeroType();
 
