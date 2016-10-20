@@ -65,7 +65,6 @@ public class UIControls : MonoBehaviour {
         // activate new selection
         this.currentImage.gameObject.SetActive(true);
         this.currentAbilities.gameObject.SetActive(true);
-        this.currentCharacterControl.GetComponent<Hero>().Selected();
 
         // update the selected hero for the Player
         this.player.SelectedCharacter = this.currentCharacterControl.gameObject;

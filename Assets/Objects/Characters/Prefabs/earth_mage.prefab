@@ -70,7 +70,7 @@ GameObject:
   - 23: {fileID: 23000011951927256}
   m_Layer: 0
   m_Name: player_marker_white
-  m_TagString: Untagged
+  m_TagString: char_marker_white
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -567,11 +567,11 @@ GameObject:
   - 95: {fileID: 95000013678043832}
   m_Layer: 0
   m_Name: player_marker_red
-  m_TagString: Untagged
+  m_TagString: char_marker_red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000013427723506
 GameObject:
   m_ObjectHideFlags: 1
@@ -615,7 +615,7 @@ GameObject:
   - 95: {fileID: 95000010975082528}
   m_Layer: 0
   m_Name: player_marker_blue
-  m_TagString: Untagged
+  m_TagString: char_marker_blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

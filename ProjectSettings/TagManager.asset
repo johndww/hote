@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - char_marker_blue
+  - char_marker_red
+  - char_marker_white
   layers:
   - Default
   - TransparentFX
