@@ -65,5 +65,6 @@ enum HeroType
     WindMage,
     Gladiator,
     HolyWarrior,
-    Jaeger
+    Jaeger,
+    Syphoness
 }
