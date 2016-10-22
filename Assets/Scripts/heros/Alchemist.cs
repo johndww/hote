@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-class Gladiator : Hero
+class Alchemist : Hero
 {
 
     public override HeroType GetHeroType()
     {
-        return HeroType.Gladiator;
+        return HeroType.Alchemist;
     }
 
     public override void Selected()
     {
-        //        Debug.Log("Gladiator hero selected");
+        //        Debug.Log("Alchemist hero selected");
     }
 
     public override void Attack(AttackType type)
     {
-        Debug.Log("Gladiator attacking with: " + type);
+        Debug.Log("Alchemist attacking with: " + type);
 	}
 
 	public override void AutoAttack (GameObject target) {
-		Debug.Log ("Gladiator autoattacking" + target);
+		Debug.Log ("Alchemist autoattacking" + target);
 	}
 
 	public override Boolean StopAttack() {

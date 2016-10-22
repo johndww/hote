@@ -66,5 +66,6 @@ enum HeroType
     Gladiator,
     HolyWarrior,
     Jaeger,
-    Syphoness
+    Syphoness,
+    Alchemist
 }

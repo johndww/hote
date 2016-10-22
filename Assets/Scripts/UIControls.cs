@@ -18,6 +18,7 @@ public class UIControls : MonoBehaviour {
     public GameObject holyWarriorAbilityUi;
     public GameObject jaegerAbilityUi;
     public GameObject syphonessAbilityUi;
+    public GameObject alchemistAbilityUi;
     // TODO add the rest of the characters
 
     private Dictionary<HeroType, GameObject> heroTypeToAbilitiesUi;
@@ -142,6 +143,7 @@ public class UIControls : MonoBehaviour {
         map.Add(HeroType.HolyWarrior, this.holyWarriorAbilityUi);
         map.Add(HeroType.Jaeger, this.jaegerAbilityUi);
         map.Add(HeroType.Syphoness, this.syphonessAbilityUi);
+        map.Add(HeroType.Alchemist, this.alchemistAbilityUi);
         //TODO add other abilities by type
         return map;
     }
