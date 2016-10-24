@@ -22,6 +22,11 @@ abstract class Hero : MonoBehaviour
 
 	public abstract bool StopAttack();
 
+	public Boolean IsAlive ()
+	{
+		return this.hp > 0;
+	}
+
 	/// <summary>
 	/// Takes the damage.
 	/// </summary>

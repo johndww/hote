@@ -7,6 +7,8 @@ using System.Collections;
 
 class EarthMage : Hero
 {
+	public GameObject autoAttackPrefab;
+
 	private Boolean isAutoAttacking = false;
 	private enum AutoAttackSeq { ONE=30, TWO=50, THREE=70 }
 
@@ -38,14 +40,24 @@ class EarthMage : Hero
 		AutoAttackSeq[] attacks = new AutoAttackSeq[3] { AutoAttackSeq.ONE, AutoAttackSeq.TWO, AutoAttackSeq.THREE };
 
 		foreach (AutoAttackSeq attack in attacks) {
-			var isAlive = target.GetComponent<Hero>().TakeDamage((int)attack);
+			var isAlive = target.GetComponent<Hero>().IsAlive();
 			if (!isAlive) {
 				this.isAutoAttacking = false;
 				yield break;
 			}
+
+			//FIRE!!!
+			FireAutoAttack(target, attack);
+
 			yield return new WaitForSeconds(1.0f);
 		}
 		this.isAutoAttacking = false;
+	}
+
+	void FireAutoAttack (GameObject target, AutoAttackSeq attack)
+	{
+//		Instantiate(autoAttackPrefab, target.transform.position, Quaternion.identity) as GameObject;
+		target.GetComponent<Hero>().TakeDamage((int)attack);
 	}
 
 	public override Boolean StopAttack() {
