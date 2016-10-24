@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 			if (selectedCharacter != null) {
 				HeroUtil.SetHeroMarkerEnablement(false, this.selectedCharacter, Statics.CHAR_MARKER_BLUE_FILLED);
 				HeroUtil.SetHeroMarkerEnablement(true, this.selectedCharacter, Statics.CHAR_MARKER_BLUE);
+
             }
             HeroUtil.SetHeroMarkerEnablement(true, value, Statics.CHAR_MARKER_BLUE_FILLED);
             HeroUtil.SetHeroMarkerEnablement(false, value, Statics.CHAR_MARKER_BLUE);
@@ -69,7 +70,7 @@ public class Player : MonoBehaviour
 			characterControl.Move();
         }
 		else if (playerInput == PlayerInput.Type.SELECT) {
-			characterControl.SelectTarget();
+			characterControl.SetTarget();
 		}
     }
 

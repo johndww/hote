@@ -18,6 +18,7 @@ public class CharacterControl : MonoBehaviour {
     // The Animator is what controls the switching from one animator to the other
     private Animator anim;
     private NavMeshAgent navMesh;
+	private GameObject locationPointer;
 
     private Boolean isWalking;
 
@@ -25,6 +26,7 @@ public class CharacterControl : MonoBehaviour {
     private GameObject playerTarget;
 
 	private Hero hero;
+
 
     /// <summary>
     /// Initialization of the script
@@ -34,6 +36,7 @@ public class CharacterControl : MonoBehaviour {
         this.anim = GetComponentInChildren<Animator>();
         this.navMesh = GetComponent<NavMeshAgent>();
 		this.hero = GetComponent<Hero> ();
+		this.locationPointer = GameObject.FindWithTag("location_pointer");
 
         // characters can walk through each other
         Physics.IgnoreLayerCollision(8, 8);
@@ -68,7 +71,7 @@ public class CharacterControl : MonoBehaviour {
 		}
 	}
 
-    public void SelectTarget()
+    public void SetTarget()
     {
         RaycastHit hitInfo = new RaycastHit();
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, 200, this.heroLayerMask))
@@ -114,12 +117,16 @@ public class CharacterControl : MonoBehaviour {
 			// can't stop attacking so the move command is ignored
 			return;
 		}
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 200))
         {
             navMesh.destination = hit.point;
+
+			this.locationPointer.transform.position = navMesh.destination;
+			this.locationPointer.GetComponent<Animator>().SetTrigger("mark");
 
             // might have already been walking. only start the animation if we just started
             if (!isWalking)

@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterPrefabs:
-  - {fileID: 1000013357304990, guid: fbf2e003716e5284eba347b161c9211c, type: 2}
+  - {fileID: 1000014240588514, guid: 9efc7254e15c5d74a91e21a89d911f90, type: 2}
   - {fileID: 1000010385196886, guid: 25eb578be2e5c1543bd530c6c4a244ea, type: 2}
   - {fileID: 1000013115087048, guid: ea8919e4ea3c6eb40b1e248d00d61579, type: 2}
   - {fileID: 1000011792603224, guid: 91c1140a6fe441147a7014e61142a445, type: 2}
@@ -4119,6 +4119,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 589b3660728d3b648b099a634acf6424, type: 2}
+    - target: {fileID: 100000, guid: 6cb330001f8cf7445836ee350b935d82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6cb330001f8cf7445836ee350b935d82, type: 3}
+      propertyPath: m_TagString
+      value: location_pointer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cb330001f8cf7445836ee350b935d82, type: 3}
   m_IsPrefabParent: 0
