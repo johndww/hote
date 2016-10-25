@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010529086094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Arm_R_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013817361462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012619213326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toes_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013589048140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013421010626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Thumb01_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010155726918}
   - 137: {fileID: 137000013718463016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011194736472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Thumb01_L_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010074304714}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Thumb01_R_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014119507702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Arm_L_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010885232630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg_Control_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - 4: {fileID: 4000010548383392}
   - 33: {fileID: 33000012022243600}
   - 23: {fileID: 23000014118754920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012257683900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011301410148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011362389400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - 4: {fileID: 4000010701559968}
   - 33: {fileID: 33000011900026924}
   - 23: {fileID: 23000010645712908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player_marker_blue_filled
   m_TagString: char_marker_blue_filled
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010117581180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014007587802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011581729320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Arm_R_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013456060608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Arm_L_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011774010736}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012983539622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010400707258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014261598102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012714254574}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Arm_R_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   - 33: {fileID: 33000012491129562}
   - 23: {fileID: 23000010808200784}
   - 95: {fileID: 95000011410847302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player_marker_blue
   m_TagString: char_marker_blue
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012868740144}
   - 137: {fileID: 137000010175305550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - 33: {fileID: 33000011891089274}
   - 23: {fileID: 23000011520277840}
   - 95: {fileID: 95000010553471194}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player_marker_red_filled
   m_TagString: char_marker_red_filled
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013196201520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Arm_R_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010591058904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012340967134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013582416704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011005144732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Thumb01_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010302217180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   - 114: {fileID: 114000011169892864}
   - 195: {fileID: 195000013015728828}
   - 136: {fileID: 136000013654060346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: jaeger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012807122988}
   - 137: {fileID: 137000011359434470}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012354930710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg_Control_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011205572874}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013055475332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toes_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010277335638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Arm_L_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +622,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010519433790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Arm_L_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013568959258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   - 33: {fileID: 33000013468655688}
   - 23: {fileID: 23000014166186958}
   - 95: {fileID: 95000010781135950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player_marker_red
   m_TagString: char_marker_red
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013907250274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010158809294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +701,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014033657868}
   - 137: {fileID: 137000011780920132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: quiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}

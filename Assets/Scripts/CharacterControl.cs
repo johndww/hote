@@ -77,12 +77,28 @@ public class CharacterControl : MonoBehaviour {
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, 200, this.heroLayerMask))
         {
 			//TODO avoid targetting friends too!
+
 			// can't target ourselves
-			if (hitInfo.collider.gameObject.GetInstanceID() == gameObject.GetInstanceID()) {
+			var targetted = hitInfo.collider.gameObject;
+			if (targetted.GetInstanceID() == gameObject.GetInstanceID()) {
 				return;
 			}
 
-            playerTarget = hitInfo.collider.gameObject;
+			// haven't selected anyone yet, just accept the new target
+			if (playerTarget == null) {
+				playerTarget = hitInfo.collider.gameObject;
+			}
+
+			// targetting the same target, nothing to do
+			if (targetted.GetInstanceID() == playerTarget.GetInstanceID()) {
+				return;
+			}
+
+			// only switch to another target if we can stop attacking
+			if (GetComponent<Hero>().StopAttack()) {
+				playerTarget = hitInfo.collider.gameObject;
+				Debug.Log("new target " + playerTarget);
+			}
         }
     }
 
