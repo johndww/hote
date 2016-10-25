@@ -1,0 +1,623 @@
+# Blender MTL File: 'arena_4_pillars_output.blend'
+# Material Count: 69
+
+newmtl None
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.004
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.005
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.006
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.011
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.019
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.020
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.021
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.031
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.032
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.033
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.034
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.035
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.036
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.037
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.038
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.039
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.040
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.041
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.042
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.046
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.047
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.048
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.049
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.050
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.051
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.052
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.053
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.055
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.058
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.059
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.060
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.061
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.062
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.063
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.068
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.069
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.071
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.072
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.073
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.074
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.075
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.086
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.087
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.088
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.089
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.090
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.091
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.092
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.093
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.094
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.095
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.099
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.100
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.101
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.102
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.103
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.104
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.107
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.108
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.109
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.110
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.111
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.112
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.117
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.118
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.119
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas.png.120
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
