@@ -66,9 +66,17 @@ public class CharacterControl : MonoBehaviour {
 			// move a bit towards target
 		}
 		else {
+			
 			// autoattack
-			this.hero.AutoAttack(this.playerTarget);
+			RotateTowards(this.playerTarget.transform);
+			this.hero.StartAutoAttack(this.playerTarget);
 		}
+	}
+
+	private void RotateTowards (Transform target) {
+		Vector3 direction = (target.position - transform.position).normalized;
+		Quaternion lookRotation = Quaternion.LookRotation(direction);
+		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 	}
 
     public void SetTarget()

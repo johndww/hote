@@ -1867,8 +1867,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139d3261f20d27f4a829ac8f74ffa4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAttackPrefab: {fileID: 1000011422196548, guid: 7b555194072dd4bc7b46e361fd698a22,
+  prefabProjectile: {fileID: 1000013196935084, guid: 4cedeac6947cc45a59440e4d8a6dff37,
     type: 2}
+  prefabSpikes: {fileID: 1000011422196548, guid: 7b555194072dd4bc7b46e361fd698a22,
+    type: 2}
+  projectileSpeed: 40
 --- !u!136 &136000010278404188
 CapsuleCollider:
   m_ObjectHideFlags: 1

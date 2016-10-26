@@ -7,12 +7,12 @@ using System.Collections;
 
 class EarthMage : Hero
 {
-	public GameObject autoAttackPrefab;
+	public GameObject prefabProjectile;
+	public GameObject prefabSpikes;
+	public float projectileSpeed = 40;
 
-	// initialized in 
+	// initialized in awake
 	private AttackState attackState;
-
-	private enum AutoAttackSeq { ONE=30, TWO=50, THREE=70 }
 
 	void Awake() {
 		this.attackState = AttackState.None();
@@ -33,7 +33,7 @@ class EarthMage : Hero
         Debug.Log("earth mage attacking with: " + type);
     }
 
-	public override void AutoAttack (GameObject target) {
+	public override void StartAutoAttack (GameObject target) {
 		if (this.attackState.isFinished()) {
 			var coroutine = DoAutoAttack(target);
 			this.attackState = AttackState.create(coroutine, true);
@@ -43,9 +43,9 @@ class EarthMage : Hero
 
 	IEnumerator DoAutoAttack (GameObject target)
 	{
-		AutoAttackSeq[] attacks = new AutoAttackSeq[3] { AutoAttackSeq.ONE, AutoAttackSeq.TWO, AutoAttackSeq.THREE };
+		var autoAttackWaves = generateAutoAttacks();
 
-		foreach (AutoAttackSeq attack in attacks) {
+		foreach (AutoAttack attack in autoAttackWaves) {
 			var isAlive = target.GetComponent<Hero>().IsAlive();
 			if (!isAlive) {
 				this.attackState.finished = true;
@@ -53,17 +53,20 @@ class EarthMage : Hero
 			}
 
 			//FIRE!!!
-			FireAutoAttack(target, attack);
+			attack.fire(gameObject, target);
 
 			yield return new WaitForSeconds(1.0f);
 		}
 		this.attackState.finished = true;
 	}
 
-	void FireAutoAttack (GameObject target, AutoAttackSeq attack)
+	AutoAttack[] generateAutoAttacks ()
 	{
-//		Instantiate(autoAttackPrefab, target.transform.position, Quaternion.identity) as GameObject;
-		target.GetComponent<Hero>().TakeDamage((int)attack);
+		AutoAttack[] autoAttackWaves = new AutoAttack[3];
+		autoAttackWaves[0] = WaveOne.create(this.prefabProjectile, projectileSpeed);
+		autoAttackWaves[1] = WaveTwo.create(this.prefabProjectile, projectileSpeed);
+		autoAttackWaves[2] = WaveThree.create(this.prefabSpikes);
+		return autoAttackWaves;
 	}
 
 	public override Boolean StopAttack() {
@@ -88,5 +91,4 @@ class EarthMage : Hero
 		}
 		attackState.finished = true;
 	}
-
 }

@@ -18,7 +18,7 @@ abstract class Hero : MonoBehaviour
 	/// Autoattack the enemy playerTarget. This method assumes the target is within range of it's autoattack.
 	/// However, it does _not_ assume the character's autoattack if off cooldown.
 	/// </summary>
-	public abstract void AutoAttack (GameObject playerTarget);
+	public abstract void StartAutoAttack (GameObject playerTarget);
 
 	public abstract bool StopAttack();
 

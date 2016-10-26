@@ -22,7 +22,7 @@ class Gladiator : Hero
         Debug.Log("Gladiator attacking with: " + type);
 	}
 
-	public override void AutoAttack (GameObject target) {
+	public override void StartAutoAttack (GameObject target) {
 		Debug.Log ("Gladiator autoattacking" + target);
 	}
 

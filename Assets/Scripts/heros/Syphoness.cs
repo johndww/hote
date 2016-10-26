@@ -22,7 +22,7 @@ class Syphoness : Hero
         Debug.Log("Syphoness attacking with: " + type);
     }
 
-    public override void AutoAttack(GameObject target)
+    public override void StartAutoAttack(GameObject target)
     {
         Debug.Log("Syphoness autoattacking" + target);
     }

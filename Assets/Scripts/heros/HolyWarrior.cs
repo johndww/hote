@@ -22,7 +22,7 @@ class HolyWarrior : Hero
         Debug.Log("Holy Warrior attacking with: " + type);
     }
 
-	public override void AutoAttack (GameObject target) {
+	public override void StartAutoAttack (GameObject target) {
 		Debug.Log ("holy warrior autoattacking" + target);
 	}
 

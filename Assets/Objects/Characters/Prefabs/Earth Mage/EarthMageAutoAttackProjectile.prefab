@@ -22,6 +22,7 @@ GameObject:
   - 33: {fileID: 33000011721373542}
   - 23: {fileID: 23000013637437282}
   - 95: {fileID: 95000013366246928}
+  - 114: {fileID: 114000012973554594}
   m_Layer: 0
   m_Name: EarthMageAutoAttackProjectile
   m_TagString: Untagged
@@ -95,3 +96,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000012973554594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013196935084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c1661c51f984e0ea8f6dcdb4fabf6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

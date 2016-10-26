@@ -22,7 +22,7 @@ class Jaeger : Hero
         Debug.Log("Jaeger attacking with: " + type);
 	}
 
-	public override void AutoAttack (GameObject target) {
+	public override void StartAutoAttack (GameObject target) {
 		Debug.Log ("Jaeger autoattacking" + target);
 	}
 
