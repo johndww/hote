@@ -20,6 +20,8 @@ abstract class Hero : MonoBehaviour
 	/// </summary>
 	public abstract void StartAutoAttack (GameObject playerTarget);
 
+	public abstract bool IsAttacking();
+
 	public abstract bool StopAttack();
 
 	public Boolean IsAlive ()

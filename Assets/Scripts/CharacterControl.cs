@@ -25,6 +25,9 @@ public class CharacterControl : MonoBehaviour {
     // gameobject who this player is currently targeting
     private GameObject playerTarget;
 
+	// bookmark to know we've seen the hero as dead. the death source of truth is the hero
+	private bool charIsDead;
+
 	private Hero hero;
 
 
@@ -47,40 +50,106 @@ public class CharacterControl : MonoBehaviour {
     /// </summary>
     void Update()
     {
-		if (this.hero.isDead()) {
+		if (isDead()) {
 			return;
 		}
 
         if (isWalking)
         {
             WalkControl();
+			return;
         }
-		else if (this.playerTarget != null && !this.playerTarget.GetComponent<Hero>().isDead()) {
+
+		if (this.playerTarget == null) {
+			// no need to do any more work if we haven't targetted anyone
+			return;
+		}
+
+		if (RotateTowards(this.playerTarget.transform)) {
+			// need to rotate more before we can do anything
+			return;
+		}
+
+		if (!this.hero.IsAttacking()) {
 			AttemptToAutoAttack ();
 		}
     }
 
-	void AttemptToAutoAttack ()
+	/// <summary>
+	/// Hacky method. This should simply be represented by this.hero.IsDead(). However,
+	/// there seems to be a bug with Unity (or more likely, with our code) that prevents us from
+	/// transitioning from Walking to Dead in one frame.  This block of code effectively gives us 1 frame extra
+	/// to transition from Walking->Idle and then AnyState->Dead which appears to work.
+	/// </summary>
+	bool isDead ()
 	{
+		if (this.charIsDead) {
+			if (this.anim.GetInteger(ANIM_STATE) != (int)Anim.DEATH) {
+				this.anim.SetInteger(ANIM_STATE, (int)Anim.DEATH);
+			}
+		}
+
+		if (this.hero.isDead() && !this.charIsDead) {
+			this.charIsDead = true;
+			if (this.isWalking) {
+				StopWalking();
+			}
+			if (this.hero.IsAttacking()) {
+				this.hero.StopAttack();
+			}
+		}
+		return this.charIsDead;
+	}
+
+	private void AttemptToAutoAttack ()
+	{
+		if (this.playerTarget.GetComponent<Hero>().isDead()) {
+			this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
+			return;
+		}
+
 		if (this.hero.isTooFarToAutoAttack()) {
 			// move a bit towards target
 		}
 		else {
-			
-			// autoattack
-			RotateTowards(this.playerTarget.transform);
+			StartAutoAttackAnimation();
 			this.hero.StartAutoAttack(this.playerTarget);
 		}
 	}
 
-	private void RotateTowards (Transform target) {
+	private void StartAutoAttackAnimation ()
+	{
+		// start autoattack animation if we weren't previously autoattacking
+		if (this.anim.GetInteger(ANIM_STATE) != (int)Anim.AUTOATTACK) {
+			this.anim.SetInteger(ANIM_STATE, (int)Anim.AUTOATTACK);
+		}
+		else {
+			// if we're already autoattack, we need to reset the animation
+			this.anim.Play("AutoAttacks", -1, 0f);
+		}
+	}
+
+	private bool RotateTowards (Transform target) {
 		Vector3 direction = (target.position - transform.position).normalized;
 		Quaternion lookRotation = Quaternion.LookRotation(direction);
+		float angle = Quaternion.Angle(transform.rotation, lookRotation);
+
+		if (angle < 5f) {
+			// slerping is strange. give up rotating if we're less than 5 degrees angled from target
+			// to smooth out (and speed up) the rotation transition
+			return false;
+		}
+
 		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+		return true;
 	}
 
     public void SetTarget()
     {
+		if (this.hero.isDead()) {
+			return;
+		}
+
         RaycastHit hitInfo = new RaycastHit();
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, 200, this.heroLayerMask))
         {
@@ -105,6 +174,7 @@ public class CharacterControl : MonoBehaviour {
 			// only switch to another target if we can stop attacking
 			if (GetComponent<Hero>().StopAttack()) {
 				playerTarget = hitInfo.collider.gameObject;
+
 				Debug.Log("new target " + playerTarget);
 			}
         }
@@ -136,6 +206,10 @@ public class CharacterControl : MonoBehaviour {
 
     public void Move()
     {
+		if (this.hero.isDead()) {
+			return;
+		}
+
 		// attempt to stop attacking (if attacking) so we can move
 		if (!this.hero.StopAttack()) {
 			// can't stop attacking so the move command is ignored
@@ -163,6 +237,10 @@ public class CharacterControl : MonoBehaviour {
 
     public void Attack(AttackType type)
     {
+		if (this.hero.isDead()) {
+			return;
+		}
+
         StopWalking();
         this.anim.SetInteger(ANIM_STATE, (int)attackAnimMap[type]);
 		this.hero.Attack(type);

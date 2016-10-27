@@ -31,4 +31,8 @@ class Syphoness : Hero
     {
         return true;
     }
+
+	public override bool IsAttacking() {
+		return false;
+	}
 }

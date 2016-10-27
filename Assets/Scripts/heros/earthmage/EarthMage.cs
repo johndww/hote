@@ -34,11 +34,13 @@ class EarthMage : Hero
     }
 
 	public override void StartAutoAttack (GameObject target) {
-		if (this.attackState.isFinished()) {
-			var coroutine = DoAutoAttack(target);
-			this.attackState = AttackState.create(coroutine, true);
-			StartCoroutine(coroutine);
-		}
+		var coroutine = DoAutoAttack(target);
+		this.attackState = AttackState.create(coroutine, true);
+		StartCoroutine(coroutine);
+	}
+
+	public override bool IsAttacking() {
+		return !this.attackState.isFinished();
 	}
 
 	IEnumerator DoAutoAttack (GameObject target)
@@ -46,17 +48,26 @@ class EarthMage : Hero
 		var autoAttackWaves = generateAutoAttacks();
 
 		foreach (AutoAttack attack in autoAttackWaves) {
-			var isAlive = target.GetComponent<Hero>().IsAlive();
-			if (!isAlive) {
+			if (isDead()) {
+				// we're dead, probably can't keep attacking :\
+				yield break;
+			}
+
+			// timing for each attack wave
+			yield return new WaitForSeconds(attack.waitTime());
+
+			if (!target.GetComponent<Hero>().IsAlive()) {
+				// target is dead, can't attack them!
 				this.attackState.finished = true;
 				yield break;
 			}
 
-			//FIRE!!!
+			// FIRE!!!
 			attack.fire(gameObject, target);
 
-			yield return new WaitForSeconds(1.0f);
 		}
+
+		yield return new WaitForSeconds (1.0f);
 		this.attackState.finished = true;
 	}
 

@@ -29,4 +29,8 @@ class HolyWarrior : Hero
 	public override Boolean StopAttack() {
 		return true;
 	}
+
+	public override bool IsAttacking() {
+		return false;
+	}
 }

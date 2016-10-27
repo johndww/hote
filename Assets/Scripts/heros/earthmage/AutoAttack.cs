@@ -9,6 +9,8 @@ public abstract class AutoAttack : ScriptableObject {
 	protected float speed;
 
 	public abstract void fire(GameObject source, GameObject target);
+
+	public abstract float waitTime ();
 }
 
 class WaveOne : AutoAttack {
@@ -24,6 +26,10 @@ class WaveOne : AutoAttack {
 	public override void fire(GameObject source, GameObject target) {
 		GameObject projectile = GameObject.Instantiate(prefab, source.transform.position, Quaternion.identity) as GameObject;
 		projectile.GetComponent<ProjectileSeeker>().seek(target, speed, damage);
+	}
+
+	public override float waitTime() {
+		return 0.1f;
 	}
 }
 
@@ -45,6 +51,10 @@ class WaveTwo : AutoAttack {
 		projectile1.GetComponent<ProjectileSeeker>().seek(target, speed, damage);
 		projectile2.GetComponent<ProjectileSeeker>().seek(target, speed, damage);
 	}
+
+	public override float waitTime() {
+		return 0.6f;
+	}
 }
 
 
@@ -62,5 +72,9 @@ class WaveThree : AutoAttack {
 	public override void fire(GameObject source, GameObject target) {
 		GameObject spikes = Instantiate(prefab, target.transform.position, Quaternion.identity) as GameObject;
 		spikes.GetComponent<TimedStationaryAttack>().init(target, damage, 2);
+	}
+
+	public override float waitTime() {
+		return 1.9f;
 	}
 }
