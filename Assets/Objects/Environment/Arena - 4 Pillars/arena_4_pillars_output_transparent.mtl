@@ -1,5 +1,5 @@
 # Blender MTL File: 'arena_4_pillars_output.blend'
-# Material Count: 20
+# Material Count: 12
 
 newmtl Material.000
 Ns 96.078431
@@ -25,79 +25,7 @@ illum 0
 map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
 map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
 
-newmtl Material.001_arena_4_pillars_atlas.png.012
-Ns 96.078431
-Ka 1.000000 1.000000 1.000000
-Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 0.000000
-illum 0
-map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
-map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
-
 newmtl Material.002
-Ns 96.078431
-Ka 1.000000 1.000000 1.000000
-Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 0.000000
-illum 0
-map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
-map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
-
-newmtl Material.002_arena_4_pillars_atlas.png.002
-Ns 96.078431
-Ka 1.000000 1.000000 1.000000
-Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 0.000000
-illum 0
-map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
-map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
-
-newmtl Material.002_arena_4_pillars_atlas.png.005
-Ns 96.078431
-Ka 1.000000 1.000000 1.000000
-Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 0.000000
-illum 0
-map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
-map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
-
-newmtl Material.002_arena_4_pillars_atlas.png.006
-Ns 96.078431
-Ka 1.000000 1.000000 1.000000
-Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 0.000000
-illum 0
-map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
-map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
-
-newmtl Material.002_arena_4_pillars_atlas.png.007
-Ns 96.078431
-Ka 1.000000 1.000000 1.000000
-Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 0.000000
-illum 0
-map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
-map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
-
-newmtl Material.002_arena_4_pillars_atlas.png.017
 Ns 96.078431
 Ka 1.000000 1.000000 1.000000
 Kd 0.640000 0.640000 0.640000
@@ -122,18 +50,6 @@ map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_
 map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
 
 newmtl Material.013
-Ns 96.078431
-Ka 1.000000 1.000000 1.000000
-Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 0.000000
-illum 0
-map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
-map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
-
-newmtl Material.014
 Ns 96.078431
 Ka 1.000000 1.000000 1.000000
 Kd 0.640000 0.640000 0.640000
@@ -218,18 +134,6 @@ map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_
 map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
 
 newmtl Material.021
-Ns 96.078431
-Ka 1.000000 1.000000 1.000000
-Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 0.000000
-illum 0
-map_Kd C:\Users\stefa\iCloudDrive\Heroes of the Empire\Blender\Textures\arena_4_pillars_atlas.png
-map_d  C:\\Users\\stefa\\iCloudDrive\\Heroes of the Empire\\Blender\\Textures\\texture_atlas.psd
-
-newmtl Material.021_arena_4_pillars_atlas.png.025
 Ns 96.078431
 Ka 1.000000 1.000000 1.000000
 Kd 0.640000 0.640000 0.640000
