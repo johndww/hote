@@ -20,7 +20,10 @@ public class CharacterControl : MonoBehaviour {
     private NavMeshAgent navMesh;
 	private GameObject locationPointer;
 
-    private Boolean isWalking;
+	// player controlled walking
+	private bool isPlayerForcedWalking;
+	// autoattack seek walking - trying to get in range to autoattack
+	private bool isSeekWalking;
 
     // gameobject who this player is currently targeting
     private GameObject playerTarget;
@@ -46,7 +49,9 @@ public class CharacterControl : MonoBehaviour {
     }
 
     /// <summary>
-    /// Evaluated every frame
+    /// Character control's main body of work is moving, animating, and delegating to the hero for attacking.
+	/// Controlling a animation state machine frame by frame is hard. The easiest way to ensure one state change
+	/// per frame is to always exit Update() immediately on each state change.
     /// </summary>
     void Update()
     {
@@ -54,14 +59,34 @@ public class CharacterControl : MonoBehaviour {
 			return;
 		}
 
-        if (isWalking)
+		if (isPlayerForcedWalking)
         {
-            WalkControl();
+            PlayerWalkControl();
 			return;
         }
 
 		if (this.playerTarget == null) {
 			// no need to do any more work if we haven't targetted anyone
+			return;
+		}
+
+		if (this.playerTarget.GetComponent<Hero>().isDead()) {
+			this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
+			return;
+		}
+
+		if (this.hero.OutOfRange(this.playerTarget)) {
+			// move towards target until we're in range
+			this.navMesh.destination = this.playerTarget.transform.position;
+			this.anim.SetInteger(ANIM_STATE, (int) Anim.WALK);
+			this.isSeekWalking = true;
+			return;
+		}
+		else if (this.isSeekWalking) {
+			// we were just seekwalking, but now we're close enough to the target to autoattack
+			// dont try and autoattack this frame, just stop walking, and we'll attack next frame
+			this.isSeekWalking = false;
+			StopWalking();
 			return;
 		}
 
@@ -71,7 +96,8 @@ public class CharacterControl : MonoBehaviour {
 		}
 
 		if (!this.hero.IsAttacking()) {
-			AttemptToAutoAttack ();
+			StartAutoAttackAnimation();
+			this.hero.StartAutoAttack(this.playerTarget);
 		}
     }
 
@@ -91,7 +117,7 @@ public class CharacterControl : MonoBehaviour {
 
 		if (this.hero.isDead() && !this.charIsDead) {
 			this.charIsDead = true;
-			if (this.isWalking) {
+			if (this.isPlayerForcedWalking) {
 				StopWalking();
 			}
 			if (this.hero.IsAttacking()) {
@@ -99,22 +125,6 @@ public class CharacterControl : MonoBehaviour {
 			}
 		}
 		return this.charIsDead;
-	}
-
-	private void AttemptToAutoAttack ()
-	{
-		if (this.playerTarget.GetComponent<Hero>().isDead()) {
-			this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
-			return;
-		}
-
-		if (this.hero.isTooFarToAutoAttack()) {
-			// move a bit towards target
-		}
-		else {
-			StartAutoAttackAnimation();
-			this.hero.StartAutoAttack(this.playerTarget);
-		}
 	}
 
 	private void StartAutoAttackAnimation ()
@@ -180,20 +190,20 @@ public class CharacterControl : MonoBehaviour {
         }
     }
 
-    private void WalkControl()
+    private void PlayerWalkControl()
     {
         // navmesh is buggy. need to check alot to determine that we're done walking (or reached destination)
         if ((!this.navMesh.pathPending)
             && (this.navMesh.remainingDistance <= this.navMesh.stoppingDistance)
             && (!this.navMesh.hasPath || this.navMesh.velocity.sqrMagnitude == 0f))
         {
+			this.isPlayerForcedWalking = false;
             StopWalking();
         }
     }
 
     private void StopWalking()
     {
-        this.isWalking = false;
         this.navMesh.Stop();
         this.navMesh.ResetPath();
         this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
@@ -227,9 +237,9 @@ public class CharacterControl : MonoBehaviour {
 			this.locationPointer.GetComponent<Animator>().SetTrigger("mark");
 
             // might have already been walking. only start the animation if we just started
-            if (!isWalking)
+            if (!isPlayerForcedWalking)
             {
-                isWalking = true;
+                isPlayerForcedWalking = true;
                 this.anim.SetInteger(ANIM_STATE, (int) Anim.WALK);
             }
         }

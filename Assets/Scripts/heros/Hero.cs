@@ -24,9 +24,25 @@ abstract class Hero : MonoBehaviour
 
 	public abstract bool StopAttack();
 
-	public Boolean IsAlive ()
+	public virtual float AttackRange() {
+		return 40f;
+	}
+
+	public bool InRange(GameObject target) {
+		return Vector3.Distance(target.transform.position, gameObject.transform.position) <= AttackRange();
+	}
+
+	public bool OutOfRange(GameObject target) {
+		return !InRange(target);
+	}
+
+	public bool IsAlive ()
 	{
 		return this.hp > 0;
+	}
+
+	public bool IsDead() {
+		return !IsAlive();
 	}
 
 	/// <summary>
@@ -53,12 +69,6 @@ abstract class Hero : MonoBehaviour
 	{
 		this.hp = 0;
 		Debug.Log("DEAD: " + gameObject);
-	}
-
-	public Boolean isTooFarToAutoAttack ()
-	{
-		//TODO make abstract for heros to determine
-		return false;
 	}
 
 	public Boolean isDead() {

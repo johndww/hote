@@ -56,8 +56,8 @@ class EarthMage : Hero
 			// timing for each attack wave
 			yield return new WaitForSeconds(attack.waitTime());
 
-			if (!target.GetComponent<Hero>().IsAlive()) {
-				// target is dead, can't attack them!
+			if (target.GetComponent<Hero>().IsDead() || OutOfRange(target)) {
+				// can't attack anymore
 				this.attackState.finished = true;
 				yield break;
 			}
