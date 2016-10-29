@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 /// <summary>
-/// Character control for an indivudal hero.
+/// Character control for an individual hero.
 /// 
 /// Synchronization based on https://unity3d.com/learn/tutorials/topics/multiplayer-networking/introduction-simple-multiplayer-example?playlist=29690
 /// </summary>
@@ -171,16 +171,21 @@ public class CharacterControl : MonoBehaviour {
 				return;
 			}
 
+			if (isSeekWalking || isPlayerForcedWalking) {
+				StopWalking();
+			}
+
 			// haven't selected anyone yet, just accept the new target
 			if (playerTarget == null) {
 				playerTarget = hitInfo.collider.gameObject;
+				return;
 			}
 
 			// targetting the same target, nothing to do
 			if (targetted.GetInstanceID() == playerTarget.GetInstanceID()) {
 				return;
 			}
-
+				
 			// only switch to another target if we can stop attacking
 			if (GetComponent<Hero>().StopAttack()) {
 				playerTarget = hitInfo.collider.gameObject;
