@@ -104,6 +104,7 @@ ModelImporter:
     7400012: Green
     7400014: Blue
     7400016: Red
+    7400018: Purple
     9500000: //RootNode
     13700000: Mace
     13700002: Paladin_Mesh
@@ -838,6 +839,108 @@ ModelImporter:
       takeName: Default Take
       firstFrame: 3000
       lastFrame: 3037
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_001
+        weight: 1
+      - path: Armature_001/Leg_Control_L
+        weight: 1
+      - path: Armature_001/Leg_Control_L/Foot_L
+        weight: 1
+      - path: Armature_001/Leg_Control_L/Foot_L/Toes_L
+        weight: 1
+      - path: Armature_001/Leg_Control_R
+        weight: 1
+      - path: Armature_001/Leg_Control_R/Foot_R
+        weight: 1
+      - path: Armature_001/Leg_Control_R/Foot_R/Toes_R
+        weight: 1
+      - path: Armature_001/Torso
+        weight: 1
+      - path: Armature_001/Torso/Chest
+        weight: 1
+      - path: Armature_001/Torso/Chest/Neck
+        weight: 1
+      - path: Armature_001/Torso/Chest/Neck/Head
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001/Hand_L_002
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L/Thumb01_L_001
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Hand_R_001
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Hand_R_001/Hand_R_002
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R/Thumb01_R_001
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_L
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_R
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Charge_Trace
+        weight: 1
+      - path: Holy_Warrior_Mesh
+        weight: 1
+      - path: Mace
+        weight: 1
+      - path: Shield
+        weight: 1
+      - path: Shield_Shine
+        weight: 1
+      - path: Shoulders
+        weight: 1
+      - path: Weapon_Trace
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Purple
+      takeName: Default Take
+      firstFrame: 3500
+      lastFrame: 3549
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
