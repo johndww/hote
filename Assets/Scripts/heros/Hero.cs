@@ -12,13 +12,20 @@ abstract class Hero : MonoBehaviour
 
     public abstract void Selected();
 
-    public abstract void Attack(AttackType attack);
+    public abstract void BlueAttack();
 
-	/// <summary>
-	/// Autoattack the enemy playerTarget. This method assumes the target is within range of it's autoattack.
-	/// However, it does _not_ assume the character's autoattack if off cooldown.
-	/// </summary>
-	public abstract void StartAutoAttack (GameObject playerTarget);
+    public abstract void GreenAttack();
+
+    public abstract void PurpleAttack();
+
+    public abstract void RedAttack();
+
+
+    /// <summary>
+    /// Autoattack the enemy playerTarget. This method assumes the target is within range of it's autoattack.
+    /// However, it does _not_ assume the character's autoattack if off cooldown.
+    /// </summary>
+    public abstract void StartAutoAttack (GameObject playerTarget);
 
 	public abstract bool IsAttacking();
 

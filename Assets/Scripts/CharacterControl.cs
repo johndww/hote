@@ -259,7 +259,21 @@ public class CharacterControl : MonoBehaviour {
 
         StopWalking();
         this.anim.SetInteger(ANIM_STATE, (int)attackAnimMap[type]);
-		this.hero.Attack(type);
+
+        switch (type)
+        {
+            case AttackType.BLUE:
+                break;
+            case AttackType.GREEN:
+                this.hero.GreenAttack();
+                break;
+            case AttackType.PURPLE:
+                break;
+            case AttackType.RED:
+                break;
+            default:
+                throw new ArgumentException("unknown attack: " + type);
+        }
     }
 
     private static Dictionary<AttackType, Anim> generateAttackTypeToAnimMap()

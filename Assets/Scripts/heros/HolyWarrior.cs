@@ -17,12 +17,27 @@ class HolyWarrior : Hero
 //        Debug.Log("Holy Warrior hero selected");
     }
 
-    public override void Attack(AttackType type)
+    public override void BlueAttack()
     {
-        Debug.Log("Holy Warrior attacking with: " + type);
+        Debug.Log("earth mage attacking with blue");
     }
 
-	public override void StartAutoAttack (GameObject target) {
+    public override void GreenAttack()
+    {
+        Debug.Log("earth mage attacking with green");
+    }
+
+    public override void PurpleAttack()
+    {
+        Debug.Log("earth mage attacking with purple");
+    }
+
+    public override void RedAttack()
+    {
+        Debug.Log("earth mage attacking with red");
+    }
+
+    public override void StartAutoAttack (GameObject target) {
 		Debug.Log ("holy warrior autoattacking" + target);
 	}
 
