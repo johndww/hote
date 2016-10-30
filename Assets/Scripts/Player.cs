@@ -58,20 +58,30 @@ public class Player : MonoBehaviour
     {
         PlayerInput.Type playerInput = PlayerInput.getPlayerInput();
 
-		// code below is only valid to be on a selected character
-		if (this.selectedCharacter == null) {
-			return;
-		}
+		foreach (GameObject character in characters) {
+            var characterControl = character.GetComponent<CharacterControl>();
 
-		var characterControl = this.selectedCharacter.GetComponent<CharacterControl>();
-
-        if (playerInput == PlayerInput.Type.MOVE)
-        {
-			characterControl.Move();
+            // selected character gets to read player input. all other characters just get regular updates
+            if (this.selectedCharacter != null && this.selectedCharacter.GetInstanceID() == character.GetInstanceID())
+            {
+                switch (playerInput)
+                {
+                    case PlayerInput.Type.MOVE:
+                        characterControl.Move();
+                        break;
+                    case PlayerInput.Type.SELECT:
+                        characterControl.SetTarget();
+                        break;
+                    default:
+                        characterControl.doUpdate();
+                        break;
+                }      
+            }
+            else
+            {
+                characterControl.doUpdate();
+            }
         }
-		else if (playerInput == PlayerInput.Type.SELECT) {
-			characterControl.SetTarget();
-		}
     }
 
     Vector3[] getSpawnPoints()

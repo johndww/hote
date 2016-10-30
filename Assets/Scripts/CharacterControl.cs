@@ -51,9 +51,10 @@ public class CharacterControl : MonoBehaviour {
     /// <summary>
     /// Character control's main body of work is moving, animating, and delegating to the hero for attacking.
 	/// Controlling a animation state machine frame by frame is hard. The easiest way to ensure one state change
-	/// per frame is to always exit Update() immediately on each state change.
+	/// per frame is to always exit doUpdate() immediately on each state change. No Update() call for this class,
+    /// only doUpdate, which is called on the Player Update().  This avoids two separate animation changes in one frame.
     /// </summary>
-    void Update()
+    public void doUpdate()
     {
 		if (isDead()) {
 			return;
