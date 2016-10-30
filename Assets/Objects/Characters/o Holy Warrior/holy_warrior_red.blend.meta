@@ -15,6 +15,7 @@ ModelImporter:
     100014: Bolt_1
     100016: Bolt_2
     100018: Bolt_3
+    100020: Ring_001
     400000: //RootNode
     400002: Mace
     400004: Sphere
@@ -25,6 +26,7 @@ ModelImporter:
     400014: Bolt_1
     400016: Bolt_2
     400018: Bolt_3
+    400020: Ring_001
     2300000: Mace
     2300002: Sphere
     2300004: ring
@@ -34,6 +36,7 @@ ModelImporter:
     2300012: Bolt_1
     2300014: Bolt_2
     2300016: Bolt_3
+    2300018: Ring_001
     3300000: Mace
     3300002: Sphere
     3300004: ring
@@ -43,6 +46,7 @@ ModelImporter:
     3300012: Bolt_1
     3300014: Bolt_2
     3300016: Bolt_3
+    3300018: Ring_001
     4300000: Mace
     4300002: Sphere
     4300004: ring
@@ -52,6 +56,7 @@ ModelImporter:
     4300012: Bolt_2
     4300014: Bolt_1
     4300016: Bolt_3
+    4300018: Ring_001
     7400000: Hammer
     7400002: AoE
     7400004: Mace
@@ -79,7 +84,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: AoE
+      name: Red
       takeName: Default Take
       firstFrame: 0
       lastFrame: 240
@@ -105,12 +110,6 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Bolt_1
-        weight: 1
-      - path: Bolt_2
-        weight: 1
-      - path: Bolt_3
-        weight: 1
       - path: Impact_Shine
         weight: 1
       - path: Mace
@@ -118,6 +117,8 @@ ModelImporter:
       - path: Mace_Trace
         weight: 1
       - path: Ring
+        weight: 1
+      - path: Ring_001
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
