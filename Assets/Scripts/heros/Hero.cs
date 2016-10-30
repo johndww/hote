@@ -20,7 +20,6 @@ abstract class Hero : MonoBehaviour
 
     public abstract void RedAttack();
 
-
     /// <summary>
     /// Autoattack the enemy playerTarget. This method assumes the target is within range of it's autoattack.
     /// However, it does _not_ assume the character's autoattack if off cooldown.

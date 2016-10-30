@@ -9,6 +9,7 @@ class EarthMage : Hero
 {
 	public GameObject prefabProjectile;
 	public GameObject prefabSpikes;
+    public GameObject prefabGreenAttack;
 	public float projectileSpeed = 40;
 
 	// initialized in awake
@@ -36,6 +37,8 @@ class EarthMage : Hero
     public override void GreenAttack()
     {
         Debug.Log("earth mage attacking with green");
+        //TODO start this as a coroutine with destroy. prevent incoming damage. heal. fix animator. prevent walking
+        GameObject.Instantiate(this.prefabGreenAttack, gameObject.transform.position, Quaternion.identity);
     }
 
     public override void PurpleAttack()

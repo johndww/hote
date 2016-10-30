@@ -1871,6 +1871,8 @@ MonoBehaviour:
     type: 2}
   prefabSpikes: {fileID: 1000011422196548, guid: 7b555194072dd4bc7b46e361fd698a22,
     type: 2}
+  prefabGreenAttack: {fileID: 1000012401435502, guid: 8f33c545fc4472b49a46b580d1e0eb1f,
+    type: 2}
   projectileSpeed: 40
 --- !u!136 &136000010278404188
 CapsuleCollider:
