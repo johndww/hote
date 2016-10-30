@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: fd8405b26a683614ca11474d6ae2a2b5
+timeCreated: 1477769096
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Mace
+    100004: Sphere
+    100006: ring
+    100008: Mace_Trace
+    100010: Ring
+    100012: Impact_Shine
+    100014: Bolt_1
+    100016: Bolt_2
+    100018: Bolt_3
+    400000: //RootNode
+    400002: Mace
+    400004: Sphere
+    400006: ring
+    400008: Mace_Trace
+    400010: Ring
+    400012: Impact_Shine
+    400014: Bolt_1
+    400016: Bolt_2
+    400018: Bolt_3
+    2300000: Mace
+    2300002: Sphere
+    2300004: ring
+    2300006: Mace_Trace
+    2300008: Ring
+    2300010: Impact_Shine
+    2300012: Bolt_1
+    2300014: Bolt_2
+    2300016: Bolt_3
+    3300000: Mace
+    3300002: Sphere
+    3300004: ring
+    3300006: Mace_Trace
+    3300008: Ring
+    3300010: Impact_Shine
+    3300012: Bolt_1
+    3300014: Bolt_2
+    3300016: Bolt_3
+    4300000: Mace
+    4300002: Sphere
+    4300004: ring
+    4300006: Mace_Trace
+    4300008: Ring
+    4300010: Impact_Shine
+    4300012: Bolt_2
+    4300014: Bolt_1
+    4300016: Bolt_3
+    7400000: Hammer
+    7400002: AoE
+    7400004: Mace
+    7400006: Red
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: AoE
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bolt_1
+        weight: 1
+      - path: Bolt_2
+        weight: 1
+      - path: Bolt_3
+        weight: 1
+      - path: Impact_Shine
+        weight: 1
+      - path: Mace
+        weight: 1
+      - path: Mace_Trace
+        weight: 1
+      - path: Ring
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
