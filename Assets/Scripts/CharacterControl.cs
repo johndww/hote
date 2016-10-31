@@ -265,7 +265,7 @@ public class CharacterControl : MonoBehaviour {
 
     public void Attack(AttackType type)
     {
-		if (this.hero.isDead()) {
+		if (this.hero.isDead() || this.playerTarget.GetComponent<Hero>().isDead()) {
 			return;
 		}
 			
@@ -274,24 +274,25 @@ public class CharacterControl : MonoBehaviour {
 			return;
 		}
 
-        StopWalking();
+		StopWalking();
 
 		bool playAnimation = false;
+
 		switch (type) {
-			case AttackType.BLUE:
-				playAnimation = true;
-				break;
-			case AttackType.GREEN:
-				playAnimation = this.hero.GreenAttack();
-				break;
-			case AttackType.PURPLE:
-				playAnimation = true;
-				break;
-			case AttackType.RED:
-				playAnimation = true;
-				break;
-			default:
-				throw new ArgumentException ("unknown attack: " + type);
+		case AttackType.BLUE:
+			playAnimation = true;
+			break;
+		case AttackType.GREEN:
+			playAnimation = this.hero.GreenAttack();
+			break;
+		case AttackType.PURPLE:
+			playAnimation = true;
+			break;
+		case AttackType.RED:
+			playAnimation = this.hero.RedAttack(this.playerTarget);
+			break;
+		default:
+			throw new ArgumentException ("unknown attack: " + type);
 		}
 
 		if (playAnimation) {

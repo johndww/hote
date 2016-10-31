@@ -35,7 +35,7 @@ class HolyWarrior : Hero
 		return true;
     }
 
-    public override bool RedAttack()
+	public override bool RedAttack(GameObject target)
     {
         Debug.Log("earth mage attacking with red");
 		return true;

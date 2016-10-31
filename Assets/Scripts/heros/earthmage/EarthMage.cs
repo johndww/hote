@@ -10,6 +10,8 @@ class EarthMage : Hero
 	public GameObject prefabProjectile;
 	public GameObject prefabSpikes;
     public GameObject prefabGreenAttack;
+	public GameObject prefabRedAttack;
+
 	public float projectileSpeed = 40;
 
 	// initialized in awake
@@ -69,11 +71,27 @@ class EarthMage : Hero
 		return true;
     }
 
-	public override bool RedAttack()
+	public override bool RedAttack(GameObject target)
     {
-        Debug.Log("earth mage attacking with red");
+		var coroutine = DoRedAttack(target);
+		this.attackState = AttackState.create(coroutine, false);
+		StartCoroutine(coroutine);
 		return true;
     }
+
+	IEnumerator DoRedAttack (GameObject target)
+	{
+		this.immobile = true;
+
+		var spikes = GameObject.Instantiate(this.prefabRedAttack, target.transform.position, Quaternion.identity) as GameObject;
+		target.GetComponent<Hero>().TakeDamageOverTime(100, 4, 1);
+
+		yield return new WaitForSeconds (2);
+		Destroy(spikes);
+
+		this.attackState.finished = true;
+		this.immobile = false;
+	}
 
     public override void StartAutoAttack (GameObject target) {
 		var coroutine = DoAutoAttack(target);

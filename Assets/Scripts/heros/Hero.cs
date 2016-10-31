@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using System.Collections;
 
 abstract class Hero : MonoBehaviour
 {
 	// non-static for possibility of future update that boots max hp temporarily
-	private int maxHp = 200;
+	private int maxHp = 2000;
 
-	protected int hp = 200;
+	protected int hp = 2000;
 
 	protected bool immobile = false;
 	protected bool invulnerable = false;
@@ -24,7 +25,7 @@ abstract class Hero : MonoBehaviour
 
 	public abstract bool PurpleAttack();
 
-	public abstract bool RedAttack();
+	public abstract bool RedAttack(GameObject target);
 
     /// <summary>
     /// Autoattack the enemy playerTarget. This method assumes the target is within range of it's autoattack.
@@ -84,6 +85,26 @@ abstract class Hero : MonoBehaviour
 		}
 		Die();
 		return false;
+	}
+
+	/// <summary>
+	/// Takes the damage over time.
+	/// </summary>
+	/// <param name="damagePerTick">Damage per tick.</param>
+	/// <param name="numTicks">Number ticks.</param>
+	/// <param name="tickRate">Tick rate (seconds per tick)</param>
+	public void TakeDamageOverTime (int damagePerTick, int numTicks, float tickRate)
+	{
+		//TODO should keep track of these dots
+		StartCoroutine(DoTakeDamageOverTime(damagePerTick, numTicks, tickRate));
+	}
+
+	IEnumerator DoTakeDamageOverTime (int damagePerTick, int numTicks, float tickRate)
+	{
+		for (int i = 0; i < numTicks; i++) {
+			TakeDamage(damagePerTick);
+			yield return new WaitForSeconds (tickRate);
+		}
 	}
 
 	public bool Heal(int amount) {
