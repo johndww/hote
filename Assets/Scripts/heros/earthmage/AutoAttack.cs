@@ -53,7 +53,7 @@ class WaveTwo : AutoAttack {
 	}
 
 	public override float waitTime() {
-		return 0.6f;
+		return 0.7f;
 	}
 }
 
@@ -75,6 +75,6 @@ class WaveThree : AutoAttack {
 	}
 
 	public override float waitTime() {
-		return 1.9f;
+		return 1.8f;
 	}
 }

@@ -86,8 +86,7 @@ public class CharacterControl : MonoBehaviour {
 		else if (this.isSeekWalking) {
 			// we were just seekwalking, but now we're close enough to the target to autoattack
 			// dont try and autoattack this frame, just stop walking, and we'll attack next frame
-			this.isSeekWalking = false;
-			StopWalking();
+			StopWalkingAndAnimation();
 			return;
 		}
 
@@ -101,6 +100,12 @@ public class CharacterControl : MonoBehaviour {
 			this.hero.StartAutoAttack(this.playerTarget);
 		}
     }
+
+	void StopWalkingAndAnimation ()
+	{
+		StopWalking();
+		this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
+	}
 
 	/// <summary>
 	/// Hacky method. This should simply be represented by this.hero.IsDead(). However,
@@ -118,14 +123,16 @@ public class CharacterControl : MonoBehaviour {
 
 		if (this.hero.isDead() && !this.charIsDead) {
 			this.charIsDead = true;
-			if (this.isPlayerForcedWalking) {
-				StopWalking();
-			}
-			if (this.hero.IsAttacking()) {
-				this.hero.StopAttack();
+			if (isWalking()) {
+				StopWalkingAndAnimation();
 			}
 		}
 		return this.charIsDead;
+	}
+
+	bool isWalking ()
+	{
+		return this.isPlayerForcedWalking || this.isSeekWalking;
 	}
 
 	private void StartAutoAttackAnimation ()
@@ -155,12 +162,16 @@ public class CharacterControl : MonoBehaviour {
 		return true;
 	}
 
-    public void SetTarget()
+	/// <summary>
+	/// Player has selected something for this character
+	/// </summary>
+    public void Select()
     {
 		if (this.hero.isDead()) {
 			return;
 		}
 
+		// we've selected a hero
         RaycastHit hitInfo = new RaycastHit();
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, 200, this.heroLayerMask))
         {
@@ -172,8 +183,8 @@ public class CharacterControl : MonoBehaviour {
 				return;
 			}
 
-			if (isSeekWalking || isPlayerForcedWalking) {
-				StopWalking();
+			if (isWalking()) {
+				StopWalkingAndAnimation();
 			}
 
 			// haven't selected anyone yet, just accept the new target
@@ -203,8 +214,7 @@ public class CharacterControl : MonoBehaviour {
             && (this.navMesh.remainingDistance <= this.navMesh.stoppingDistance)
             && (!this.navMesh.hasPath || this.navMesh.velocity.sqrMagnitude == 0f))
         {
-			this.isPlayerForcedWalking = false;
-            StopWalking();
+			StopWalkingAndAnimation();
         }
     }
 
@@ -212,7 +222,8 @@ public class CharacterControl : MonoBehaviour {
     {
         this.navMesh.Stop();
         this.navMesh.ResetPath();
-        this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
+		this.isPlayerForcedWalking = false;
+		this.isSeekWalking = false;
     }
 
     /// <summary>
@@ -222,13 +233,14 @@ public class CharacterControl : MonoBehaviour {
 
     public void Move()
     {
-		if (this.hero.isDead()) {
+		if (this.hero.isDead() || this.hero.IsImmobile()) {
 			return;
 		}
 
 		// attempt to stop attacking (if attacking) so we can move
 		if (!this.hero.StopAttack()) {
 			// can't stop attacking so the move command is ignored
+			Debug.Log("cant stop attacking, can't move");
 			return;
 		}
 
@@ -256,24 +268,35 @@ public class CharacterControl : MonoBehaviour {
 		if (this.hero.isDead()) {
 			return;
 		}
+			
+		// try and stop attacking. if we can't, no new attack this frame
+		if (this.hero.IsAttacking() && !this.hero.StopAttack()) {
+			return;
+		}
 
         StopWalking();
-        this.anim.SetInteger(ANIM_STATE, (int)attackAnimMap[type]);
 
-        switch (type)
-        {
-            case AttackType.BLUE:
-                break;
-            case AttackType.GREEN:
-                this.hero.GreenAttack();
-                break;
-            case AttackType.PURPLE:
-                break;
-            case AttackType.RED:
-                break;
-            default:
-                throw new ArgumentException("unknown attack: " + type);
-        }
+		bool playAnimation = false;
+		switch (type) {
+			case AttackType.BLUE:
+				playAnimation = true;
+				break;
+			case AttackType.GREEN:
+				playAnimation = this.hero.GreenAttack();
+				break;
+			case AttackType.PURPLE:
+				playAnimation = true;
+				break;
+			case AttackType.RED:
+				playAnimation = true;
+				break;
+			default:
+				throw new ArgumentException ("unknown attack: " + type);
+		}
+
+		if (playAnimation) {
+			this.anim.SetInteger(ANIM_STATE, (int)attackAnimMap [type]);
+		}
     }
 
     private static Dictionary<AttackType, Anim> generateAttackTypeToAnimMap()

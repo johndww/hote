@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
                         characterControl.Move();
                         break;
                     case PlayerInput.Type.SELECT:
-                        characterControl.SetTarget();
+                        characterControl.Select();
                         break;
                     default:
                         characterControl.doUpdate();

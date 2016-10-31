@@ -29,26 +29,50 @@ class EarthMage : Hero
 //        Debug.Log("earth mage hero selected");
     }
 
-    public override void BlueAttack()
+    public override bool BlueAttack()
     {
         Debug.Log("earth mage attacking with blue");
+		return true;
     }
 
-    public override void GreenAttack()
+	public override bool GreenAttack()
     {
         Debug.Log("earth mage attacking with green");
         //TODO start this as a coroutine with destroy. prevent incoming damage. heal. fix animator. prevent walking
-        GameObject.Instantiate(this.prefabGreenAttack, gameObject.transform.position, Quaternion.identity);
+		var coroutine = DoGreenAttack();
+		this.attackState = AttackState.create(coroutine, false);
+		StartCoroutine(coroutine);
+		return true;
     }
 
-    public override void PurpleAttack()
+	private IEnumerator DoGreenAttack ()
+	{
+		this.immobile = true;
+		this.invulnerable = true;
+		var rocks = GameObject.Instantiate(this.prefabGreenAttack, gameObject.transform.position, Quaternion.identity) as GameObject;
+
+		yield return new WaitForSeconds(1.0f);
+
+		this.hp = this.hp + 300;
+		Debug.Log("earth mage gained 300hp. current hp: " + this.hp);
+
+		yield return new WaitForSeconds(2.3f);
+		Destroy(rocks);
+		this.immobile = false;
+		this.invulnerable = false;
+		this.attackState.finished = true;
+	}
+
+	public override bool PurpleAttack()
     {
         Debug.Log("earth mage attacking with purple");
+		return true;
     }
 
-    public override void RedAttack()
+	public override bool RedAttack()
     {
         Debug.Log("earth mage attacking with red");
+		return true;
     }
 
     public override void StartAutoAttack (GameObject target) {

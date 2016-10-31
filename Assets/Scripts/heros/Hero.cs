@@ -8,17 +8,20 @@ abstract class Hero : MonoBehaviour
 {
 	protected int hp = 2000;
 
+	protected bool immobile = false;
+	protected bool invulnerable = false;
+
     public abstract HeroType GetHeroType();
 
     public abstract void Selected();
 
-    public abstract void BlueAttack();
+	public abstract bool BlueAttack();
 
-    public abstract void GreenAttack();
+    public abstract bool GreenAttack();
 
-    public abstract void PurpleAttack();
+	public abstract bool PurpleAttack();
 
-    public abstract void RedAttack();
+	public abstract bool RedAttack();
 
     /// <summary>
     /// Autoattack the enemy playerTarget. This method assumes the target is within range of it's autoattack.
@@ -27,6 +30,15 @@ abstract class Hero : MonoBehaviour
     public abstract void StartAutoAttack (GameObject playerTarget);
 
 	public abstract bool IsAttacking();
+
+	public bool IsImmobile ()
+	{
+		return this.immobile;
+	}
+
+	public bool IsInvulnerable() {
+		return this.invulnerable;
+	}
 
 	public abstract bool StopAttack();
 
@@ -56,8 +68,8 @@ abstract class Hero : MonoBehaviour
 	/// </summary>
 	/// <returns><c>true</c>, if hero took damage and is still alive, <c>false</c> if dead.</returns>
 	/// <param name="damage">Damage.</param>
-	public Boolean TakeDamage (int damage) {
-		if (isDead()) {
+	public bool TakeDamage (int damage) {
+		if (isDead() || IsInvulnerable()) {
 			return false;
 		}
 

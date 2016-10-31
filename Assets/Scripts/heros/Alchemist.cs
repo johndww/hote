@@ -17,24 +17,28 @@ class Alchemist : Hero
         //        Debug.Log("Alchemist hero selected");
     }
 
-    public override void BlueAttack()
+	public override bool BlueAttack()
     {
         Debug.Log("earth mage attacking with blue");
+		return true;
     }
 
-    public override void GreenAttack()
+	public override bool GreenAttack()
     {
         Debug.Log("earth mage attacking with green");
+		return true;
     }
 
-    public override void PurpleAttack()
+	public override bool PurpleAttack()
     {
         Debug.Log("earth mage attacking with purple");
+		return true;
     }
 
-    public override void RedAttack()
+	public override bool RedAttack()
     {
         Debug.Log("earth mage attacking with red");
+		return true;
     }
 
     public override void StartAutoAttack (GameObject target) {
