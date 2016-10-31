@@ -53,8 +53,8 @@ class EarthMage : Hero
 
 		yield return new WaitForSeconds(1.0f);
 
-		this.hp = this.hp + 300;
-		Debug.Log("earth mage gained 300hp. current hp: " + this.hp);
+		Heal(300);
+		Debug.Log("earth mage attempted healing for 300. new hp: " + this.hp);
 
 		yield return new WaitForSeconds(2.3f);
 		Destroy(rocks);

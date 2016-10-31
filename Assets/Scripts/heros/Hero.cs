@@ -6,7 +6,10 @@ using UnityEngine;
 
 abstract class Hero : MonoBehaviour
 {
-	protected int hp = 2000;
+	// non-static for possibility of future update that boots max hp temporarily
+	private int maxHp = 200;
+
+	protected int hp = 200;
 
 	protected bool immobile = false;
 	protected bool invulnerable = false;
@@ -81,6 +84,14 @@ abstract class Hero : MonoBehaviour
 		}
 		Die();
 		return false;
+	}
+
+	public bool Heal(int amount) {
+		if (this.hp == this.maxHp) {
+			return false;
+		}
+		this.hp = Math.Min(this.maxHp, this.hp + amount);
+		return true;
 	}
 
 	void Die ()
