@@ -31,6 +31,8 @@ public class CharacterControl : MonoBehaviour {
 	// bookmark to know we've seen the hero as dead. the death source of truth is the hero
 	private bool charIsDead;
 
+	private bool attackInProgress;
+
 	private Hero hero;
 
 
@@ -71,7 +73,9 @@ public class CharacterControl : MonoBehaviour {
 			return;
 		}
 
-		if (this.playerTarget.GetComponent<Hero>().isDead()) {
+		// target is dead or we were attacking the target and aren't anymore. time to idle
+		if (this.playerTarget.GetComponent<Hero>().isDead() || (this.attackInProgress && !this.hero.IsAttacking())) {
+			this.attackInProgress = false;
 			this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
 			return;
 		}
@@ -268,37 +272,38 @@ public class CharacterControl : MonoBehaviour {
 		if (this.hero.isDead()) {
 			return;
 		}
-			
+
 		// try and stop attacking. if we can't, no new attack this frame
 		if (this.hero.IsAttacking() && !this.hero.StopAttack()) {
 			return;
 		}
-			
-		bool playAnimation = false;
+
+		bool attackSuccess = false;
 
 		switch (type) {
 		case AttackType.BLUE:
-			playAnimation = true;
+			attackSuccess = true;
 			break;
 		case AttackType.GREEN:
-			playAnimation = this.hero.GreenAttack();
+			attackSuccess = this.hero.GreenAttack();
 			break;
 		case AttackType.PURPLE:
-			playAnimation = true;
+			attackSuccess = true;
 			break;
 		case AttackType.RED:
 			if (this.playerTarget == null || this.playerTarget.GetComponent<Hero>().isDead()) {
-				playAnimation = false;
+				attackSuccess = false;
 			}
 			else {
-				playAnimation = this.hero.RedAttack(this.playerTarget);
+				attackSuccess = this.hero.RedAttack(this.playerTarget);
 			}
 			break;
 		default:
 			throw new ArgumentException ("unknown attack: " + type);
 		}
 
-		if (playAnimation) {
+		if (attackSuccess) {
+			this.attackInProgress = true;
 			StopWalking();
 			this.anim.SetInteger(ANIM_STATE, (int)attackAnimMap [type]);
 		}
