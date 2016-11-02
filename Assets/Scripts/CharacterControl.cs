@@ -265,7 +265,7 @@ public class CharacterControl : MonoBehaviour {
 
     public void Attack(AttackType type)
     {
-		if (this.hero.isDead() || this.playerTarget.GetComponent<Hero>().isDead()) {
+		if (this.hero.isDead()) {
 			return;
 		}
 			
@@ -273,9 +273,7 @@ public class CharacterControl : MonoBehaviour {
 		if (this.hero.IsAttacking() && !this.hero.StopAttack()) {
 			return;
 		}
-
-		StopWalking();
-
+			
 		bool playAnimation = false;
 
 		switch (type) {
@@ -289,13 +287,19 @@ public class CharacterControl : MonoBehaviour {
 			playAnimation = true;
 			break;
 		case AttackType.RED:
-			playAnimation = this.hero.RedAttack(this.playerTarget);
+			if (this.playerTarget == null || this.playerTarget.GetComponent<Hero>().isDead()) {
+				playAnimation = false;
+			}
+			else {
+				playAnimation = this.hero.RedAttack(this.playerTarget);
+			}
 			break;
 		default:
 			throw new ArgumentException ("unknown attack: " + type);
 		}
 
 		if (playAnimation) {
+			StopWalking();
 			this.anim.SetInteger(ANIM_STATE, (int)attackAnimMap [type]);
 		}
     }

@@ -73,6 +73,10 @@ class EarthMage : Hero
 
 	public override bool RedAttack(GameObject target)
     {
+		if (OutOfRange(target)) {
+			return false;
+		}
+
 		var coroutine = DoRedAttack(target);
 		this.attackState = AttackState.create(coroutine, false);
 		StartCoroutine(coroutine);
