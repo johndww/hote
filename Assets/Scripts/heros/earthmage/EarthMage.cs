@@ -33,9 +33,41 @@ class EarthMage : Hero
 
     public override bool BlueAttack()
     {
-        Debug.Log("earth mage attacking with blue");
-		return true;
+		var attackUIOverride = GetComponent<AttackUIOverride>();
+
+		if (attackUIOverride.isActiveAndEnabled) {
+			attackUIOverride.enabled = false;
+
+			if (!attackUIOverride.IsLocationSelected()) {
+				attackUIOverride.Reset();
+				return false;
+			}
+			var coroutine = DoBlueAttack(attackUIOverride.GetLocation());
+			this.attackState = AttackState.create(coroutine, false);
+			StartCoroutine(coroutine);
+			attackUIOverride.Reset();
+			return true;
+		}
+		else {
+			GetComponent<AttackUIOverride>().enabled = true;
+			return false;
+		}
     }
+
+	IEnumerator DoBlueAttack (Vector3 location)
+	{
+		this.immobile = true;
+		this.invulnerable = true;
+		yield return new WaitForSeconds (2.0f);
+
+		transform.position = location;
+
+		yield return new WaitForSeconds (2.0f);
+
+		this.immobile = false;
+		this.invulnerable = false;
+		this.attackState.finished = true;
+	}
 
 	public override bool GreenAttack()
     {
@@ -161,8 +193,8 @@ class EarthMage : Hero
 	void stop (AttackState attackState)
 	{
 		// protect against the NONE inital state which will have a null enumerator
-		if (attackState.getEnumerator() != null) {
-			StopCoroutine(attackState.getEnumerator());
+		if (attackState.getCoroutine() != null) {
+			StopCoroutine(attackState.getCoroutine());
 		}
 		attackState.finished = true;
 	}

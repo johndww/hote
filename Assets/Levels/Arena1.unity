@@ -4377,6 +4377,7 @@ GameObject:
   - 224: {fileID: 870481636}
   - 222: {fileID: 870481638}
   - 114: {fileID: 870481637}
+  - 225: {fileID: 870481639}
   m_Layer: 5
   m_Name: Abilities Background
   m_TagString: Untagged
@@ -4415,7 +4416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4435,6 +4436,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 870481635}
+--- !u!225 &870481639
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870481635}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &909702754
 GameObject:
   m_ObjectHideFlags: 0

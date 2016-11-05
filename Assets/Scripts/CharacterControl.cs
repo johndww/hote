@@ -68,7 +68,7 @@ public class CharacterControl : MonoBehaviour {
 			return;
         }
 
-		if (this.playerTarget == null) {
+		if (this.playerTarget == null || this.hero.IsAttacking()) {
 			// no need to do any more work if we haven't targetted anyone
 			return;
 		}
@@ -282,7 +282,7 @@ public class CharacterControl : MonoBehaviour {
 
 		switch (type) {
 		case AttackType.BLUE:
-			attackSuccess = true;
+			attackSuccess = this.hero.BlueAttack();
 			break;
 		case AttackType.GREEN:
 			attackSuccess = this.hero.GreenAttack();

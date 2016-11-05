@@ -10,7 +10,7 @@ public class AttackState : ScriptableObject
 {
 	public Boolean finished;
 
-	private IEnumerator enumerator;
+	private IEnumerator coroutine;
 	private Boolean interruptable;
 
 	public bool isFinished ()
@@ -18,8 +18,8 @@ public class AttackState : ScriptableObject
 		return this.finished;
 	}
 
-	public IEnumerator getEnumerator() {
-		return this.enumerator;
+	public IEnumerator getCoroutine() {
+		return this.coroutine;
 	}
 
 	public bool isInterruptable() {
@@ -28,14 +28,21 @@ public class AttackState : ScriptableObject
 
 	private void init (IEnumerator coroutine, bool interruptable)
 	{
-		this.enumerator = coroutine;
+		this.coroutine = coroutine;
 		this.interruptable = interruptable;
 	}
-
-	public static AttackState create(IEnumerator coroutine, Boolean interruptable) {
+		
+	public static AttackState create(IEnumerator coroutine, bool interruptable) {
 		AttackState attackState = ScriptableObject.CreateInstance<AttackState>();
 		attackState.init(coroutine, interruptable);
 		return attackState;
+	}
+
+	/// <summary>
+	/// Creates an uninterruptable attack state that must be manually finished
+	/// </summary>
+	public static AttackState create() {
+		return create(null, false);
 	}
 
 	public static AttackState None ()
