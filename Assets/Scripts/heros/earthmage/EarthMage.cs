@@ -16,9 +16,11 @@ class EarthMage : Hero
 
 	// initialized in awake
 	private AttackState attackState;
+	private Animator anim;
 
 	void Awake() {
 		this.attackState = AttackState.None();
+		this.anim = GetComponentInChildren<Animator>();
 	}
 
     public override HeroType GetHeroType()
@@ -33,36 +35,56 @@ class EarthMage : Hero
 
     public override bool BlueAttack()
     {
-		var attackUIOverride = GetComponent<AttackUIOverride>();
+		AttackUIOverride attackUIOverride = GetComponent<AttackUIOverride>();
+		// enable polling for selected location
+		attackUIOverride.enabled = true;
 
-		if (attackUIOverride.isActiveAndEnabled) {
-			attackUIOverride.enabled = false;
+		var coroutine = DoBlueAttack(attackUIOverride);
+		this.attackState = AttackState.create(coroutine, true, BlueAttackComplete);
+		StartCoroutine(coroutine);
 
-			if (!attackUIOverride.IsLocationSelected()) {
-				attackUIOverride.Reset();
-				return false;
-			}
-			var coroutine = DoBlueAttack(attackUIOverride.GetLocation());
-			this.attackState = AttackState.create(coroutine, false);
-			StartCoroutine(coroutine);
-			attackUIOverride.Reset();
-			return true;
-		}
-		else {
-			GetComponent<AttackUIOverride>().enabled = true;
-			return false;
-		}
+		// manually controlling substate animation here
+		return true;
     }
 
-	IEnumerator DoBlueAttack (Vector3 location)
+	private void BlueAttackComplete() {
+		AttackUIOverride attackUIOverride = GetComponent<AttackUIOverride>();
+		attackUIOverride.enabled = false;
+		attackUIOverride.Reset();
+
+		Debug.Log("exiting?");
+//		this.anim.SetTrigger("exitSubState");
+	}
+
+	private IEnumerator DoBlueAttack (AttackUIOverride attackUIOverride)
 	{
+		// give us an extra frame for the substate animation control
+		yield return null;
+
+		while (!attackUIOverride.IsLocationSelected()) {
+			Debug.Log("waiting for loc");
+			yield return new WaitForSeconds (0.1f);
+		}
+
+		// now that we've actually selected a location, change to be uninterruptable
+		this.attackState = AttackState.create();
+
+		// start the travel animation now that we've selected. wait a frame.
+		this.anim.SetTrigger("select");
+
 		this.immobile = true;
 		this.invulnerable = true;
-		yield return new WaitForSeconds (2.0f);
-
-		transform.position = location;
 
 		yield return new WaitForSeconds (2.0f);
+
+		transform.position = attackUIOverride.GetLocation();
+		attackUIOverride.Reset();
+
+		yield return new WaitForSeconds (2.0f);
+
+		// exit and give a frame for the transition
+		this.anim.SetTrigger("exitSubState");
+		yield return null;
 
 		this.immobile = false;
 		this.invulnerable = false;
@@ -90,7 +112,7 @@ class EarthMage : Hero
 		Heal(300);
 		Debug.Log("earth mage attempted healing for 300. new hp: " + this.hp);
 
-		yield return new WaitForSeconds(2.3f);
+		yield return new WaitForSeconds(2.8f);
 		Destroy(rocks);
 		this.immobile = false;
 		this.invulnerable = false;
@@ -196,6 +218,8 @@ class EarthMage : Hero
 		if (attackState.getCoroutine() != null) {
 			StopCoroutine(attackState.getCoroutine());
 		}
+		// we've interrupted this attack. run the complete function to close resources/reset state
+		attackState.getCompleteFunction()();
 		attackState.finished = true;
 	}
 }

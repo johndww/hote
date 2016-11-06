@@ -12,6 +12,11 @@ public class AttackState : ScriptableObject
 
 	private IEnumerator coroutine;
 	private Boolean interruptable;
+	private CompleteFunction completeFunction;
+
+	public delegate void CompleteFunction();
+	private static void NoopCompleteFunction() {
+	}
 
 	public bool isFinished ()
 	{
@@ -22,24 +27,37 @@ public class AttackState : ScriptableObject
 		return this.coroutine;
 	}
 
+	public CompleteFunction getCompleteFunction() {
+		return this.completeFunction;
+	}
+
 	public bool isInterruptable() {
 		return this.interruptable;
 	}
 
-	private void init (IEnumerator coroutine, bool interruptable)
+	private void init (IEnumerator coroutine, bool interruptable, CompleteFunction completeFunction)
 	{
 		this.coroutine = coroutine;
 		this.interruptable = interruptable;
+		this.completeFunction = completeFunction;
 	}
 		
 	public static AttackState create(IEnumerator coroutine, bool interruptable) {
+		return create(coroutine, interruptable, NoopCompleteFunction);
+	}
+
+	/// <summary>
+	/// Creates an attack state.  The complete function is provided if the attack state is interrupted. It's
+	/// intended to be run on interrupt (to close additional resources / reset state)
+	/// </summary>
+	public static AttackState create(IEnumerator coroutine, bool interruptable, CompleteFunction completeFunction) {
 		AttackState attackState = ScriptableObject.CreateInstance<AttackState>();
-		attackState.init(coroutine, interruptable);
+		attackState.init(coroutine, interruptable, completeFunction);
 		return attackState;
 	}
 
 	/// <summary>
-	/// Creates an uninterruptable attack state that must be manually finished
+	/// Creates an uninterruptable attack state.
 	/// </summary>
 	public static AttackState create() {
 		return create(null, false);

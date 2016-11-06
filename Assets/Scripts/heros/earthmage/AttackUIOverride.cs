@@ -18,6 +18,8 @@ public class AttackUIOverride : MonoBehaviour {
 
 			if (Physics.Raycast(ray, out hit, 200)) {
 				this.location = hit.point;
+				// we got a location, we're done
+				GetComponent<AttackUIOverride>().enabled = false;
 			}
 		}
 	}

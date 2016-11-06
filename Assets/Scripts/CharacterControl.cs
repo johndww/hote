@@ -29,9 +29,8 @@ public class CharacterControl : MonoBehaviour {
     private GameObject playerTarget;
 
 	// bookmark to know we've seen the hero as dead. the death source of truth is the hero
+	//TODO remove this
 	private bool charIsDead;
-
-	private bool attackInProgress;
 
 	private Hero hero;
 
@@ -64,34 +63,35 @@ public class CharacterControl : MonoBehaviour {
 
 		if (isPlayerForcedWalking)
         {
-            PlayerWalkControl();
+            StopPlayerWalkIfAtDestination();
 			return;
         }
 
 		if (this.playerTarget == null || this.hero.IsAttacking()) {
-			// no need to do any more work if we haven't targetted anyone
 			return;
 		}
 
-		// target is dead or we were attacking the target and aren't anymore. time to idle
-		if (this.playerTarget.GetComponent<Hero>().isDead() || (this.attackInProgress && !this.hero.IsAttacking())) {
-			this.attackInProgress = false;
-			this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
+		if (this.playerTarget.GetComponent<Hero>().isDead()) {
+			if (anim.GetCurrentAnimatorStateInfo(0).IsName("AutoAttacks") && !anim.IsInTransition(0)) {
+				this.anim.SetTrigger(Anim.IDLE.ToString());
+			}
 			return;
 		}
 
 		if (this.hero.OutOfRange(this.playerTarget)) {
 			// move towards target until we're in range
 			this.navMesh.destination = this.playerTarget.transform.position;
-			this.anim.SetInteger(ANIM_STATE, (int) Anim.WALK);
-			this.isSeekWalking = true;
+
+			if (!this.isSeekWalking) {
+				// we just started seek walking
+				this.anim.SetTrigger(Anim.WALK.ToString());
+				this.isSeekWalking = true;
+			}
 			return;
 		}
 		else if (this.isSeekWalking) {
 			// we were just seekwalking, but now we're close enough to the target to autoattack
-			// dont try and autoattack this frame, just stop walking, and we'll attack next frame
-			StopWalkingAndAnimation();
-			return;
+			StopWalking();
 		}
 
 		if (RotateTowards(this.playerTarget.transform)) {
@@ -108,7 +108,7 @@ public class CharacterControl : MonoBehaviour {
 	void StopWalkingAndAnimation ()
 	{
 		StopWalking();
-		this.anim.SetInteger(ANIM_STATE, (int)Anim.IDLE);
+		this.anim.SetTrigger(Anim.IDLE.ToString());
 	}
 
 	/// <summary>
@@ -121,7 +121,7 @@ public class CharacterControl : MonoBehaviour {
 	{
 		if (this.charIsDead) {
 			if (this.anim.GetInteger(ANIM_STATE) != (int)Anim.DEATH) {
-				this.anim.SetInteger(ANIM_STATE, (int)Anim.DEATH);
+				this.anim.SetTrigger(Anim.DEATH.ToString());
 			}
 		}
 
@@ -143,7 +143,7 @@ public class CharacterControl : MonoBehaviour {
 	{
 		// start autoattack animation if we weren't previously autoattacking
 		if (this.anim.GetInteger(ANIM_STATE) != (int)Anim.AUTOATTACK) {
-			this.anim.SetInteger(ANIM_STATE, (int)Anim.AUTOATTACK);
+			this.anim.SetTrigger(Anim.AUTOATTACK.ToString());
 		}
 		else {
 			// if we're already autoattack, we need to reset the animation
@@ -211,7 +211,7 @@ public class CharacterControl : MonoBehaviour {
         }
     }
 
-    private void PlayerWalkControl()
+    private void StopPlayerWalkIfAtDestination()
     {
         // navmesh is buggy. need to check alot to determine that we're done walking (or reached destination)
         if ((!this.navMesh.pathPending)
@@ -244,7 +244,6 @@ public class CharacterControl : MonoBehaviour {
 		// attempt to stop attacking (if attacking) so we can move
 		if (!this.hero.StopAttack()) {
 			// can't stop attacking so the move command is ignored
-			Debug.Log("cant stop attacking, can't move");
 			return;
 		}
 
@@ -262,7 +261,8 @@ public class CharacterControl : MonoBehaviour {
             if (!isPlayerForcedWalking)
             {
                 isPlayerForcedWalking = true;
-                this.anim.SetInteger(ANIM_STATE, (int) Anim.WALK);
+//                this.anim.SetInteger(ANIM_STATE, (int) Anim.WALK);
+				this.anim.SetTrigger(Anim.WALK.ToString());
             }
         }
     }
@@ -303,9 +303,10 @@ public class CharacterControl : MonoBehaviour {
 		}
 
 		if (attackSuccess) {
-			this.attackInProgress = true;
 			StopWalking();
-			this.anim.SetInteger(ANIM_STATE, (int)attackAnimMap [type]);
+
+			// trigger the attack animation / substate
+			this.anim.SetTrigger(attackAnimMap [type].ToString());
 		}
     }
 
@@ -319,5 +320,5 @@ public class CharacterControl : MonoBehaviour {
         return map;
     }
 
-    enum Anim { IDLE, WALK, AUTOATTACK, GREEN, BLUE, RED, PURPLE, DEATH}
+    public enum Anim { IDLE, WALK, AUTOATTACK, GREEN, BLUE, RED, PURPLE, DEATH}
 }
