@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackUIOverride : MonoBehaviour {
+public class CollectLocationUI : MonoBehaviour {
 
 	private Vector3 location = Vector3.zero;
 
@@ -19,7 +19,7 @@ public class AttackUIOverride : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, 200)) {
 				this.location = hit.point;
 				// we got a location, we're done
-				GetComponent<AttackUIOverride>().enabled = false;
+				GetComponent<CollectLocationUI>().enabled = false;
 			}
 		}
 	}

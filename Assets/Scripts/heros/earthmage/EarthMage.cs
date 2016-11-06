@@ -11,6 +11,7 @@ class EarthMage : Hero
 	public GameObject prefabSpikes;
     public GameObject prefabGreenAttack;
 	public GameObject prefabRedAttack;
+	public GameObject prefabPurpleAttack;
 
 	public float projectileSpeed = 40;
 
@@ -35,34 +36,29 @@ class EarthMage : Hero
 
     public override bool BlueAttack()
     {
-		AttackUIOverride attackUIOverride = GetComponent<AttackUIOverride>();
+		CollectLocationUI collectLocationUI = GetComponent<CollectLocationUI>();
 		// enable polling for selected location
-		attackUIOverride.enabled = true;
+		collectLocationUI.enabled = true;
 
-		var coroutine = DoBlueAttack(attackUIOverride);
+		var coroutine = DoBlueAttack(collectLocationUI);
 		this.attackState = AttackState.create(coroutine, true, BlueAttackComplete);
 		StartCoroutine(coroutine);
 
-		// manually controlling substate animation here
 		return true;
     }
 
 	private void BlueAttackComplete() {
-		AttackUIOverride attackUIOverride = GetComponent<AttackUIOverride>();
-		attackUIOverride.enabled = false;
-		attackUIOverride.Reset();
-
-		Debug.Log("exiting?");
-//		this.anim.SetTrigger("exitSubState");
+		CollectLocationUI collectLocationUI = GetComponent<CollectLocationUI>();
+		collectLocationUI.enabled = false;
+		collectLocationUI.Reset();
 	}
 
-	private IEnumerator DoBlueAttack (AttackUIOverride attackUIOverride)
+	private IEnumerator DoBlueAttack (CollectLocationUI collectLocationUI)
 	{
 		// give us an extra frame for the substate animation control
 		yield return null;
 
-		while (!attackUIOverride.IsLocationSelected()) {
-			Debug.Log("waiting for loc");
+		while (!collectLocationUI.IsLocationSelected()) {
 			yield return new WaitForSeconds (0.1f);
 		}
 
@@ -77,8 +73,8 @@ class EarthMage : Hero
 
 		yield return new WaitForSeconds (2.0f);
 
-		transform.position = attackUIOverride.GetLocation();
-		attackUIOverride.Reset();
+		transform.position = collectLocationUI.GetLocation();
+		collectLocationUI.Reset();
 
 		yield return new WaitForSeconds (2.0f);
 
@@ -93,8 +89,6 @@ class EarthMage : Hero
 
 	public override bool GreenAttack()
     {
-        Debug.Log("earth mage attacking with green");
-        //TODO start this as a coroutine with destroy. prevent incoming damage. heal. fix animator. prevent walking
 		var coroutine = DoGreenAttack();
 		this.attackState = AttackState.create(coroutine, false);
 		StartCoroutine(coroutine);
@@ -120,10 +114,63 @@ class EarthMage : Hero
 	}
 
 	public override bool PurpleAttack()
-    {
-        Debug.Log("earth mage attacking with purple");
+	{
+		CollectLineLocationUI collectLineLocationUI = GetComponent<CollectLineLocationUI>();
+		// enable polling for selected location
+		collectLineLocationUI.enabled = true;
+
+		var coroutine = DoPurpleAttack(collectLineLocationUI);
+		this.attackState = AttackState.create(coroutine, true, PurpleAttackComplete);
+		StartCoroutine(coroutine);
+
 		return true;
-    }
+	}
+
+	private void PurpleAttackComplete() {
+		CollectLineLocationUI collectLineLocationUI = GetComponent<CollectLineLocationUI>();
+		collectLineLocationUI.enabled = false;
+		collectLineLocationUI.Reset();
+	}
+
+	private IEnumerator DoPurpleAttack (CollectLineLocationUI collectLineLocationUI)
+	{
+		// give us an extra frame for the substate animation control
+		yield return null;
+
+		while (!collectLineLocationUI.IsComplete()) {
+			yield return new WaitForSeconds (0.1f);
+		}
+
+		// now that we've actually selected a location, change to be uninterruptable
+		this.attackState = AttackState.create();
+
+		// start the travel animation now that we've selected. wait a frame.
+		this.anim.SetTrigger("select");
+
+		this.immobile = true;
+
+		var rocks = GameObject.Instantiate(this.prefabPurpleAttack, collectLineLocationUI.GetLocation(), Quaternion.identity) as GameObject;
+		//TODO figure out how to rotate this
+//		rocks.transform.Rotate(collectLineLocationUI.GetMoveDelta().x, 0f, collectLineLocationUI.GetMoveDelta().z);
+		collectLineLocationUI.Reset();
+
+		StartCoroutine(DestroyPurpleWall(rocks));
+
+		yield return new WaitForSeconds (3.0f);
+
+		// exit and give a frame for the transition
+		this.anim.SetTrigger("exitSubState");
+		yield return null;
+
+		this.immobile = false;
+		this.attackState.finished = true;
+	}
+
+	IEnumerator DestroyPurpleWall (GameObject rocks)
+	{
+		yield return new WaitForSeconds (12.0f);
+		Destroy(rocks);
+	}
 
 	public override bool RedAttack(GameObject target)
     {

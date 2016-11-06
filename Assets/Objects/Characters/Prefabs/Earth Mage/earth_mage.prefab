@@ -684,6 +684,7 @@ GameObject:
   - 195: {fileID: 195000012561645714}
   - 136: {fileID: 136000010278404188}
   - 114: {fileID: 114000013375665022}
+  - 114: {fileID: 114000012759073470}
   m_Layer: 8
   m_Name: earth_mage
   m_TagString: Untagged
@@ -1836,6 +1837,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114000012759073470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014240588514}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03ab24bfdc6c4abbae84efd078382c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013067867446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1876,6 +1888,8 @@ MonoBehaviour:
     type: 2}
   prefabRedAttack: {fileID: 1000011923410986, guid: bc5aba8fba5ae493fa6e628947b69e22,
     type: 2}
+  prefabPurpleAttack: {fileID: 1000010078985930, guid: 0039fce9980574ea79be03d66f71b84b,
+    type: 2}
   projectileSpeed: 40
 --- !u!114 &114000013375665022
 MonoBehaviour:
@@ -1885,7 +1899,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000014240588514}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f3f901aeb0bd4cfc8335e43d125d771, type: 3}
+  m_Script: {fileID: 11500000, guid: d04e6035d2d5146a1b21390afcf6dc56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!136 &136000010278404188

@@ -175,6 +175,10 @@ public class CharacterControl : MonoBehaviour {
 			return;
 		}
 
+		//TODO this causes bugs with ui overrides from abilities. select gets called
+		// at the same time. select should also stop attacks. but, we need to disable this
+		// when in ui override.
+
 		// we've selected a hero
         RaycastHit hitInfo = new RaycastHit();
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, 200, this.heroLayerMask))
@@ -261,7 +265,6 @@ public class CharacterControl : MonoBehaviour {
             if (!isPlayerForcedWalking)
             {
                 isPlayerForcedWalking = true;
-//                this.anim.SetInteger(ANIM_STATE, (int) Anim.WALK);
 				this.anim.SetTrigger(Anim.WALK.ToString());
             }
         }
@@ -288,15 +291,10 @@ public class CharacterControl : MonoBehaviour {
 			attackSuccess = this.hero.GreenAttack();
 			break;
 		case AttackType.PURPLE:
-			attackSuccess = true;
+			attackSuccess = this.hero.PurpleAttack();
 			break;
 		case AttackType.RED:
-			if (this.playerTarget == null || this.playerTarget.GetComponent<Hero>().isDead()) {
-				attackSuccess = false;
-			}
-			else {
-				attackSuccess = this.hero.RedAttack(this.playerTarget);
-			}
+			attackSuccess = HasAliveTarget() ? this.hero.RedAttack(this.playerTarget) : false;
 			break;
 		default:
 			throw new ArgumentException ("unknown attack: " + type);
@@ -309,6 +307,11 @@ public class CharacterControl : MonoBehaviour {
 			this.anim.SetTrigger(attackAnimMap [type].ToString());
 		}
     }
+
+	private bool HasAliveTarget ()
+	{
+		return this.playerTarget != null && this.playerTarget.GetComponent<Hero>().IsAlive();
+	}
 
     private static Dictionary<AttackType, Anim> generateAttackTypeToAnimMap()
     {
