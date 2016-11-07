@@ -32,6 +32,9 @@ public class CharacterControl : MonoBehaviour {
 	//TODO remove this
 	private bool charIsDead;
 
+	// determines if an attack is overriding the UI. this disables certain actions like SELECT
+	private bool attackUIOverride;
+
 	private Hero hero;
 
 
@@ -171,7 +174,7 @@ public class CharacterControl : MonoBehaviour {
 	/// </summary>
     public void Select()
     {
-		if (this.hero.isDead() || this.hero.IsAttacking()) {
+		if (this.hero.isDead() || this.attackUIOverride) {
 			return;
 		}
 
@@ -307,6 +310,17 @@ public class CharacterControl : MonoBehaviour {
 			this.anim.SetTrigger(attackAnimMap [type].ToString());
 		}
     }
+
+	public delegate void AttackUIOverrideFunction(bool enable);
+
+	public AttackUIOverrideFunction GetAttackUIOverrideFunction ()
+	{
+		return AttackUIOverrideControl;
+	}
+
+	private void AttackUIOverrideControl(bool enable) {
+		this.attackUIOverride = enable;
+	}
 
 	private bool HasAliveTarget ()
 	{

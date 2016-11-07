@@ -17,7 +17,7 @@ class Jaeger : Hero
         //        Debug.Log("Jaeger hero selected");
     }
 
-    public override bool BlueAttack()
+	public override bool BlueAttack()
     {
         Debug.Log("earth mage attacking with blue");
 		return true;
@@ -29,7 +29,7 @@ class Jaeger : Hero
 		return true;
     }
 
-    public override bool PurpleAttack()
+	public override bool PurpleAttack()
     {
         Debug.Log("earth mage attacking with purple");
 		return true;

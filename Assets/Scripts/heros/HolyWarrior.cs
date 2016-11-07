@@ -17,7 +17,7 @@ class HolyWarrior : Hero
 //        Debug.Log("Holy Warrior hero selected");
     }
 
-    public override bool BlueAttack()
+	public override bool BlueAttack()
     {
         Debug.Log("earth mage attacking with blue");
 		return true;
@@ -29,7 +29,7 @@ class HolyWarrior : Hero
 		return true;
     }
 
-    public override bool PurpleAttack()
+	public override bool PurpleAttack()
     {
         Debug.Log("earth mage attacking with purple");
 		return true;

@@ -18,10 +18,15 @@ class EarthMage : Hero
 	// initialized in awake
 	private AttackState attackState;
 	private Animator anim;
+	CharacterControl.AttackUIOverrideFunction uiOverrideFunction;
 
 	void Awake() {
 		this.attackState = AttackState.None();
 		this.anim = GetComponentInChildren<Animator>();
+
+		// we could just reference charactercontrol here. the function might be not necessary
+		// but it seems strange to have the char control->hero->char control cyclic references
+		this.uiOverrideFunction = GetComponent<CharacterControl>().GetAttackUIOverrideFunction();
 	}
 
     public override HeroType GetHeroType()
@@ -34,11 +39,12 @@ class EarthMage : Hero
 //        Debug.Log("earth mage hero selected");
     }
 
-    public override bool BlueAttack()
+	public override bool BlueAttack()
     {
 		CollectLocationUI collectLocationUI = GetComponent<CollectLocationUI>();
 		// enable polling for selected location
 		collectLocationUI.enabled = true;
+		this.uiOverrideFunction(true);
 
 		var coroutine = DoBlueAttack(collectLocationUI);
 		this.attackState = AttackState.create(coroutine, true, BlueAttackComplete);
@@ -51,6 +57,7 @@ class EarthMage : Hero
 		CollectLocationUI collectLocationUI = GetComponent<CollectLocationUI>();
 		collectLocationUI.enabled = false;
 		collectLocationUI.Reset();
+		this.uiOverrideFunction(false);
 	}
 
 	private IEnumerator DoBlueAttack (CollectLocationUI collectLocationUI)
@@ -85,6 +92,7 @@ class EarthMage : Hero
 		this.immobile = false;
 		this.invulnerable = false;
 		this.attackState.finished = true;
+		uiOverrideFunction(false);
 	}
 
 	public override bool GreenAttack()
@@ -118,6 +126,7 @@ class EarthMage : Hero
 		CollectLineLocationUI collectLineLocationUI = GetComponent<CollectLineLocationUI>();
 		// enable polling for selected location
 		collectLineLocationUI.enabled = true;
+		this.uiOverrideFunction(true);
 
 		var coroutine = DoPurpleAttack(collectLineLocationUI);
 		this.attackState = AttackState.create(coroutine, true, PurpleAttackComplete);
@@ -129,6 +138,7 @@ class EarthMage : Hero
 	private void PurpleAttackComplete() {
 		CollectLineLocationUI collectLineLocationUI = GetComponent<CollectLineLocationUI>();
 		collectLineLocationUI.enabled = false;
+		this.uiOverrideFunction(false);
 		collectLineLocationUI.Reset();
 	}
 
@@ -168,6 +178,7 @@ class EarthMage : Hero
 
 		this.immobile = false;
 		this.attackState.finished = true;
+		this.uiOverrideFunction(false);
 	}
 
 	IEnumerator DestroyPurpleWall (GameObject rocks)
@@ -267,6 +278,9 @@ class EarthMage : Hero
 	{
 		// protect against the NONE inital state which will have a null enumerator
 		if (attackState.getCoroutine() != null) {
+			//NOTE: stopping a coroutine mid execution nees to be thought through
+			// an attackState that is interruptable must only be interruptable if
+			// it doesn't need to de-allocate objects other than with the complete function
 			StopCoroutine(attackState.getCoroutine());
 		}
 		// we've interrupted this attack. run the complete function to close resources/reset state

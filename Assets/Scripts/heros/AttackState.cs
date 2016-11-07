@@ -8,10 +8,10 @@ using System.Collections;
 /// </summary>
 public class AttackState : ScriptableObject
 {
-	public Boolean finished;
+	public bool finished;
 
 	private IEnumerator coroutine;
-	private Boolean interruptable;
+	private bool interruptable;
 	private CompleteFunction completeFunction;
 
 	public delegate void CompleteFunction();
@@ -48,7 +48,7 @@ public class AttackState : ScriptableObject
 
 	/// <summary>
 	/// Creates an attack state.  The complete function is provided if the attack state is interrupted. It's
-	/// intended to be run on interrupt (to close additional resources / reset state)
+	/// intended to be run on interrupt (to close additional resources / reset state).
 	/// </summary>
 	public static AttackState create(IEnumerator coroutine, bool interruptable, CompleteFunction completeFunction) {
 		AttackState attackState = ScriptableObject.CreateInstance<AttackState>();
