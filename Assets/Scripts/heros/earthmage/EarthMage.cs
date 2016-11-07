@@ -150,8 +150,12 @@ class EarthMage : Hero
 		this.immobile = true;
 
 		var rocks = GameObject.Instantiate(this.prefabPurpleAttack, collectLineLocationUI.GetLocation(), Quaternion.identity) as GameObject;
-		//TODO figure out how to rotate this
-//		rocks.transform.Rotate(collectLineLocationUI.GetMoveDelta().x, 0f, collectLineLocationUI.GetMoveDelta().z);
+
+		//TODO i have no idea how this works. geometry is not my strong suit
+		// theres definitely a way i can do this in one operation but this works so im done
+		rocks.transform.rotation = Quaternion.LookRotation(collectLineLocationUI.GetMoveDelta());
+		rocks.transform.rotation *= Quaternion.Euler(0,90f,0);
+
 		collectLineLocationUI.Reset();
 
 		StartCoroutine(DestroyPurpleWall(rocks));

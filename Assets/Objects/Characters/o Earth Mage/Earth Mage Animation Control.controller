@@ -762,7 +762,7 @@ AnimatorState:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Travel
+  m_Name: CreateWall
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -775,7 +775,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400012, guid: 6fd29207f6e5d974283f169715467dd8, type: 3}
+  m_Motion: {fileID: 7400016, guid: 6fd29207f6e5d974283f169715467dd8, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

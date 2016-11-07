@@ -8,7 +8,7 @@ public class CollectLineLocationUI : MonoBehaviour
 
 	public Vector3 GetMoveDelta() {
 		//TODO figure out what we actually need for rotations
-		return this.firstPoint;
+		return this.firstPoint - this.secondPoint;
 	}
 
 	public Vector3 GetLocation() {
