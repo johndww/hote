@@ -8,7 +8,7 @@ public class CollectLineLocationUI : MonoBehaviour
 
 	public Vector3 GetMoveDelta() {
 		//TODO figure out what we actually need for rotations
-		return this.firstPoint - this.secondPoint;
+		return this.secondPoint - this.firstPoint;
 	}
 
 	public Vector3 GetLocation() {
@@ -73,7 +73,11 @@ public class CollectLineLocationUI : MonoBehaviour
 		RaycastHit hit;
 
 		if (Physics.Raycast(ray, out hit, 200)) {
-			return hit.point;
+			//TODO another physics hack here. sometimes the user input lands on something thats like a tree
+			// or a person which raises the point in the y direction. this collector only wants x,z coordinates,
+			// so this flattens it to the ground. however, that isn't perfect since the camera is at an angle.
+			// the true fix for this is to raycast on a flat plane layer that has no obstructions. TODO
+			return new Vector3(hit.point.x, 0, hit.point.z);
 		}
 		return Vector3.zero;
 	}

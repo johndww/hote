@@ -171,7 +171,7 @@ public class CharacterControl : MonoBehaviour {
 	/// </summary>
     public void Select()
     {
-		if (this.hero.isDead()) {
+		if (this.hero.isDead() || this.hero.IsAttacking()) {
 			return;
 		}
 
