@@ -69,6 +69,8 @@ class EarthMage : Hero
 			yield return new WaitForSeconds (0.1f);
 		}
 
+		this.uiOverrideFunction(false);
+
 		// now that we've actually selected a location, change to be uninterruptable
 		this.attackState = AttackState.create();
 
@@ -92,7 +94,6 @@ class EarthMage : Hero
 		this.immobile = false;
 		this.invulnerable = false;
 		this.attackState.finished = true;
-		uiOverrideFunction(false);
 	}
 
 	public override bool GreenAttack()
@@ -151,6 +152,8 @@ class EarthMage : Hero
 			yield return new WaitForSeconds (0.1f);
 		}
 
+		this.uiOverrideFunction(false);
+
 		// now that we've actually selected a location, change to be uninterruptable
 		this.attackState = AttackState.create();
 
@@ -178,7 +181,6 @@ class EarthMage : Hero
 
 		this.immobile = false;
 		this.attackState.finished = true;
-		this.uiOverrideFunction(false);
 	}
 
 	IEnumerator DestroyPurpleWall (GameObject rocks)

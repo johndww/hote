@@ -320,6 +320,7 @@ public class CharacterControl : MonoBehaviour {
 
 	private void AttackUIOverrideControl(bool enable) {
 		this.attackUIOverride = enable;
+		GameObject.FindGameObjectWithTag("camera").GetComponent<CameraMovement>().SetUiOverride(enable);
 	}
 
 	private bool HasAliveTarget ()

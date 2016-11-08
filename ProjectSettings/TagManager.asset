@@ -9,6 +9,7 @@ TagManager:
   - char_marker_blue_filled
   - char_marker_red_filled
   - location_pointer
+  - camera
   layers:
   - Default
   - TransparentFX

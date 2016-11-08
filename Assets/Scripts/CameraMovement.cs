@@ -6,14 +6,22 @@ public class CameraMovement : MonoBehaviour {
 	public GameObject camera_object; // attach the camera object that will be transformed during panning and rotation
 	public GameObject camera_poivot_point; // attach the center object around which the camera will rotate and towards which it will zoom in
 
-
+	private bool uiOverride;
 
 	// Use this for initialization
 	void Start () {
 	}
+
+	public void SetUiOverride(bool enable) {
+		this.uiOverride = enable;
+	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (uiOverride) {
+			return;
+		}
 
 		// One touch means there's one finger and therefore we're panning the camera
 		if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved) {
