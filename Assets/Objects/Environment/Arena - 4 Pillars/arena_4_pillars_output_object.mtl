@@ -1,5 +1,5 @@
-# Blender MTL File: 'arena_4_pillars_output.blend'
-# Material Count: 18
+# Blender MTL File: 'arena_4_pillars_2.blend'
+# Material Count: 19
 
 newmtl None
 Ns 0
@@ -162,3 +162,12 @@ Ks 0.8 0.8 0.8
 d 1
 illum 2
 map_Kd C:\Users\stefa\iCloudDrive\Tome of Heroes\Blender\Textures\arena_4_pillars_atlas.png
+
+newmtl None_arena_4_pillars_atlas_2.psd
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd C:\Users\stefa\iCloudDrive\Tome of Heroes\Blender\Textures\arena_4_pillars_atlas_2.psd
