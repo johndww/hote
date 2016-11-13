@@ -2356,10 +2356,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Idle: 0
-  Green: 1
+  Green: 0
   Blue: 0
   Red: 0
-  Purple: 0
+  Purple: 1
   AutoAttacks: 0
   AutoAttacksWalking: 0
   Walking: 0
