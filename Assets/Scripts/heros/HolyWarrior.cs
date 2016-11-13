@@ -11,12 +11,7 @@ class HolyWarrior : Hero
     {
         return HeroType.HolyWarrior;
     }
-
-    public override void Selected()
-    {
-//        Debug.Log("Holy Warrior hero selected");
-    }
-
+		
 	public override bool BlueAttack()
     {
         Debug.Log("earth mage attacking with blue");

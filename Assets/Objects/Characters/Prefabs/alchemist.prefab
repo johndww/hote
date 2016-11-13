@@ -438,6 +438,7 @@ GameObject:
   - 114: {fileID: 114000011571506998}
   - 195: {fileID: 195000013989547522}
   - 136: {fileID: 136000010552436060}
+  - 114: {fileID: 114000011893977588}
   m_Layer: 8
   m_Name: alchemist
   m_TagString: Untagged
@@ -1486,6 +1487,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d33359a006067344e94c15f134a8d7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greenCooldownDuration: 0
+  blueCooldownDuration: 0
+  redCooldownDuration: 0
+  purpleCooldownDuration: 0
+--- !u!114 &114000011893977588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013115087048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cd2028ecee6479ba2c236bdb43197f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114000013776834456

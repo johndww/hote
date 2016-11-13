@@ -91,7 +91,9 @@ public class UIControls : MonoBehaviour {
 
         for (int i = 0; i < 4; i++) {
             CharacterControl characterControl = characters[i].GetComponent<CharacterControl>();
-            GameObject uiAbilitiesForHeroSlot = this.heroTypeToAbilitiesUi[characterControl.GetComponent<Hero>().GetHeroType()];
+			var hero = characterControl.GetComponent<Hero>();
+            GameObject uiAbilitiesForHeroSlot = this.heroTypeToAbilitiesUi[hero.GetHeroType()];
+			hero.InitializeCooldowns(uiAbilitiesForHeroSlot);
 
             this.abilitiesBySlot[i] = uiAbilitiesForHeroSlot;
             this.characterBySlot[i] = characterControl;

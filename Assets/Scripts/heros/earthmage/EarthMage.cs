@@ -7,36 +7,17 @@ using System.Collections;
 
 class EarthMage : Hero
 {
-	public GameObject prefabProjectile;
-	public GameObject prefabSpikes;
-    public GameObject prefabGreenAttack;
-	public GameObject prefabRedAttack;
-	public GameObject prefabPurpleAttack;
+	public GameObject prefabProjectile = null;
+	public GameObject prefabSpikes = null;
+    public GameObject prefabGreenAttack = null;
+	public GameObject prefabRedAttack = null;
+	public GameObject prefabPurpleAttack = null;
 
 	public float projectileSpeed = 40;
-
-	// initialized in awake
-	private AttackState attackState;
-	private Animator anim;
-	CharacterControl.AttackUIOverrideFunction uiOverrideFunction;
-
-	void Awake() {
-		this.attackState = AttackState.None();
-		this.anim = GetComponentInChildren<Animator>();
-
-		// we could just reference charactercontrol here. the function might be not necessary
-		// but it seems strange to have the char control->hero->char control cyclic references
-		this.uiOverrideFunction = GetComponent<CharacterControl>().GetAttackUIOverrideFunction();
-	}
 
     public override HeroType GetHeroType()
     {
         return HeroType.EarthMage;
-    }
-
-    public override void Selected()
-    {
-//        Debug.Log("earth mage hero selected");
     }
 
 	public override bool BlueAttack()
@@ -70,6 +51,7 @@ class EarthMage : Hero
 		}
 
 		this.uiOverrideFunction(false);
+		ActivateCooldown(AttackType.BLUE);
 
 		// now that we've actually selected a location, change to be uninterruptable
 		this.attackState = AttackState.create();
@@ -101,6 +83,7 @@ class EarthMage : Hero
 		var coroutine = DoGreenAttack();
 		this.attackState = AttackState.create(coroutine, false);
 		StartCoroutine(coroutine);
+		ActivateCooldown(AttackType.GREEN);
 		return true;
     }
 
@@ -153,6 +136,7 @@ class EarthMage : Hero
 		}
 
 		this.uiOverrideFunction(false);
+		ActivateCooldown(AttackType.PURPLE);
 
 		// now that we've actually selected a location, change to be uninterruptable
 		this.attackState = AttackState.create();
@@ -198,6 +182,7 @@ class EarthMage : Hero
 		var coroutine = DoRedAttack(target);
 		this.attackState = AttackState.create(coroutine, false);
 		StartCoroutine(coroutine);
+		ActivateCooldown(AttackType.RED);
 		return true;
     }
 

@@ -12,11 +12,6 @@ class Gladiator : Hero
         return HeroType.Gladiator;
     }
 
-    public override void Selected()
-    {
-        //        Debug.Log("Gladiator hero selected");
-    }
-
 	public override bool BlueAttack()
     {
         Debug.Log("earth mage attacking with blue");

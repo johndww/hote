@@ -12,11 +12,6 @@ class Alchemist : Hero
         return HeroType.Alchemist;
     }
 
-    public override void Selected()
-    {
-        //        Debug.Log("Alchemist hero selected");
-    }
-
 	public override bool BlueAttack()
     {
         Debug.Log("earth mage attacking with blue");

@@ -275,7 +275,7 @@ public class CharacterControl : MonoBehaviour {
 
     public void Attack(AttackType type)
     {
-		if (this.hero.isDead()) {
+		if (this.hero.isDead() || this.hero.CooldownInProgress(type)) {
 			return;
 		}
 

@@ -11,12 +11,7 @@ class Jaeger : Hero
     {
         return HeroType.Jaeger;
     }
-
-    public override void Selected()
-    {
-        //        Debug.Log("Jaeger hero selected");
-    }
-
+		
 	public override bool BlueAttack()
     {
         Debug.Log("earth mage attacking with blue");

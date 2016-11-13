@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
 				HeroUtil.SetHeroMarkerEnablement(false, this.selectedCharacter, Statics.CHAR_MARKER_BLUE_FILLED);
 				HeroUtil.SetHeroMarkerEnablement(true, this.selectedCharacter, Statics.CHAR_MARKER_BLUE);
 
+				this.selectedCharacter.GetComponent<Hero>().UnSelected();
+
             }
             HeroUtil.SetHeroMarkerEnablement(true, value, Statics.CHAR_MARKER_BLUE_FILLED);
             HeroUtil.SetHeroMarkerEnablement(false, value, Statics.CHAR_MARKER_BLUE);

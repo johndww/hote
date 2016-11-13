@@ -7,6 +7,11 @@ using System.Collections;
 
 abstract class Hero : MonoBehaviour
 {
+	public int greenCooldownDuration = 10;
+	public int blueCooldownDuration = 10;
+	public int redCooldownDuration = 10;
+	public int purpleCooldownDuration = 10;
+
 	// non-static for possibility of future update that boots max hp temporarily
 	private int maxHp = 2000;
 
@@ -15,9 +20,41 @@ abstract class Hero : MonoBehaviour
 	protected bool immobile = false;
 	protected bool invulnerable = false;
 
+	// initialized in awake
+	protected AttackState attackState;
+	protected Animator anim;
+	protected CharacterControl.AttackUIOverrideFunction uiOverrideFunction;
+	private Cooldowns cooldowns;
+
+	/// <summary>
+	/// Unity's awake initializer
+	/// Overriders must call base.Awake() when overriding.
+	/// </summary>
+	protected virtual void Awake() {
+		this.attackState = AttackState.None();
+		this.anim = GetComponentInChildren<Animator>();
+
+		// we could just reference charactercontrol here. the function might be not necessary
+		// but it seems strange to have the char control->hero->char control cyclic references
+		this.uiOverrideFunction = GetComponent<CharacterControl>().GetAttackUIOverrideFunction();
+		this.cooldowns = GetComponent<Cooldowns>();
+	}
+
     public abstract HeroType GetHeroType();
 
-    public abstract void Selected();
+	/// <summary>
+	/// Called when a hero is selected.
+	/// Overriders must call base.Selected first()
+	/// </summary>
+	public virtual void Selected() {
+	}
+
+	/// <summary>
+	/// Called when a hero is unselected.
+	/// Overriders must call base.Unselected() first.
+	/// </summary>
+	public virtual void UnSelected() {
+	}
 
 	public abstract bool BlueAttack();
 
@@ -34,6 +71,38 @@ abstract class Hero : MonoBehaviour
     public abstract void StartAutoAttack (GameObject playerTarget);
 
 	public abstract bool IsAttacking();
+
+	public void InitializeCooldowns (GameObject uiAbilitiesGameObject)
+	{
+		this.cooldowns.Initialize(uiAbilitiesGameObject);
+	}
+
+	protected void ActivateCooldown(AttackType type) {
+		// this is annoying - should just be a static map. unforutnately unity's
+		// initalizers are strange so we can statically define this without jumping through hoops
+		int duration;
+		switch (type) {
+		case AttackType.BLUE:
+			duration = blueCooldownDuration;
+			break;
+		case AttackType.GREEN:
+			duration = greenCooldownDuration;
+			break;
+		case AttackType.PURPLE:
+			duration = purpleCooldownDuration;
+			break;
+		case AttackType.RED:
+			duration = redCooldownDuration;
+			break;
+		default:
+			throw new ArgumentException ("unknown type: " + type);
+		}
+		this.cooldowns.Activate(type, duration);
+	}
+
+	public bool CooldownInProgress(AttackType type) {
+		return this.cooldowns.InProgress(type);
+	}
 
 	public bool IsImmobile ()
 	{

@@ -195,6 +195,7 @@ GameObject:
   - 114: {fileID: 114000010256267420}
   - 195: {fileID: 195000013686896768}
   - 136: {fileID: 136000013626724976}
+  - 114: {fileID: 114000011261860944}
   m_Layer: 8
   m_Name: syphoness
   m_TagString: Untagged
@@ -1492,6 +1493,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37f8b6e8ba76cfa4faca371261857820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greenCooldownDuration: 0
+  blueCooldownDuration: 0
+  redCooldownDuration: 0
+  purpleCooldownDuration: 0
+--- !u!114 &114000011261860944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011792603224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cd2028ecee6479ba2c236bdb43197f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!136 &136000013626724976

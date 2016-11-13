@@ -531,6 +531,7 @@ GameObject:
   - 114: {fileID: 114000011169892864}
   - 195: {fileID: 195000013015728828}
   - 136: {fileID: 136000013654060346}
+  - 114: {fileID: 114000013199272028}
   m_Layer: 8
   m_Name: jaeger
   m_TagString: Untagged
@@ -1608,6 +1609,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcf6f253ae2a38643a096d6a53831756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greenCooldownDuration: 0
+  blueCooldownDuration: 0
+  redCooldownDuration: 0
+  purpleCooldownDuration: 0
+--- !u!114 &114000013199272028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013357304990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cd2028ecee6479ba2c236bdb43197f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!136 &136000013654060346
