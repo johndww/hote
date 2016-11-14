@@ -47,6 +47,7 @@ ModelImporter:
     100078: syphoness_mesh
     100080: Plane
     100082: Plane_001
+    100084: Spin_Waves
     400000: Armature_001
     400002: Bone
     400004: Bone_001
@@ -89,12 +90,15 @@ ModelImporter:
     400078: syphoness_mesh
     400080: Plane
     400082: Plane_001
+    400084: Spin_Waves
     2300000: auto_attacks_trace
     2300002: Plane
     2300004: Plane_001
+    2300006: Spin_Waves
     3300000: auto_attacks_trace
     3300002: Plane
     3300004: Plane_001
+    3300006: Spin_Waves
     4300000: shoulder
     4300002: earth_mage_mesh
     4300004: staff
@@ -103,6 +107,7 @@ ModelImporter:
     4300010: book
     4300012: Plane
     4300014: Plane_001
+    4300016: Spin_Waves
     7400000: Idle
     7400002: Walk_blocking
     7400004: Walking
@@ -744,15 +749,13 @@ ModelImporter:
         weight: 1
       - path: book
         weight: 1
-      - path: Plane
-        weight: 1
-      - path: Plane_001
+      - path: Spin_Waves
         weight: 1
       - path: syphoness_mesh
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 2499
     isReadable: 1
   meshes:
     lODScreenPercentages: []
