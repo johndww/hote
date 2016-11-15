@@ -39,6 +39,9 @@ ModelImporter:
     100062: Upper_Arm_R
     100064: Upper_Leg_L
     100066: Upper_Leg_R
+    100068: Shoulder_L
+    100070: Shoulder_R
+    100072: Sphere
     400000: Armature_001
     400002: auto_attack_traces
     400004: Chest
@@ -73,18 +76,25 @@ ModelImporter:
     400062: Upper_Arm_R
     400064: Upper_Leg_L
     400066: Upper_Leg_R
+    400068: Shoulder_L
+    400070: Shoulder_R
+    400072: Sphere
     2300000: auto_attack_traces
+    2300002: Sphere
     3300000: auto_attack_traces
+    3300002: Sphere
     4300000: auto_attack_traces
     4300002: shoulders
     4300004: gladiator_body_mesh
     4300006: hammer
+    4300008: Sphere
     7400000: Idle
     7400002: Walk_blocking
     7400004: Walking
     7400006: Death
     7400008: AutoAttacks
     7400010: AutoAttacksWalking
+    7400012: Blue
     9500000: //RootNode
     13700000: gladiator_body_mesh
     13700002: hammer
@@ -590,6 +600,108 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Blue
+      takeName: Default Take
+      firstFrame: 1999.9999
+      lastFrame: 2044.9999
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_001
+        weight: 1
+      - path: Armature_001/Leg_Control_L
+        weight: 1
+      - path: Armature_001/Leg_Control_L/Foot_L
+        weight: 1
+      - path: Armature_001/Leg_Control_L/Foot_L/Toes_L
+        weight: 1
+      - path: Armature_001/Leg_Control_R
+        weight: 1
+      - path: Armature_001/Leg_Control_R/Foot_R
+        weight: 1
+      - path: Armature_001/Leg_Control_R/Foot_R/Toes_R
+        weight: 1
+      - path: Armature_001/Torso
+        weight: 1
+      - path: Armature_001/Torso/Chest
+        weight: 1
+      - path: Armature_001/Torso/Chest/Neck
+        weight: 1
+      - path: Armature_001/Torso/Chest/Neck/Head
+        weight: 1
+      - path: Armature_001/Torso/Chest/Shoulder_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Shoulder_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Hand_L_001/Hand_L_002
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_L/Lower_Arm_L/Hand_L/Thumb01_L/Thumb01_L_001
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Hand_R_001
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Hand_R_001/Hand_R_002
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R
+        weight: 1
+      - path: Armature_001/Torso/Chest/Upper_Arm_R/Lower_Arm_R/Hand_R/Thumb01_R/Thumb01_R_001
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_L
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_R
+        weight: 1
+      - path: Armature_001/Torso/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: auto_attack_traces
+        weight: 1
+      - path: gladiator_body_mesh
+        weight: 1
+      - path: hammer
+        weight: 1
+      - path: shoulders
+        weight: 1
+      - path: Sphere
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1999
     isReadable: 1
   meshes:
     lODScreenPercentages: []
